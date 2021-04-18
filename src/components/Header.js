@@ -3,9 +3,6 @@ import Link from "./Link";
 
 import MenuIcon from "../../public/icons/MenuIcon";
 import CloseIcon from "../../public/icons/CloseIcon";
-import MediumCircle from "../../public/icons/MediumCircle";
-import SmallRec from "../../public/icons/SmallRec";
-import MediumRec from "../../public/icons/MediumRec";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -99,7 +96,7 @@ function ElevationScroll(props) {
   });
 
   return cloneElement(children, {
-    elevation: trigger ? 2 : 0
+    elevation: trigger ? 0 : 0
   });
 }
 
@@ -147,16 +144,16 @@ function Header(props) {
         <CloseIcon />
       </IconButton>
       <span className={classes.mdCircle}>
-        <MediumCircle />
+        <img src="/icons/circle.svg" alt="Background icon" />
       </span>
       <span className={classes.smRec1}>
-        <SmallRec />
+        <img src="/icons/smallRec.svg" alt="Background icon" />
       </span>
       <span className={classes.smRec2}>
-        <SmallRec />
+        <img src="/icons/smallRec.svg" alt="Background icon" />
       </span>
       <span className={classes.mdRec}>
-        <MediumRec />
+        <img src="/icons/rec.svg" alt="Background icon" />
       </span>
       <List>
         {[
@@ -205,9 +202,6 @@ function Header(props) {
               </IconButton>
             </Hidden>
           </Toolbar>
-          <div style={{ display: "none" }}>
-            <MediumRec />
-          </div>
         </AppBar>
       </ElevationScroll>
     </div>

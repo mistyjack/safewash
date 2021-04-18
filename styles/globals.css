@@ -25,3 +25,23 @@ a {
   font-weight: 700;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-ExtraBold.otf");
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+}
+
+.btn {
+  text-transform: none !important;
+  color: #fff !important;
+  padding: 16px 21px !important;
+  border-radius: 13px 13px 13px 0px !important;
+  font-family: "Gilroy" !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  font-style: normal !important;
+}
