@@ -6,6 +6,7 @@ import FirstSlide from "../src/components/FirstSlide";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Hidden from "@material-ui/core/Hidden";
+import Carousel from "react-material-ui-carousel";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -16,13 +17,10 @@ const useStyles = makeStyles(theme =>
       zIndex: 10,
       backgroundColor: "#fff"
     },
-    firstSlide: {
-      minHeight: "600px",
-      position: "relative",
-      [theme.breakpoints.up("md")]: {
-        minheight: "100vh",
-        height: "801px",
-        background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(213.01deg, #FFFFFF 4.13%, rgba(254, 150, 198, 0.5) 80.31%)"
+    babyInBasketImage: {
+      padding: theme.spacing(0, 3),
+      [theme.breakpoints.up("sm")]: {
+        padding: theme.spacing(0, 6)
       }
     }
   })
@@ -40,12 +38,98 @@ export default function Home() {
       </Head>
 
       <main className={classes.root}>
-        <section className={classes.firstSlide}>
-          <FirstSlide />
-        </section>
+        <Hidden smDown>
+          <Carousel
+            indicatorContainerProps={{
+              style: {
+                position: "absolute",
+                bottom: "10rem",
+                textAlign: "left",
+                marginLeft: "11rem"
+              }
+            }}
+            indicatorIconButtonProps={{
+              style: {
+                color: "transparent",
+                border: "1px solid #FE96C6",
+                marginRight: "5px"
+              }
+            }}
+            activeIndicatorIconButtonProps={{
+              style: {
+                color: "#FE96C6",
+                backgroundColor: "#FE96C6"
+              }
+            }}
+          >
+            <FirstSlide />
+            <FirstSlide />
+          </Carousel>
+        </Hidden>
+
+        <Hidden xsDown mdUp>
+          <Carousel
+            indicatorContainerProps={{
+              style: {
+                position: "absolute",
+                bottom: "7rem",
+                textAlign: "left",
+                marginLeft: "3rem"
+              }
+            }}
+            indicatorIconButtonProps={{
+              style: {
+                color: "transparent",
+                border: "1px solid #FE96C6",
+                marginRight: "5px"
+              }
+            }}
+            activeIndicatorIconButtonProps={{
+              style: {
+                color: "#FE96C6",
+                backgroundColor: "#FE96C6"
+              }
+            }}
+          >
+            <FirstSlide />
+            <FirstSlide />
+          </Carousel>
+        </Hidden>
+
         <Hidden smUp>
-          <div className={classes.babyImage}>
-            <Image src="/images/babyInBasket.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={400} height={408} />
+          <Carousel
+            indicatorContainerProps={{
+              style: {
+                position: "absolute",
+                bottom: "6rem",
+                textAlign: "left",
+                marginLeft: "1rem"
+              }
+            }}
+            indicatorIconButtonProps={{
+              style: {
+                color: "transparent",
+                border: "1px solid #FE96C6",
+                marginRight: "5px",
+                fontSize: "10px"
+              }
+            }}
+            activeIndicatorIconButtonProps={{
+              style: {
+                color: "#FE96C6",
+                backgroundColor: "#FE96C6",
+                fontSize: "10px"
+              }
+            }}
+          >
+            <FirstSlide />
+            <FirstSlide />
+          </Carousel>
+        </Hidden>
+
+        <Hidden mdUp>
+          <div className={classes.babyInBasketImage}>
+            <Image src="/images/babyInBasket.png" alt="BQ Safewash baby 4 hero 1" layout="responsive" width={575} height={566} />
           </div>
         </Hidden>
       </main>

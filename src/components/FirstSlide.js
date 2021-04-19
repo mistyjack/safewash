@@ -8,6 +8,15 @@ import Hidden from "@material-ui/core/Hidden";
 
 const useStyles = makeStyles(theme =>
   createStyles({
+    firstSlide: {
+      minHeight: "600px",
+      position: "relative",
+      [theme.breakpoints.up("md")]: {
+        minheight: "100vh",
+        height: "801px",
+        background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(213.01deg, #FFFFFF 4.13%, rgba(254, 150, 198, 0.5) 80.31%)"
+      }
+    },
     stylishHeading: {
       fontSize: 50,
       [theme.breakpoints.down("sm")]: {
@@ -138,7 +147,7 @@ const FirstSlide = () => {
   const classes = useStyles();
 
   return (
-    <section>
+    <section className={classes.firstSlide}>
       <CssBaseline />
       <span className={classes.mdCircle}>
         <img src="/icons/circle.svg" alt="Background icon" />
@@ -179,7 +188,7 @@ const FirstSlide = () => {
         </Button>
       </div>
 
-      <Hidden xsDown>
+      <Hidden smDown>
         <div className={classes.babyImage}>
           <Image src="/images/baby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={728} height={681} />
         </div>
