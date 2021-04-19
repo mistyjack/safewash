@@ -82,33 +82,58 @@ const useStyles = makeStyles(theme =>
     },
     mdCircle: {
       position: "absolute",
+      [theme.breakpoints.up("md")]: {
+        top: "5rem",
+        left: "5rem"
+      },
       top: "5rem",
-      left: "5rem"
+      left: "45%"
+    },
+    smCircle: {
+      position: "absolute",
+      top: "15rem",
+      left: "50%"
     },
     mdRec: {
-      position: "absolute",
-      top: "1rem",
-      right: "40%"
+      [theme.breakpoints.up("md")]: {
+        position: "absolute",
+        top: "1rem",
+        right: "40%"
+      }
     },
     rec: {
       position: "absolute",
-      top: "50%",
-      left: "5rem"
+      [theme.breakpoints.up("md")]: {
+        top: "50%",
+        left: "5rem"
+      },
+      bottom: "11rem",
+      left: "1rem"
     },
     smallRec1: {
       position: "absolute",
-      top: "21.5rem",
-      left: "40rem"
+      [theme.breakpoints.up("md")]: {
+        top: "21.5rem",
+        left: "40rem"
+      },
+      top: "8rem",
+      left: "1rem"
     },
     smallRec2: {
       position: "absolute",
-      bottom: "12.7rem",
-      left: "31rem"
+      [theme.breakpoints.up("md")]: {
+        bottom: "12.7rem",
+        left: "31rem"
+      },
+      bottom: "13rem",
+      right: "3rem"
     },
     smallRec3: {
-      position: "absolute",
-      bottom: "11.7rem",
-      left: "43rem"
+      [theme.breakpoints.up("md")]: {
+        position: "absolute",
+        bottom: "11.7rem",
+        left: "43rem"
+      }
     }
   })
 );
@@ -122,9 +147,11 @@ const FirstSlide = () => {
       <span className={classes.mdCircle}>
         <img src="/icons/circle.svg" alt="Background icon" />
       </span>
-      <span className={classes.mdRec}>
-        <img src="/icons/mdRec.svg" alt="Background icon" />
-      </span>
+      <Hidden smDown>
+        <span className={classes.mdRec}>
+          <img src="/icons/mdRec.svg" alt="Background icon" />
+        </span>
+      </Hidden>
       <span className={classes.rec}>
         <img src="/icons/rec.svg" alt="Background icon" />
       </span>
@@ -134,12 +161,19 @@ const FirstSlide = () => {
       <span className={classes.smallRec2}>
         <img src="/icons/smallRec.svg" alt="Background icon" />
       </span>
-      <span className={classes.smallRec3}>
-        <img src="/icons/smallRec.svg" alt="Background icon" />
-      </span>
+      <Hidden smDown>
+        <span className={classes.smallRec3}>
+          <img src="/icons/smallRec.svg" alt="Background icon" />
+        </span>
+      </Hidden>
+      <Hidden mdUp>
+        <span className={classes.smCircle}>
+          <img src="/icons/smCircle.svg" alt="Background icon" />
+        </span>
+      </Hidden>
       <div className={classes.textContent}>
         <Typography className={classes.stylishHeading} variant="h1" gutterBottom>
-          A Liquid Laundry Detargent Specifically Formulated for
+          A Liquid Laundry Detergent Specifically Formulated for
         </Typography>
         <Typography className={classes.blockHeading} variant="h1" gutterBottom>
           Babies and Children Clothings
