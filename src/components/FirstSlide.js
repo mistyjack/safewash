@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Image from "next/image";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
@@ -68,14 +67,11 @@ const useStyles = makeStyles(theme =>
       padding: theme.spacing(2)
     },
     babyImage: {
-      height: "100vh",
-      zIndex: 0,
       position: "absolute",
       right: 0,
-      top: 0,
+      bottom: 0,
       overflow: "hidden",
       [theme.breakpoints.down("md")]: {
-        top: 0,
         transform: "scale(0.65)",
         transformOrigin: "bottom right"
       }
@@ -142,7 +138,7 @@ const FirstSlide = () => {
   const classes = useStyles();
 
   return (
-    <Fragment>
+    <section>
       <CssBaseline />
       <span className={classes.mdCircle}>
         <img src="/icons/circle.svg" alt="Background icon" />
@@ -185,10 +181,10 @@ const FirstSlide = () => {
 
       <Hidden xsDown>
         <div className={classes.babyImage}>
-          <Image src="/images/baby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={914} height={1033} />
+          <Image src="/images/baby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={728} height={681} />
         </div>
       </Hidden>
-    </Fragment>
+    </section>
   );
 };
 

@@ -17,10 +17,11 @@ const useStyles = makeStyles(theme =>
       backgroundColor: "#fff"
     },
     firstSlide: {
-      height: "600px",
+      minHeight: "600px",
       position: "relative",
       [theme.breakpoints.up("md")]: {
-        height: "100vh",
+        minheight: "100vh",
+        height: "801px",
         background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(213.01deg, #FFFFFF 4.13%, rgba(254, 150, 198, 0.5) 80.31%)"
       }
     }
