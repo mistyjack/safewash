@@ -11,14 +11,14 @@ const useStyles = makeStyles(theme =>
     container: {
       position: "relative"
     },
-    firstSlide: {
+    SecondSlide: {
       minHeight: "600px",
       [theme.breakpoints.up("md")]: {
         minHeight: "100vh",
         height: "801px",
-        background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(213.01deg, #FFFFFF 4.13%, rgba(254, 150, 198, 0.5) 80.31%)",
-        opacity: "0.5",
-        transform: "matrix(-1, 0, 0, 1, 0, 0)"
+        background: "linear-gradient(212.16deg, rgba(254, 150, 198, 0.8) 10.33%, rgba(254, 150, 198, 0.8) 31.35%, rgba(255, 255, 255, 0) 83.91%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(213.01deg, #FFFFFF 4.13%, rgba(254, 150, 198, 0.5) 80.31%)",
+        transform: "matrix(-1, 0, 0, 1, 0, 0)",
+        opacity: "0.5"
       }
     },
     stylishHeading: {
@@ -61,33 +61,30 @@ const useStyles = makeStyles(theme =>
       lineHeight: "70.5px",
       fontStyle: "normal",
       fontWeight: "bold",
-      maxWidth: 678
+      maxWidth: 678,
+      marginBottom: "40px"
     },
     textContent: {
       position: "absolute",
       top: "50%",
       transform: "translateY(-50%)",
       [theme.breakpoints.up("md")]: {
-        left: "10.1rem"
+        right: "1rem"
       },
       [theme.breakpoints.down("sm")]: {
-        left: "2rem"
+        right: "2rem"
       },
       [theme.breakpoints.down("xs")]: {
-        left: 0
+        right: 0
       },
       zIndex: 10,
       padding: theme.spacing(2)
     },
     babyImage: {
       position: "absolute",
-      right: 0,
+      left: 0,
       bottom: 0,
-      overflow: "hidden",
-      [theme.breakpoints.down("md")]: {
-        transform: "scale(0.65)",
-        transformOrigin: "bottom right"
-      }
+      overflow: "hidden"
     },
     mdCircle: {
       position: "absolute",
@@ -147,13 +144,13 @@ const useStyles = makeStyles(theme =>
   })
 );
 
-const FirstSlide = () => {
+const SecondSlide = () => {
   const classes = useStyles();
 
   return (
     <section className={classes.container}>
-      <div className={classes.firstSlide} />
       <CssBaseline />
+      <div className={classes.SecondSlide} />
       <span className={classes.mdCircle}>
         <img src="/icons/circle.svg" alt="Background icon" />
       </span>
@@ -183,10 +180,10 @@ const FirstSlide = () => {
       </Hidden>
       <div className={classes.textContent}>
         <Typography className={classes.stylishHeading} variant="h1" gutterBottom>
-          A Liquid Laundry Detergent Specifically Formulated for
+          Mild and Gentle On Your Baby’s Soft Skin
         </Typography>
         <Typography className={classes.blockHeading} variant="h1" gutterBottom>
-          Babies and Children Clothings
+          Happy Fragrance
         </Typography>
         <Button className="btn" variant="contained" color="secondary" disableElevation>
           Find Distributors Around You?
@@ -195,11 +192,11 @@ const FirstSlide = () => {
 
       <Hidden smDown>
         <div className={classes.babyImage}>
-          <Image src="/images/baby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={728} height={681} />
+          <Image src="/images/mildGentle.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={829} height={825} />
         </div>
       </Hidden>
     </section>
   );
 };
 
-export default FirstSlide;
+export default SecondSlide;
