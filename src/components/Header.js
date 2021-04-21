@@ -197,7 +197,7 @@ function Header(props) {
               </SwipeableDrawer>
             </Hidden>
             <Hidden mdUp>
-              <IconButton onClick={toggleDrawer("top", true)} edge="start" color="inherit" aria-label="menu">
+              <IconButton style={{ paddingRight: 0 }} onClick={toggleDrawer("top", true)} edge="start" color="inherit" aria-label="menu">
                 <MenuIcon />
               </IconButton>
             </Hidden>

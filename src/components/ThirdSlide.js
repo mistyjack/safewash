@@ -11,16 +11,12 @@ const useStyles = makeStyles(theme =>
     container: {
       position: "relative"
     },
-    SecondSlide: {
-      minHeight: "670px",
-      background: "linear-gradient(212.16deg, rgba(254, 150, 198, 0.7) 10.33%, rgba(254, 150, 198, 0.7) 31.35%, rgba(255, 255, 255, 0) 83.91%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)",
-      opacity: "0.5",
-      transform: "matrix(-1, 0, 0, 1, 0, 0)",
+    thirdSlide: {
+      minHeight: "600px",
       [theme.breakpoints.up("md")]: {
         minHeight: "100vh",
         height: "801px",
-        background: "linear-gradient(212.16deg, rgba(254, 150, 198, 0.8) 10.33%, rgba(254, 150, 198, 0.8) 31.35%, rgba(255, 255, 255, 0) 83.91%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(213.01deg, #FFFFFF 4.13%, rgba(254, 150, 198, 0.5) 80.31%)",
-        transform: "matrix(-1, 0, 0, 1, 0, 0)",
+        background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(146.99deg, rgba(255, 255, 255, 0.5) 4.13%, rgba(254, 150, 198, 0.5) 80.31%)",
         opacity: "0.5"
       }
     },
@@ -34,7 +30,7 @@ const useStyles = makeStyles(theme =>
       [theme.breakpoints.down("xs")]: {
         fontSize: 26,
         lineHeight: "36px",
-        maxWidth: 330
+        maxWidth: 230
       },
       lineHeight: "70.5px",
       fontStyle: "normal",
@@ -65,48 +61,72 @@ const useStyles = makeStyles(theme =>
       fontStyle: "normal",
       fontWeight: "bold",
       maxWidth: 678,
-      marginBottom: "40px"
+      marginBottom: 117
     },
     textContent: {
       position: "absolute",
-      bottom: "0",
+      top: "50%",
       transform: "translateY(-50%)",
       [theme.breakpoints.up("md")]: {
-        right: "1rem"
+        left: "10.1rem"
+      },
+      [theme.breakpoints.down("sm")]: {
+        left: "2rem"
+      },
+      [theme.breakpoints.down("xs")]: {
+        left: 0
       },
       zIndex: 10,
       padding: theme.spacing(2)
     },
     babyImage: {
       position: "absolute",
-      left: 0,
-      bottom: 0,
+      zIndex: 10,
+      right: "7rem",
+      top: 0,
       overflow: "hidden",
       [theme.breakpoints.down("md")]: {
-        transform: "scale(0.7)",
-        transformOrigin: "bottom left"
+        transform: "scale(0.65)",
+        transformOrigin: "bottom right"
       }
     },
-    babySmallImage: {
+    babyImageSmallScreen: {
       position: "absolute",
-      right: 0,
+      zIndex: 1,
+      right: "0",
       top: 0,
+      overflow: "hidden"
+    },
+    babyImageBorder: {
+      position: "absolute",
+      zIndex: 0,
+      right: "0",
+      top: "6rem",
+      overflow: "hidden",
+      [theme.breakpoints.down("md")]: {
+        transform: "scale(0.65)",
+        transformOrigin: "bottom right"
+      }
+    },
+    babyImageBorderSmallScreen: {
+      position: "absolute",
+      zIndex: 0,
+      right: "0",
+      top: "6rem",
       overflow: "hidden"
     },
     mdCircle: {
       position: "absolute",
       [theme.breakpoints.up("md")]: {
-        top: "5rem",
-        left: "5rem"
-      },
-      top: "5rem",
-      left: "45%"
+        bottom: "33%",
+        left: "46%"
+      }
     },
     mdCircle1: {
       position: "absolute",
       [theme.breakpoints.up("md")]: {
-        bottom: "1.5rem",
-        right: "6.4rem"
+        bottom: "1rem",
+        right: "1rem"
       }
     },
     smCircle: {
@@ -118,59 +138,51 @@ const useStyles = makeStyles(theme =>
       [theme.breakpoints.up("md")]: {
         position: "absolute",
         top: "1rem",
-        right: "40%"
+        right: "33%"
       }
     },
     rec: {
       position: "absolute",
       [theme.breakpoints.up("md")]: {
-        top: "30%",
-        left: "6rem"
-      },
-      bottom: "11rem",
-      left: "1rem"
+        top: "50%",
+        left: "5rem"
+      }
     },
     smallRec1: {
       position: "absolute",
       [theme.breakpoints.up("md")]: {
-        top: "22.2rem",
-        left: "50%"
-      },
-      top: "8rem",
-      left: "1rem"
+        top: "25%",
+        right: "13%"
+      }
     },
     smallRec2: {
       position: "absolute",
       [theme.breakpoints.up("md")]: {
-        top: "45%",
-        right: "30%"
-      },
-      bottom: "13rem",
-      right: "3rem"
+        top: "41%",
+        left: "45%"
+      }
     },
     smallRec3: {
       [theme.breakpoints.up("md")]: {
         position: "absolute",
-        bottom: "2rem",
-        right: "34%"
+        bottom: "14.4%",
+        left: "35.5%"
       }
-    },
-    backgroundImg: {
-      position: "absolute",
-      right: 0,
-      bottom: 0
     }
   })
 );
 
-const SecondSlide = () => {
+const ThirdSlide = () => {
   const classes = useStyles();
 
   return (
     <section className={classes.container}>
+      <div className={classes.thirdSlide} />
       <CssBaseline />
-      <div className={classes.SecondSlide} />
       <span className={classes.mdCircle}>
+        <img src="/icons/circle.svg" alt="Background icon" />
+      </span>
+      <span className={classes.mdCircle1}>
         <img src="/icons/circle.svg" alt="Background icon" />
       </span>
       <Hidden smDown>
@@ -192,46 +204,43 @@ const SecondSlide = () => {
           <img src="/icons/smallRec.svg" alt="Background icon" />
         </span>
       </Hidden>
-      <Hidden mdUp>
-        <span className={classes.smCircle}>
-          <img src="/icons/smCircle.svg" alt="Background icon" />
-        </span>
-      </Hidden>
-      <span className={classes.mdCircle1}>
-        <img src="/icons/circle.svg" alt="Background icon" />
-      </span>
-
       <div className={classes.textContent}>
         <Typography className={classes.stylishHeading} variant="h1" gutterBottom>
-          Mild and Gentle On Your Baby’s Soft Skin
+          Keeps Your Baby Smiling All Day
         </Typography>
         <Typography className={classes.blockHeading} variant="h1" gutterBottom>
-          Happy Fragrance
+          Zero Skin Irritations
         </Typography>
         <Button className="btn" variant="contained" color="secondary" disableElevation>
-          Find Distributors Around You?
+          Become A Distributor
         </Button>
       </div>
 
       <Hidden smDown>
         <div className={classes.babyImage}>
-          <Image src="/images/mildGentle.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={829} height={825} />
+          <Image src="/images/thirdBaby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={560} height={731} />
         </div>
       </Hidden>
 
       <Hidden mdUp>
-        <div className={classes.babySmallImage}>
-          <Image src="/images/mildSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={375} height={372} />
+        <div className={classes.babyImageSmallScreen}>
+          <Image src="/images/thirdBabySmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={254} height={373} />
         </div>
       </Hidden>
 
       <Hidden smDown>
-        <div className={classes.backgroundImg}>
-          <Image src="/images/backgroundImg.png" alt="Background Image" layout="fixed" width={501} height={604} />
+        <div className={classes.babyImageBorder}>
+          <Image src="/images/border.svg" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={735} height={673} />
+        </div>
+      </Hidden>
+
+      <Hidden mdUp>
+        <div className={classes.babyImageBorderSmallScreen}>
+          <Image src="/images/borderSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={204} height={248} />
         </div>
       </Hidden>
     </section>
   );
 };
 
-export default SecondSlide;
+export default ThirdSlide;

@@ -11,17 +11,14 @@ const useStyles = makeStyles(theme =>
     container: {
       position: "relative"
     },
-    SecondSlide: {
-      minHeight: "670px",
-      background: "linear-gradient(212.16deg, rgba(254, 150, 198, 0.7) 10.33%, rgba(254, 150, 198, 0.7) 31.35%, rgba(255, 255, 255, 0) 83.91%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)",
-      opacity: "0.5",
-      transform: "matrix(-1, 0, 0, 1, 0, 0)",
+    firstSlide: {
+      minHeight: "600px",
       [theme.breakpoints.up("md")]: {
         minHeight: "100vh",
         height: "801px",
-        background: "linear-gradient(212.16deg, rgba(254, 150, 198, 0.8) 10.33%, rgba(254, 150, 198, 0.8) 31.35%, rgba(255, 255, 255, 0) 83.91%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(213.01deg, #FFFFFF 4.13%, rgba(254, 150, 198, 0.5) 80.31%)",
-        transform: "matrix(-1, 0, 0, 1, 0, 0)",
-        opacity: "0.5"
+        background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(213.01deg, #FFFFFF 4.13%, rgba(254, 150, 198, 0.5) 80.31%)",
+        opacity: "0.5",
+        transform: "matrix(-1, 0, 0, 1, 0, 0)"
       }
     },
     stylishHeading: {
@@ -40,7 +37,7 @@ const useStyles = makeStyles(theme =>
       fontStyle: "normal",
       fontFamily: "Cocon",
       fontWeight: 700,
-      maxWidth: 701,
+      maxWidth: 678,
       color: theme.palette.primary.main
     },
     blockHeading: {
@@ -65,14 +62,20 @@ const useStyles = makeStyles(theme =>
       fontStyle: "normal",
       fontWeight: "bold",
       maxWidth: 678,
-      marginBottom: "40px"
+      marginBottom: "100px"
     },
     textContent: {
       position: "absolute",
-      bottom: "0",
+      top: "50%",
       transform: "translateY(-50%)",
       [theme.breakpoints.up("md")]: {
-        right: "1rem"
+        left: "10.1rem"
+      },
+      [theme.breakpoints.down("sm")]: {
+        left: "2rem"
+      },
+      [theme.breakpoints.down("xs")]: {
+        left: 0
       },
       zIndex: 10,
       padding: theme.spacing(2)
@@ -82,22 +85,20 @@ const useStyles = makeStyles(theme =>
       left: 0,
       bottom: 0,
       overflow: "hidden",
-      [theme.breakpoints.down("md")]: {
-        transform: "scale(0.7)",
-        transformOrigin: "bottom left"
-      }
+      maxWidth: "100%"
     },
-    babySmallImage: {
+    babyImageSmallScreen: {
       position: "absolute",
       right: 0,
       top: 0,
-      overflow: "hidden"
+      overflow: "hidden",
+      maxWidth: "100%"
     },
     mdCircle: {
       position: "absolute",
       [theme.breakpoints.up("md")]: {
-        top: "5rem",
-        left: "5rem"
+        bottom: "33%",
+        left: "46%"
       },
       top: "5rem",
       left: "45%"
@@ -105,36 +106,36 @@ const useStyles = makeStyles(theme =>
     mdCircle1: {
       position: "absolute",
       [theme.breakpoints.up("md")]: {
-        bottom: "1.5rem",
-        right: "6.4rem"
+        bottom: "1rem",
+        right: "1rem"
       }
     },
     smCircle: {
       position: "absolute",
       top: "15rem",
-      left: "50%"
-    },
-    mdRec: {
+      left: "50%",
       [theme.breakpoints.up("md")]: {
-        position: "absolute",
-        top: "1rem",
-        right: "40%"
+        top: "39%",
+        left: "10%"
       }
     },
     rec: {
       position: "absolute",
-      [theme.breakpoints.up("md")]: {
-        top: "30%",
-        left: "6rem"
-      },
       bottom: "11rem",
       left: "1rem"
+    },
+    mdRec: {
+      [theme.breakpoints.up("md")]: {
+        position: "absolute",
+        top: "19.7%",
+        right: "44%"
+      }
     },
     smallRec1: {
       position: "absolute",
       [theme.breakpoints.up("md")]: {
-        top: "22.2rem",
-        left: "50%"
+        top: "25%",
+        right: "13%"
       },
       top: "8rem",
       left: "1rem"
@@ -142,8 +143,8 @@ const useStyles = makeStyles(theme =>
     smallRec2: {
       position: "absolute",
       [theme.breakpoints.up("md")]: {
-        top: "45%",
-        right: "30%"
+        top: "41%",
+        left: "45%"
       },
       bottom: "13rem",
       right: "3rem"
@@ -151,36 +152,36 @@ const useStyles = makeStyles(theme =>
     smallRec3: {
       [theme.breakpoints.up("md")]: {
         position: "absolute",
-        bottom: "2rem",
-        right: "34%"
+        bottom: "14.4%",
+        left: "35.5%"
       }
-    },
-    backgroundImg: {
-      position: "absolute",
-      right: 0,
-      bottom: 0
     }
   })
 );
 
-const SecondSlide = () => {
+const FourthSlide = () => {
   const classes = useStyles();
 
   return (
     <section className={classes.container}>
+      <div className={classes.firstSlide} />
       <CssBaseline />
-      <div className={classes.SecondSlide} />
       <span className={classes.mdCircle}>
         <img src="/icons/circle.svg" alt="Background icon" />
       </span>
+      <span className={classes.mdCircle1}>
+        <img src="/icons/circle.svg" alt="Background icon" />
+      </span>
+      <Hidden mdUp>
+        <span className={classes.rec}>
+          <img src="/icons/rec.svg" alt="Background icon" />
+        </span>
+      </Hidden>
       <Hidden smDown>
         <span className={classes.mdRec}>
           <img src="/icons/mdRec.svg" alt="Background icon" />
         </span>
       </Hidden>
-      <span className={classes.rec}>
-        <img src="/icons/rec.svg" alt="Background icon" />
-      </span>
       <span className={classes.smallRec1}>
         <img src="/icons/smallRec.svg" alt="Background icon" />
       </span>
@@ -192,21 +193,15 @@ const SecondSlide = () => {
           <img src="/icons/smallRec.svg" alt="Background icon" />
         </span>
       </Hidden>
-      <Hidden mdUp>
-        <span className={classes.smCircle}>
-          <img src="/icons/smCircle.svg" alt="Background icon" />
-        </span>
-      </Hidden>
-      <span className={classes.mdCircle1}>
-        <img src="/icons/circle.svg" alt="Background icon" />
+      <span className={classes.smCircle}>
+        <img src="/icons/smCircle.svg" alt="Background icon" />
       </span>
-
       <div className={classes.textContent}>
         <Typography className={classes.stylishHeading} variant="h1" gutterBottom>
-          Mild and Gentle On Your Baby’s Soft Skin
+          Remove 99% Food and Tough Stains
         </Typography>
         <Typography className={classes.blockHeading} variant="h1" gutterBottom>
-          Happy Fragrance
+          Preserves Clothing Colors
         </Typography>
         <Button className="btn" variant="contained" color="secondary" disableElevation>
           Find Distributors Around You?
@@ -215,23 +210,17 @@ const SecondSlide = () => {
 
       <Hidden smDown>
         <div className={classes.babyImage}>
-          <Image src="/images/mildGentle.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={829} height={825} />
+          <Image src="/images/fourthSlide.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={1321} height={751} />
         </div>
       </Hidden>
 
       <Hidden mdUp>
-        <div className={classes.babySmallImage}>
-          <Image src="/images/mildSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={375} height={372} />
-        </div>
-      </Hidden>
-
-      <Hidden smDown>
-        <div className={classes.backgroundImg}>
-          <Image src="/images/backgroundImg.png" alt="Background Image" layout="fixed" width={501} height={604} />
+        <div className={classes.babyImageSmallScreen}>
+          <Image src="/images/fourthSlideSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={375} height={317} />
         </div>
       </Hidden>
     </section>
   );
 };
 
-export default SecondSlide;
+export default FourthSlide;
