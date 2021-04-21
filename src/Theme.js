@@ -25,7 +25,11 @@ const theme = createMuiTheme({
     fontWeightMedium: 500,
     fontWeightBold: 700,
     h3: {
-      color: "#fb6542"
+      color: "#21A4C4",
+      fontWeight: "bold",
+      fontSize: "26px",
+      lineHeight: "41.91px",
+      textAlign: "center"
     },
     h4: {
       color: "#375497"
@@ -33,10 +37,19 @@ const theme = createMuiTheme({
     h5: {
       color: "#fb6542"
     },
+    h6: {
+      color: "#776E70",
+      fontWeight: "normal",
+      fontSize: "14px",
+      lineHeight: "28px",
+      textAlign: "center"
+    },
     body1: {
-      fontWeight: 300,
-      lineHeight: 1.65,
-      fontSize: "1.225rem"
+      fontWeight: 600,
+      lineHeight: "28px",
+      fontSize: "14px",
+      fontStyle: "normal",
+      color: "#66334B"
     },
     body2: {
       fontWeight: 300
