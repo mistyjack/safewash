@@ -5,48 +5,77 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Hidden from "@material-ui/core/Hidden";
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
-      position: "relative"
+      position: "relative",
+      height: "1230px",
+      [theme.breakpoints.up("md")]: {
+        height: "1000px",
+        marginTop: "153px"
+      }
+    },
+    babyInBasketImage: {
+      padding: theme.spacing(0, 3)
     },
     px2: {
       padding: theme.spacing(0, 2)
     },
+    mt3: {
+      marginTop: theme.spacing(3)
+    },
+    mainBody: {
+      fontSize: "16px",
+      lineHeight: "26px",
+      fontWeight: "normal",
+      fontStyle: "normal"
+    },
     heading: {
       marginBottom: "100px",
+      [theme.breakpoints.up("md")]: {
+        maxWidth: "816px",
+        padding: theme.spacing(0, 6),
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginBottom: "36px"
+      }
+    },
+    item: {
+      textAlign: "center",
+      marginBottom: "72px",
+      maxWidth: "331px",
+      padding: theme.spacing(0, 2),
+      marginLeft: "auto",
+      marginRight: "auto",
+      [theme.breakpoints.up("md")]: {
+        textAlign: "left",
+        maxWidth: "504px"
+      }
+    },
+    headingText: {
+      fontSize: "48px",
+      lineHeight: "77px",
+      fontStyle: "normal"
+    },
+    contentContainer: {
       position: "absolute",
-      top: "0"
+      top: 0,
+      zIndex: "10",
+      width: "100%"
     },
     backgrd: {
+      position: "absolute",
+      zIndex: "0",
+      top: "0",
       background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(131.41deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 15.33%, rgba(255, 210, 231, 0.9) 35.21%, rgba(254, 168, 208, 0.9) 51.11%, rgba(254, 166, 207, 0.9) 69.85%, rgba(255, 255, 255, 0.9) 98.24%, rgba(255, 255, 255, 0.9) 109.03%)",
       opacity: "0.5",
-      minHeight: "1230px"
-    },
-    item1: {
-      position: "absolute",
-      textAlign: "center",
+      height: "1230px",
       width: "100%",
-      top: "19.19%"
-    },
-    item2: {
-      position: "absolute",
-      textAlign: "center",
-      width: "100%",
-      top: "40.4%"
-    },
-    item3: {
-      position: "absolute",
-      textAlign: "center",
-      width: "100%",
-      top: "61.85%"
-    },
-    item4: {
-      position: "absolute",
-      textAlign: "center",
-      width: "100%",
-      top: "82.36%"
+      [theme.breakpoints.up("md")]: {
+        height: "1000px"
+      }
     },
     itemHeading: {
       fontFamily: "Gilroy",
@@ -63,6 +92,9 @@ const useStyles = makeStyles(theme =>
     },
     special: {
       color: "#02998A"
+    },
+    bubble: {
+      color: "#9D3E89"
     }
   })
 );
@@ -100,8 +132,7 @@ const NotableFeatures = () => {
       imageAlt: "Bubbles",
       itemHeading: "High Concentration",
       itemBody: "We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap.",
-      style: "item4",
-      headStyle: "special"
+      headStyle: "bubble"
     }
   ];
 
@@ -109,32 +140,99 @@ const NotableFeatures = () => {
     <Fragment>
       <CssBaseline />
       <Hidden mdUp>
-        <div className={classes.babyInBasketImage}>
-          <Image src="/images/babyInBasketSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="responsive" width={575} height={566} />
+        <div>
+          <Image src="/images/babyInBasketSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="responsive" width={400} height={408} />
         </div>
 
         <div className={classes.container}>
-          <div className={classes.backgrd} />
-          <div className={`${classes.heading} ${classes.px2}`}>
-            <Typography variant="h3" component="h2">
-              Notable Features
-            </Typography>
-            <Typography variant="h6" component="h4">
-              We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
-            </Typography>
-          </div>
+          <div className={classes.contentContainer}>
+            <div className={`${classes.heading} ${classes.px2}`}>
+              <Typography variant="h3" component="h2">
+                Notable Features
+              </Typography>
+              <Typography variant="h6" component="h4">
+                We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
+              </Typography>
+            </div>
 
-          <div className={classes.items}>
-            {items.map((item, i) => (
-              <div key={item.itemHeading} className={`${classes[item.style]} ${classes.px2}`}>
-                <img src={item.imageSrc} alt={item.imageAlt} />
-                <Typography className={`${classes.itemHeading} ${classes[item.headStyle]}`} variant="h4">
-                  {item.itemHeading}
-                </Typography>
-                <Typography variant="body1">{item.itemBody}</Typography>
-              </div>
-            ))}
+            <div className={classes.items}>
+              {items.map((item, i) => (
+                <div key={item.itemHeading} className={`${classes.item} ${classes.px2}`}>
+                  <img src={item.imageSrc} alt={item.imageAlt} />
+                  <Typography className={`${classes.itemHeading} ${classes[item.headStyle]}`} variant="h4">
+                    {item.itemHeading}
+                  </Typography>
+                  <Typography variant="body1">{item.itemBody}</Typography>
+                </div>
+              ))}
+            </div>
           </div>
+          <div className={classes.backgrd} />
+        </div>
+      </Hidden>
+
+      <Hidden smDown>
+        <div className={classes.container}>
+          <div className={classes.contentContainer}>
+            <div className={classes.heading}>
+              <Typography className={classes.headingText} variant="h3" component="h2">
+                Notable Features
+              </Typography>
+              <div>
+                <Typography className={classes.mainBody} variant="h6" component="h4">
+                  We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
+                </Typography>
+              </div>
+            </div>
+            <Grid container justify="space-around" direction="row">
+              <Grid md={4} item className={classes.babyInBasketImage}>
+                <Image src="/images/babyInBasket.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={575} height={566} />
+              </Grid>
+
+              <Grid md={4} item container direction="column" justify="center">
+                <Grid item>
+                  <div className={`${classes.item}`}>
+                    <img src={items[0].imageSrc} alt={items[0].imageAlt} />
+                    <Typography className={`${classes.itemHeading} ${classes[items[0].headStyle]}`} variant="h4">
+                      {items[0].itemHeading}
+                    </Typography>
+                    <Typography variant="body1">{items[0].itemBody}</Typography>
+                  </div>
+                </Grid>
+                <Grid item>
+                  <div className={`${classes.item}`}>
+                    <img src={items[1].imageSrc} alt={items[1].imageAlt} />
+                    <Typography className={`${classes.itemHeading} ${classes[items[1].headStyle]}`} variant="h4">
+                      {items[1].itemHeading}
+                    </Typography>
+                    <Typography variant="body1">{items[1].itemBody}</Typography>
+                  </div>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid className={classes.mt3} container justify="space-around" direction="row-reverse">
+              <Grid item>
+                <div className={`${classes.item}`}>
+                  <img src={items[2].imageSrc} alt={items[2].imageAlt} />
+                  <Typography className={`${classes.itemHeading} ${classes[items[2].headStyle]}`} variant="h4">
+                    {items[2].itemHeading}
+                  </Typography>
+                  <Typography variant="body1">{items[2].itemBody}</Typography>
+                </div>
+              </Grid>
+              <Grid item>
+                <div className={`${classes.item}`}>
+                  <img src={items[3].imageSrc} alt={items[3].imageAlt} />
+                  <Typography className={`${classes.itemHeading} ${classes[items[3].headStyle]}`} variant="h4">
+                    {items[3].itemHeading}
+                  </Typography>
+                  <Typography variant="body1">{items[3].itemBody}</Typography>
+                </div>
+              </Grid>
+            </Grid>
+          </div>
+          <div className={classes.backgrd} />
         </div>
       </Hidden>
     </Fragment>
