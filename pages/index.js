@@ -6,6 +6,7 @@ import SecondSlide from "../src/components/SecondSlide";
 import ThirdSlide from "../src/components/ThirdSlide";
 import FourthSlide from "../src/components/FourthSlide";
 import NotableFeatures from "../src/components/NotableFeatures";
+import AboutUs from "../src/components/AboutUs";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -140,6 +141,12 @@ export default function Home() {
           <NotableFeatures />
         </section>
         {/* End of notable features section */}
+
+        {/* About us section begins */}
+        <section>
+          <AboutUs />
+        </section>
+        {/* End of About us section */}
       </main>
     </Fragment>
   );

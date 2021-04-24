@@ -18,7 +18,11 @@ const useStyles = makeStyles(theme =>
       }
     },
     babyInBasketImage: {
-      padding: theme.spacing(0, 3)
+      padding: theme.spacing(0, 3),
+      [theme.breakpoints.down("md")]: {
+        transform: "scale(0.7)",
+        transformOrigin: "center left"
+      }
     },
     px2: {
       padding: theme.spacing(0, 2)
@@ -139,6 +143,8 @@ const NotableFeatures = () => {
   return (
     <Fragment>
       <CssBaseline />
+
+      {/* Mobile view begins */}
       <Hidden mdUp>
         <div>
           <Image src="/images/babyInBasketSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="responsive" width={400} height={408} />
@@ -170,7 +176,9 @@ const NotableFeatures = () => {
           <div className={classes.backgrd} />
         </div>
       </Hidden>
+      {/* Mobile view ends */}
 
+      {/* Big screen view begins */}
       <Hidden smDown>
         <div className={classes.container}>
           <div className={classes.contentContainer}>
@@ -212,7 +220,7 @@ const NotableFeatures = () => {
             </Grid>
 
             <Grid className={classes.mt3} container justify="space-around" direction="row-reverse">
-              <Grid item>
+              <Grid md={4} item>
                 <div className={`${classes.item}`}>
                   <img src={items[2].imageSrc} alt={items[2].imageAlt} />
                   <Typography className={`${classes.itemHeading} ${classes[items[2].headStyle]}`} variant="h4">
@@ -221,7 +229,7 @@ const NotableFeatures = () => {
                   <Typography variant="body1">{items[2].itemBody}</Typography>
                 </div>
               </Grid>
-              <Grid item>
+              <Grid md={4} item>
                 <div className={`${classes.item}`}>
                   <img src={items[3].imageSrc} alt={items[3].imageAlt} />
                   <Typography className={`${classes.itemHeading} ${classes[items[3].headStyle]}`} variant="h4">
@@ -235,6 +243,7 @@ const NotableFeatures = () => {
           <div className={classes.backgrd} />
         </div>
       </Hidden>
+      {/* Big screen view ends */}
     </Fragment>
   );
 };

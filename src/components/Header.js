@@ -50,8 +50,8 @@ const useStyles = makeStyles(theme =>
     },
     closeButton: {
       position: "absolute",
-      top: 20,
-      right: 10
+      top: 26,
+      right: 5
     },
     drawer: {
       height: "100vh",
