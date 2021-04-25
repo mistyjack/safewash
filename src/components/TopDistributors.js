@@ -18,7 +18,12 @@ const useStyles = makeStyles(theme =>
     mb: {
       marginBottom: "126px"
     },
+    mb34: {
+      marginBottom: "34px !important",
+      marginTop: "-45px"
+    },
     headingTexts: {
+      textAlign: "center",
       maxWidth: "816px",
       padding: theme.spacing(0, 2),
       margin: theme.spacing(0, "auto"),
@@ -118,6 +123,17 @@ const TopDistributors = () => {
           </Grid>
         ))}
       </Grid>
+
+      <div className={classes.headingTexts}>
+        <Hidden smDown>
+          <Typography className={`${classes.bodyText} ${classes.mb34}`} variant="h6" component="h4">
+            We use our knowledge and expertise to providethe most effecient, effective and environmentally friendly cleaning possible.
+          </Typography>
+        </Hidden>
+        <Button className="btn" variant="contained" color="secondary" disableElevation>
+          Find Distributors Around You?
+        </Button>
+      </div>
     </Fragment>
   );
 };
