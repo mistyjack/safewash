@@ -8,6 +8,7 @@ import FourthSlide from "../src/components/FourthSlide";
 import NotableFeatures from "../src/components/NotableFeatures";
 import AboutUs from "../src/components/AboutUs";
 import TopDistributors from "../src/components/TopDistributors";
+import ContactUs from "../src/components/ContactUs";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -154,6 +155,12 @@ export default function Home() {
           <TopDistributors />
         </section>
         {/* End of Top distributors section */}
+
+        {/* Contact us section begins */}
+        <section>
+          <ContactUs />
+        </section>
+        {/* End of Contact us section */}
       </main>
     </Fragment>
   );
