@@ -45,3 +45,13 @@ a {
   line-height: 20px !important;
   font-style: normal !important;
 }
+
+.btn--top-dist {
+  background-color: #21a4c4 !important;
+  border-radius: 8px !important;
+  width: 105px;
+  height: 34px;
+  line-height: 19.07px !important;
+  font-size: 14px !important;
+  font-weight: 600;
+}

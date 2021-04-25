@@ -43,7 +43,9 @@ const useStyles = makeStyles(theme =>
     bodyText: {
       marginBottom: "30px",
       [theme.breakpoints.up("md")]: {
-        textAlign: "left"
+        textAlign: "left",
+        fontSize: "16px",
+        lineHeight: "33px"
       }
     }
   })

@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
           <meta key="theme-color" name="theme-color" content={theme.palette.primary.main} />
           <link key="favicon" rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" as="style" />
+          <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" as="style" />
           <link rel="preload" href="/fonts/Cocon-Regular-Font.otf" as="font" crossOrigin="" />
         </Head>
         <body>
