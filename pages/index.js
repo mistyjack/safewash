@@ -9,6 +9,7 @@ import NotableFeatures from "../src/components/NotableFeatures";
 import AboutUs from "../src/components/AboutUs";
 import TopDistributors from "../src/components/TopDistributors";
 import ContactUs from "../src/components/ContactUs";
+import Testimonies from "../src/components/Testimonies";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -161,6 +162,12 @@ export default function Home() {
           <ContactUs />
         </section>
         {/* End of Contact us section */}
+
+        {/* Testimonies section begins */}
+        <section>
+          <Testimonies />
+        </section>
+        {/* End of Testimonies section */}
       </main>
     </Fragment>
   );

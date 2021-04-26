@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme =>
       marginBottom: "30px",
       padding: theme.spacing(2),
       [theme.breakpoints.up("md")]: {
-        padding: theme.spacing(0, 10)
+        padding: theme.spacing(0, 2)
       }
     },
     bodyText: {
@@ -72,7 +72,7 @@ const ContactUs = () => {
             <Image src="/images/reachOut.png" alt="About us Image" layout="responsive" width={560} height={553} />
           </Hidden>
           <Hidden mdUp>
-            <Image src="/images/reachOutSmall.png" alt="About us Image" layout="responsive" width={350} height={346} />
+            <Image src="/images/reachOutSmall.png" alt="About us Image" layout="fixed" width={350} height={346} />
           </Hidden>
         </Grid>
 
