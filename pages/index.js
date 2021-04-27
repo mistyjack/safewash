@@ -145,12 +145,6 @@ export default function Home() {
         </section>
         {/* End of notable features section */}
 
-        {/* About us section begins */}
-        <section>
-          <AboutUs />
-        </section>
-        {/* End of About us section */}
-
         {/* Top distributors section begins */}
         <section>
           <TopDistributors />
