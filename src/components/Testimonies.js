@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useRef, useState } from "react";
 import Image from "next/image";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
@@ -83,8 +83,32 @@ const useStyles = makeStyles(theme =>
       position: "absolute",
       left: "20px"
     },
-    videoItem: {
-      textAlign: "center"
+    videoContainer: {
+      textAlign: "center",
+      position: "relative",
+      marginTop: "85px",
+      marginBottom: "114px",
+      [theme.breakpoints.up("md")]: {
+        marginTop: "-66px",
+        marginBottom: "224px"
+      }
+    },
+    playButton: {
+      position: "absolute",
+      zIndex: 10,
+      left: "50%",
+      top: "50%",
+      width: "101px",
+      height: "62px",
+      transform: "translate(-50%, -50%)",
+      cursor: "pointer",
+      [theme.breakpoints.up("md")]: {
+        width: "158px",
+        height: "97px"
+      }
+    },
+    dNone: {
+      display: "none"
     }
   })
 );
@@ -92,6 +116,8 @@ const useStyles = makeStyles(theme =>
 const Testimonies = () => {
   const classes = useStyles();
   const matches = useMediaQuery("(min-width:960px)");
+  const videoElement = useRef(null);
+  const [isPlayClicked, setIsPlayClicked] = useState(false);
 
   const items = [
     {
@@ -115,6 +141,11 @@ const Testimonies = () => {
       imageSrc: "/images/laundryOwner2.png"
     }
   ];
+
+  const handleClick = () => {
+    videoElement.current.play();
+    setIsPlayClicked(true);
+  };
 
   return (
     <Fragment>
@@ -152,10 +183,13 @@ const Testimonies = () => {
         ))}
       </Grid>
 
-      <div className={classes.videoItem}>
-        <video controls width={matches ? "879px" : "338px"} height={matches ? "396px" : "282px"} poster={matches ? "/images/videoPoster.png" : "/images/videoPosterSmall.png"}>
+      <div className={classes.videoContainer}>
+        <video ref={videoElement} controls width={matches ? "879px" : "338px"} height={matches ? "396px" : "282px"} poster={matches ? "/images/videoPoster.png" : "/images/videoPosterSmall.png"}>
           <source src="/video.mp4" type="video/mp4" />
         </video>
+        <div onClick={handleClick} className={isPlayClicked ? `${classes.playButton} ${classes.dNone}` : classes.playButton}>
+          <img src="/icons/playButton.svg" alt="Play button" />
+        </div>
       </div>
     </Fragment>
   );
