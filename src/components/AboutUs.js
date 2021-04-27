@@ -19,7 +19,10 @@ const useStyles = makeStyles(theme =>
     },
     womanImage: {
       maxWidth: "100%",
-      overflow: "hidden"
+      overflow: "hidden",
+      [theme.breakpoints.down("sm")]: {
+        padding: theme.spacing(0, 4)
+      }
     },
     heading: {
       color: "#795A69",
@@ -64,7 +67,7 @@ const AboutUs = () => {
             <Image src="/images/woman.png" alt="About us Image" layout="responsive" width={543} height={719} />
           </Hidden>
           <Hidden mdUp>
-            <Image src="/images/womanSmallScreen.png" alt="About us Image" layout="fixed" width={278} height={374} />
+            <Image src="/images/womanSmallScreen.png" alt="About us Image" layout="responsive" width={278} height={374} />
           </Hidden>
         </Grid>
 

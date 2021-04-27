@@ -72,7 +72,7 @@ const ContactUs = () => {
             <Image src="/images/reachOut.png" alt="About us Image" layout="responsive" width={560} height={553} />
           </Hidden>
           <Hidden mdUp>
-            <Image src="/images/reachOutSmall.png" alt="About us Image" layout="fixed" width={350} height={346} />
+            <Image src="/images/reachOutSmall.png" alt="About us Image" layout="responsive" width={350} height={346} />
           </Hidden>
         </Grid>
 

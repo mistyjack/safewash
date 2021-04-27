@@ -107,6 +107,17 @@ const useStyles = makeStyles(theme =>
         height: "97px"
       }
     },
+    videoElement: {
+      width: "90%",
+      [theme.breakpoints.up("sm")]: {
+        maxWidth: "676px",
+        maxHeight: "564px"
+      },
+      [theme.breakpoints.up("md")]: {
+        maxWidth: "879px",
+        maxHeight: "396px"
+      }
+    },
     dNone: {
       display: "none"
     }
@@ -184,9 +195,7 @@ const Testimonies = () => {
       </Grid>
 
       <div className={classes.videoContainer}>
-        <video ref={videoElement} controls width={matches ? "879px" : "338px"} height={matches ? "396px" : "282px"} poster={matches ? "/images/videoPoster.png" : "/images/videoPosterSmall.png"}>
-          <source src="/video.mp4" type="video/mp4" />
-        </video>
+        <video ref={videoElement} className={classes.videoElement} poster={matches ? "/images/videoPoster.png" : "/images/videoPosterSmall.png"}></video>
         <div onClick={handleClick} className={isPlayClicked ? `${classes.playButton} ${classes.dNone}` : classes.playButton}>
           <img src="/icons/playButton.svg" alt="Play button" />
         </div>
