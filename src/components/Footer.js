@@ -118,7 +118,7 @@ const Footer = () => {
       </div>
       <div className={classes.smallContainer}>
         <Typography className={classes.copyright} variant="body1">
-          &#169; Copyright
+          &#169; bqsafewash 2021
         </Typography>
       </div>
     </Fragment>
