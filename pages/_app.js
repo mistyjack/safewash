@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Header from "../src/components/Header";
+import Footer from "../src/components/Footer";
 import { Fragment } from "react";
 import { ThemeProvider } from "@material-ui/styles";
 import Theme from "../src/Theme";
@@ -10,6 +11,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={Theme}>
         <Header />
         <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
     </Fragment>
   );

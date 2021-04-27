@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme =>
     },
     item: {
       textAlign: "center",
-      width: "293px",
+      width: "280px",
       height: "360px",
       position: "relative",
       background: "#FFFFFF",
@@ -129,10 +129,11 @@ const TopDistributors = () => {
           <Typography className={`${classes.bodyText} ${classes.mb34}`} variant="h6" component="h4">
             We use our knowledge and expertise to providethe most effecient, effective and environmentally friendly cleaning possible.
           </Typography>
+
+          <Button className="btn" variant="contained" color="secondary" disableElevation>
+            Find Distributors Around You?
+          </Button>
         </Hidden>
-        <Button className="btn" variant="contained" color="secondary" disableElevation>
-          Find Distributors Around You?
-        </Button>
       </div>
     </Fragment>
   );

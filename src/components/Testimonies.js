@@ -20,10 +20,10 @@ const useStyles = makeStyles(theme =>
     headingTexts: {
       textAlign: "center",
       maxWidth: "816px",
-      padding: theme.spacing(0, 2),
+      padding: theme.spacing("128px", 2, 0, 2),
       margin: theme.spacing(0, "auto"),
       [theme.breakpoints.up("md")]: {
-        padding: theme.spacing(0, 6)
+        padding: theme.spacing("288px", 6, 0, 6)
       }
     },
     heading: {

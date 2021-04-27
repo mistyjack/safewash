@@ -52,7 +52,10 @@ const theme = createMuiTheme({
       color: "#66334B"
     },
     body2: {
-      fontWeight: 300
+      fontWeight: 400,
+      lineHeight: "24.5px",
+      fontSize: "12px",
+      fontStyle: "normal"
     }
   }
 });
