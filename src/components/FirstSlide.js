@@ -1,11 +1,12 @@
+import { Fragment } from "react";
 import Image from "next/image";
+import IconPack from "../../public/Icons";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { Fragment } from "react";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -113,6 +114,7 @@ const useStyles = makeStyles(theme =>
     },
     rec: {
       position: "absolute",
+      zIndex: 100,
       [theme.breakpoints.up("md")]: {
         top: "50%",
         left: "5rem"
@@ -169,37 +171,21 @@ const FirstSlide = () => {
         </Button>
       </div>
 
-      <span className={classes.mdCircle}>
-        <img src="/icons/circle.svg" alt="Background icon" />
-      </span>
-      <span className={classes.rec}>
-        <img src="/icons/rec.svg" alt="Background icon" />
-      </span>
-      <span className={classes.smallRec1}>
-        <img src="/icons/smallRec.svg" alt="Background icon" />
-      </span>
-      <span className={classes.smallRec2}>
-        <img src="/icons/smallRec.svg" alt="Background icon" />
-      </span>
+      <span className={classes.mdCircle}>{IconPack.circle}</span>
+      <span className={classes.rec}>{IconPack.mdRec}</span>
+      <span className={classes.smallRec1}>{IconPack.smallRec}</span>
+      <span className={classes.smallRec2}>{IconPack.smallRec}</span>
 
       {matches ? (
         <Fragment>
           <div className={classes.babyImage}>
             <Image src="/images/baby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={728} height={681} />
           </div>
-          <span className={classes.smallRec3}>
-            <img src="/icons/smallRec.svg" alt="Background icon" />
-          </span>
-          <span className={classes.mdRec}>
-            <img src="/icons/mdRec.svg" alt="Background icon" />
-          </span>
+          <span className={classes.smallRec3}>{IconPack.smallRec}</span>
+          <span className={classes.mdRec}>{IconPack.mdRec}</span>
         </Fragment>
       ) : (
-        <Fragment>
-          <span className={classes.smCircle}>
-            <img src="/icons/smCircle.svg" alt="Background icon" />
-          </span>
-        </Fragment>
+        <span className={classes.smCircle}>{IconPack.smallCircle}</span>
       )}
     </section>
   );

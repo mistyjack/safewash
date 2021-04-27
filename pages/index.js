@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Fragment } from "react";
 import FirstSlide from "../src/components/FirstSlide";
 import SecondSlide from "../src/components/SecondSlide";
@@ -13,7 +12,6 @@ import Testimonies from "../src/components/Testimonies";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Hidden from "@material-ui/core/Hidden";
 import Carousel from "react-material-ui-carousel";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 

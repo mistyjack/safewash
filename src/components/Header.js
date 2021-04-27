@@ -3,6 +3,7 @@ import Link from "./Link";
 
 import MenuIcon from "../../public/icons/MenuIcon";
 import CloseIcon from "../../public/icons/CloseIcon";
+import IconPack from "../../public/Icons";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -143,18 +144,10 @@ function Header(props) {
       <IconButton className={classes.closeButton} onClick={toggleDrawer("top", false)} edge="start" color="inherit" aria-label="menu">
         <CloseIcon />
       </IconButton>
-      <span className={classes.mdCircle}>
-        <img src="/icons/circle.svg" alt="Background icon" />
-      </span>
-      <span className={classes.smRec1}>
-        <img src="/icons/smallRec.svg" alt="Background icon" />
-      </span>
-      <span className={classes.smRec2}>
-        <img src="/icons/smallRec.svg" alt="Background icon" />
-      </span>
-      <span className={classes.mdRec}>
-        <img src="/icons/rec.svg" alt="Background icon" />
-      </span>
+      <span className={classes.mdCircle}>{IconPack.circle}</span>
+      <span className={classes.smRec1}>{IconPack.smallRec}</span>
+      <span className={classes.smRec2}>{IconPack.smallRec}</span>
+      <span className={classes.mdRec}>{IconPack.mdRec}</span>
       <List>
         {[
           { label: "Home", link: "/" },

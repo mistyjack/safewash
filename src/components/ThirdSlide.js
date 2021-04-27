@@ -1,11 +1,12 @@
+import { Fragment } from "react";
 import Image from "next/image";
+import IconPack from "../../public/Icons";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { Fragment } from "react";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -193,30 +194,16 @@ const ThirdSlide = () => {
         </Button>
       </div>
 
-      <span className={classes.mdCircle}>
-        <img src="/icons/circle.svg" alt="Background icon" />
-      </span>
-      <span className={classes.mdCircle1}>
-        <img src="/icons/circle.svg" alt="Background icon" />
-      </span>
-      <span className={classes.rec}>
-        <img src="/icons/rec.svg" alt="Background icon" />
-      </span>
-      <span className={classes.smallRec1}>
-        <img src="/icons/smallRec.svg" alt="Background icon" />
-      </span>
-      <span className={classes.smallRec2}>
-        <img src="/icons/smallRec.svg" alt="Background icon" />
-      </span>
+      <span className={classes.mdCircle}>{IconPack.circle}</span>
+      <span className={classes.mdCircle1}>{IconPack.circle}</span>
+      <span className={classes.rec}>{IconPack.mdRec}</span>
+      <span className={classes.smallRec1}>{IconPack.smallRec}</span>
+      <span className={classes.smallRec2}>{IconPack.smallRec}</span>
 
       {matches ? (
         <Fragment>
-          <span className={classes.mdRec}>
-            <img src="/icons/mdRec.svg" alt="Background icon" />
-          </span>
-          <span className={classes.smallRec3}>
-            <img src="/icons/smallRec.svg" alt="Background icon" />
-          </span>
+          <span className={classes.mdRec}>{IconPack.mdRec}</span>
+          <span className={classes.smallRec3}>{IconPack.smallRec}</span>
           <div className={classes.babyImage}>
             <Image src="/images/thirdBaby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={560} height={731} />
           </div>
