@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Image from "next/image";
+import IconPack from "../../public/Icons";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -45,8 +45,7 @@ const useStyles = makeStyles(theme =>
       position: "relative"
     },
     icons: {
-      position: "absolute",
-      bottom: "-39px",
+      marginTop: "10px",
       display: "flex",
       width: "156px",
       justifyContent: "space-between"
@@ -95,18 +94,10 @@ const Footer = () => {
             <Typography variant="body2">safewash@gmail.com</Typography>
 
             <div className={classes.icons}>
-              <div>
-                <img src="/icons/instagram.svg" alt="Instagram" />
-              </div>
-              <div>
-                <img src="/icons/twitter.svg" alt="Instagram" />
-              </div>
-              <div>
-                <img src="/icons/facebook.svg" alt="Instagram" />
-              </div>
-              <div>
-                <img src="/icons/linkedin.svg" alt="Instagram" />
-              </div>
+              {IconPack.instagram}
+              {IconPack.twitter}
+              {IconPack.facebook}
+              {IconPack.linkedIn}
             </div>
           </Grid>
           {!matches ? (

@@ -1,8 +1,5 @@
 import { cloneElement, Fragment, useState } from "react";
 import Link from "./Link";
-
-import MenuIcon from "../../public/icons/MenuIcon";
-import CloseIcon from "../../public/icons/CloseIcon";
 import IconPack from "../../public/Icons";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
@@ -142,7 +139,7 @@ function Header(props) {
   const list = anchor => (
     <div className={classes.list} role="Navigation menu" onClick={toggleDrawer(anchor, false)} onKeyDown={toggleDrawer(anchor, false)}>
       <IconButton className={classes.closeButton} onClick={toggleDrawer("top", false)} edge="start" color="inherit" aria-label="menu">
-        <CloseIcon />
+        {IconPack.closeIcon}
       </IconButton>
       <span className={classes.mdCircle}>{IconPack.circle}</span>
       <span className={classes.smRec1}>{IconPack.smallRec}</span>
@@ -191,7 +188,7 @@ function Header(props) {
             </Hidden>
             <Hidden mdUp>
               <IconButton style={{ paddingRight: 0 }} onClick={toggleDrawer("top", true)} edge="start" color="inherit" aria-label="menu">
-                <MenuIcon />
+                {IconPack.menuIcon}
               </IconButton>
             </Hidden>
           </Toolbar>

@@ -39,6 +39,8 @@ const useStyles = makeStyles(theme =>
     textContent: {
       maxWidth: "660px",
       marginBottom: "30px",
+      marginLeft: "auto",
+      marginRight: "auto",
       padding: theme.spacing(2),
       [theme.breakpoints.up("md")]: {
         padding: theme.spacing(0),

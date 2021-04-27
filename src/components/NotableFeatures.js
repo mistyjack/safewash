@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Image from "next/image";
+import IconPack from "../../public/Icons";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -86,6 +87,10 @@ const useStyles = makeStyles(theme =>
     },
     bubble: {
       color: "#9D3E89"
+    },
+    pt: {
+      marginBottom: "30px",
+      paddingTop: "40px"
     }
   })
 );
@@ -96,32 +101,24 @@ const NotableFeatures = () => {
 
   const items = [
     {
-      imageSrc: "/icons/shield.svg",
-      imageAlt: "Sheild",
       itemHeading: "Protection",
       itemBody: "We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap.",
       style: "item1",
       headStyle: "shieldHeading"
     },
     {
-      imageSrc: "/icons/bio.svg",
-      imageAlt: "Biodegradable",
       itemHeading: "Eco-friendly",
       itemBody: "We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap.",
       style: "item2",
       headStyle: "bioHeading"
     },
     {
-      imageSrc: "/icons/special.svg",
-      imageAlt: "Special",
       itemHeading: "Unique",
       itemBody: "We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap.",
       style: "item3",
       headStyle: "special"
     },
     {
-      imageSrc: "/icons/bubbles.svg",
-      imageAlt: "Bubbles",
       itemHeading: "High Concentration",
       itemBody: "We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap.",
       headStyle: "bubble"
@@ -155,7 +152,7 @@ const NotableFeatures = () => {
           <Grid md={4} item container direction="column" justify="center">
             <Grid item>
               <div className={`${classes.item}`}>
-                <img src={items[0].imageSrc} alt={items[0].imageAlt} />
+                {IconPack.shield}
                 <Typography className={`${classes.itemHeading} ${classes[items[0].headStyle]}`} variant="h4">
                   {items[0].itemHeading}
                 </Typography>
@@ -163,8 +160,8 @@ const NotableFeatures = () => {
               </div>
             </Grid>
             <Grid item>
-              <div className={`${classes.item}`}>
-                <img src={items[1].imageSrc} alt={items[1].imageAlt} />
+              <div className={`${classes.item} ${classes.pt}`}>
+                {IconPack.bio}
                 <Typography className={`${classes.itemHeading} ${classes[items[1].headStyle]}`} variant="h4">
                   {items[1].itemHeading}
                 </Typography>
@@ -177,7 +174,7 @@ const NotableFeatures = () => {
         <Grid className={classes.mt3} container justify="space-around" direction="row-reverse">
           <Grid md={4} item>
             <div className={`${classes.item}`}>
-              <img src={items[2].imageSrc} alt={items[2].imageAlt} />
+              {IconPack.special}
               <Typography className={`${classes.itemHeading} ${classes[items[2].headStyle]}`} variant="h4">
                 {items[2].itemHeading}
               </Typography>
@@ -186,7 +183,7 @@ const NotableFeatures = () => {
           </Grid>
           <Grid md={4} item>
             <div className={`${classes.item}`}>
-              <img src={items[3].imageSrc} alt={items[3].imageAlt} />
+              {IconPack.bubbles}
               <Typography className={`${classes.itemHeading} ${classes[items[3].headStyle]}`} variant="h4">
                 {items[3].itemHeading}
               </Typography>

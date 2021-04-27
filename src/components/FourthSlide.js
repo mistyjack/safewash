@@ -186,9 +186,7 @@ const FourthSlide = () => {
       <span className={classes.mdCircle1}>{IconPack.circle}</span>
       <span className={classes.smallRec1}>{IconPack.smallRec}</span>
       <span className={classes.smallRec2}>{IconPack.smallRec}</span>
-      <span className={classes.smCircle}>
-        <img src="/icons/smCircle.svg" alt="Background icon" />
-      </span>
+      <span className={classes.smCircle}>{IconPack.smallCircle}</span>
 
       {matches ? (
         <Fragment>

@@ -1,5 +1,6 @@
 import { Fragment, useRef, useState } from "react";
 import Image from "next/image";
+import IconPack from "../../public/Icons";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -184,9 +185,7 @@ const Testimonies = () => {
                 {item.title}
               </Typography>
               <Typography className={classes.testimony} variant="h5">
-                <div className={classes.quote}>
-                  <img src="/icons/quote.svg" alt="Quotation Mark" />
-                </div>
+                <div className={classes.quote}>{IconPack.quote}</div>
                 {item.testimony}
               </Typography>
             </Paper>
