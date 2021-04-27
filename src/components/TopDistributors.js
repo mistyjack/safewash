@@ -13,7 +13,8 @@ const useStyles = makeStyles(theme =>
   createStyles({
     container: {
       maxWidth: "967px",
-      margin: theme.spacing(0, "auto")
+      margin: theme.spacing(0, "auto"),
+      position: "relative"
     },
     mb: {
       marginBottom: "126px"
@@ -52,7 +53,8 @@ const useStyles = makeStyles(theme =>
       position: "relative",
       background: "#FFFFFF",
       boxShadow: "0px 4px 31px #F4F4F9",
-      borderRadius: "12px"
+      borderRadius: "12px",
+      zIndex: 10
     },
     name: {
       color: theme.palette.secondary.main,
@@ -71,6 +73,20 @@ const useStyles = makeStyles(theme =>
       position: "absolute",
       left: "40px",
       top: "-47px"
+    },
+    backgrd: {
+      position: "absolute",
+      background: "#FE96C6",
+      filter: "blur(451px)",
+      width: "50%",
+      height: "285px",
+      left: 0,
+      top: 0,
+      zIndex: 0,
+      [theme.breakpoints.up("md")]: {
+        width: "350px",
+        height: "285px"
+      }
     }
   })
 );
@@ -122,6 +138,7 @@ const TopDistributors = () => {
             </Paper>
           </Grid>
         ))}
+        <div className={classes.backgrd} />
       </Grid>
 
       <div className={classes.headingTexts}>

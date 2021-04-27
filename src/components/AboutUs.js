@@ -4,9 +4,9 @@ import Image from "next/image";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Button from "@material-ui/core/Button";
-import Hidden from "@material-ui/core/Hidden";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme =>
     womanImage: {
       maxWidth: "100%",
       overflow: "hidden",
+      marginLeft: "auto",
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0, 4)
       }
@@ -40,7 +41,8 @@ const useStyles = makeStyles(theme =>
       marginBottom: "30px",
       padding: theme.spacing(2),
       [theme.breakpoints.up("md")]: {
-        padding: theme.spacing(0, 10)
+        padding: theme.spacing(0),
+        marginLeft: "auto"
       }
     },
     bodyText: {
@@ -56,22 +58,18 @@ const useStyles = makeStyles(theme =>
 
 const AboutUs = () => {
   const classes = useStyles();
+  const matches = useMediaQuery("(min-width:960px)");
 
   return (
     <Fragment>
       <CssBaseline />
 
-      <Grid className={classes.container} container direction="row-reverse" alignItems="center" justify="space-around">
+      <Grid className={classes.container} container direction="row-reverse" alignItems="center" justify="space-between">
         <Grid className={classes.womanImage} xs={12} md={5} item>
-          <Hidden smDown>
-            <Image src="/images/woman.png" alt="About us Image" layout="responsive" width={543} height={719} />
-          </Hidden>
-          <Hidden mdUp>
-            <Image src="/images/womanSmallScreen.png" alt="About us Image" layout="responsive" width={278} height={374} />
-          </Hidden>
+          {matches ? <Image src="/images/woman.png" alt="About us Image" layout="responsive" width={543} height={719} /> : <Image src="/images/womanSmallScreen.png" alt="About us Image" layout="responsive" width={278} height={374} />}
         </Grid>
 
-        <Grid className={classes.textContent} xs={12} md={6} item>
+        <Grid className={classes.textContent} xs={12} md={7} item>
           <Typography className={classes.heading} variant="h3" component="h2">
             About Us
           </Typography>
