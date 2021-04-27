@@ -15,6 +15,7 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Hidden from "@material-ui/core/Hidden";
 import Carousel from "react-material-ui-carousel";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -30,6 +31,8 @@ const useStyles = makeStyles(theme =>
 
 export default function Home() {
   const classes = useStyles();
+  const mdUp = useMediaQuery("(min-width:960px)");
+  const smUp = useMediaQuery("(min-width:600px)");
 
   return (
     <Fragment>
@@ -42,7 +45,7 @@ export default function Home() {
       <main className={classes.root}>
         {/* Main landing section begins */}
         <section>
-          <Hidden smDown>
+          {mdUp ? (
             <Carousel
               indicatorContainerProps={{
                 style: {
@@ -71,9 +74,7 @@ export default function Home() {
               <ThirdSlide />
               <FourthSlide />
             </Carousel>
-          </Hidden>
-
-          <Hidden xsDown mdUp>
+          ) : smUp ? (
             <Carousel
               indicatorContainerProps={{
                 style: {
@@ -102,9 +103,7 @@ export default function Home() {
               <ThirdSlide />
               <FourthSlide />
             </Carousel>
-          </Hidden>
-
-          <Hidden smUp>
+          ) : (
             <Carousel
               indicatorContainerProps={{
                 style: {
@@ -135,7 +134,7 @@ export default function Home() {
               <ThirdSlide />
               <FourthSlide />
             </Carousel>
-          </Hidden>
+          )}
         </section>
         {/* End of main landing section */}
 

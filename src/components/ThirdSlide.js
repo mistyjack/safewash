@@ -4,7 +4,8 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Hidden from "@material-ui/core/Hidden";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { Fragment } from "react";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -174,36 +175,12 @@ const useStyles = makeStyles(theme =>
 
 const ThirdSlide = () => {
   const classes = useStyles();
+  const matches = useMediaQuery("(min-width:960px)");
 
   return (
     <section className={classes.container}>
       <div className={classes.thirdSlide} />
       <CssBaseline />
-      <span className={classes.mdCircle}>
-        <img src="/icons/circle.svg" alt="Background icon" />
-      </span>
-      <span className={classes.mdCircle1}>
-        <img src="/icons/circle.svg" alt="Background icon" />
-      </span>
-      <Hidden smDown>
-        <span className={classes.mdRec}>
-          <img src="/icons/mdRec.svg" alt="Background icon" />
-        </span>
-      </Hidden>
-      <span className={classes.rec}>
-        <img src="/icons/rec.svg" alt="Background icon" />
-      </span>
-      <span className={classes.smallRec1}>
-        <img src="/icons/smallRec.svg" alt="Background icon" />
-      </span>
-      <span className={classes.smallRec2}>
-        <img src="/icons/smallRec.svg" alt="Background icon" />
-      </span>
-      <Hidden smDown>
-        <span className={classes.smallRec3}>
-          <img src="/icons/smallRec.svg" alt="Background icon" />
-        </span>
-      </Hidden>
       <div className={classes.textContent}>
         <Typography className={classes.stylishHeading} variant="h1" gutterBottom>
           Keeps Your Baby Smiling All Day
@@ -216,29 +193,47 @@ const ThirdSlide = () => {
         </Button>
       </div>
 
-      <Hidden smDown>
-        <div className={classes.babyImage}>
-          <Image src="/images/thirdBaby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={560} height={731} />
-        </div>
-      </Hidden>
+      <span className={classes.mdCircle}>
+        <img src="/icons/circle.svg" alt="Background icon" />
+      </span>
+      <span className={classes.mdCircle1}>
+        <img src="/icons/circle.svg" alt="Background icon" />
+      </span>
+      <span className={classes.rec}>
+        <img src="/icons/rec.svg" alt="Background icon" />
+      </span>
+      <span className={classes.smallRec1}>
+        <img src="/icons/smallRec.svg" alt="Background icon" />
+      </span>
+      <span className={classes.smallRec2}>
+        <img src="/icons/smallRec.svg" alt="Background icon" />
+      </span>
 
-      <Hidden mdUp>
-        <div className={classes.babyImageSmallScreen}>
-          <Image src="/images/thirdBabySmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={254} height={373} />
-        </div>
-      </Hidden>
-
-      <Hidden smDown>
-        <div className={classes.babyImageBorder}>
-          <Image src="/images/border.svg" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={735} height={673} />
-        </div>
-      </Hidden>
-
-      <Hidden mdUp>
-        <div className={classes.babyImageBorderSmallScreen}>
-          <Image src="/images/borderSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={204} height={248} />
-        </div>
-      </Hidden>
+      {matches ? (
+        <Fragment>
+          <span className={classes.mdRec}>
+            <img src="/icons/mdRec.svg" alt="Background icon" />
+          </span>
+          <span className={classes.smallRec3}>
+            <img src="/icons/smallRec.svg" alt="Background icon" />
+          </span>
+          <div className={classes.babyImage}>
+            <Image src="/images/thirdBaby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={560} height={731} />
+          </div>
+          <div className={classes.babyImageBorder}>
+            <Image src="/images/border.svg" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={735} height={673} />
+          </div>
+        </Fragment>
+      ) : (
+        <Fragment>
+          <div className={classes.babyImageSmallScreen}>
+            <Image src="/images/thirdBabySmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={254} height={373} />
+          </div>
+          <div className={classes.babyImageBorderSmallScreen}>
+            <Image src="/images/borderSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={204} height={248} />
+          </div>
+        </Fragment>
+      )}
     </section>
   );
 };
