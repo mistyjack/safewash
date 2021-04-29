@@ -11,18 +11,7 @@ const FirstSlide = () => {
   return (
     <section>
       <CssBaseline />
-
-      <div>
-        <Typography variant="h1" gutterBottom>
-          A Liquid Laundry Detergent Specifically Formulated for
-        </Typography>
-        <Typography variant="h1" gutterBottom>
-          Babies and Children Clothings
-        </Typography>
-        <Button className="btn" variant="contained" color="secondary" disableElevation>
-          Find Distributors Around You?
-        </Button>
-      </div>
+      Abdullah
     </section>
   );
 };
