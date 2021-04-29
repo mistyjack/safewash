@@ -11,8 +11,6 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
-      background: "url('/images/notableFeatures.png') top center no-repeat",
-      backgroundSize: "cover",
       [theme.breakpoints.up("md")]: {
         marginTop: "153px"
       }

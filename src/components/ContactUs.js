@@ -12,8 +12,6 @@ const useStyles = makeStyles(theme =>
   createStyles({
     container: {
       padding: theme.spacing("225px", 0),
-      background: "url('/images/reachOutBackground.png') top center no-repeat",
-      backgroundSize: "cover",
       [theme.breakpoints.down("sm")]: {
         textAlign: "center",
         padding: theme.spacing("150px", 0, "45px")
