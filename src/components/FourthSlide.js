@@ -182,23 +182,23 @@ const FourthSlide = () => {
         </Button>
       </div>
 
-      <span className={classes.mdCircle}>{IconPack.circle}</span>
+      {/* <span className={classes.mdCircle}>{IconPack.circle}</span>
       <span className={classes.mdCircle1}>{IconPack.circle}</span>
       <span className={classes.smallRec1}>{IconPack.smallRec}</span>
       <span className={classes.smallRec2}>{IconPack.smallRec}</span>
-      <span className={classes.smCircle}>{IconPack.smallCircle}</span>
+      <span className={classes.smCircle}>{IconPack.smallCircle}</span> */}
 
       {matches ? (
         <Fragment>
-          <span className={classes.mdRec}>{IconPack.mdRec}</span>
-          <span className={classes.smallRec3}>{IconPack.smallRec}</span>
+          {/* <span className={classes.mdRec}>{IconPack.mdRec}</span>
+          <span className={classes.smallRec3}>{IconPack.smallRec}</span> */}
           <div className={classes.babyImage}>
             <Image src="/images/fourthSlide.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={1321} height={751} />
           </div>
         </Fragment>
       ) : (
         <Fragment>
-          <span className={classes.rec}>{IconPack.mdRec}</span>
+          {/* <span className={classes.rec}>{IconPack.mdRec}</span> */}
           <div className={classes.babyImageSmallScreen}>
             <Image src="/images/fourthSlideSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={375} height={317} />
           </div>

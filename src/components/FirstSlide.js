@@ -171,21 +171,19 @@ const FirstSlide = () => {
         </Button>
       </div>
 
-      <span className={classes.mdCircle}>{IconPack.circle}</span>
+      {/* <span className={classes.mdCircle}>{IconPack.circle}</span>
       <span className={classes.rec}>{IconPack.mdRec}</span>
       <span className={classes.smallRec1}>{IconPack.smallRec}</span>
-      <span className={classes.smallRec2}>{IconPack.smallRec}</span>
+      <span className={classes.smallRec2}>{IconPack.smallRec}</span> */}
 
-      {matches ? (
+      {matches && (
         <Fragment>
           <div className={classes.babyImage}>
             <Image src="/images/baby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={728} height={681} />
           </div>
-          <span className={classes.smallRec3}>{IconPack.smallRec}</span>
-          <span className={classes.mdRec}>{IconPack.mdRec}</span>
+          {/* <span className={classes.smallRec3}>{IconPack.smallRec}</span>
+          <span className={classes.mdRec}>{IconPack.mdRec}</span> */}
         </Fragment>
-      ) : (
-        <span className={classes.smCircle}>{IconPack.smallCircle}</span>
       )}
     </section>
   );

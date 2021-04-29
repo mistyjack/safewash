@@ -194,16 +194,16 @@ const ThirdSlide = () => {
         </Button>
       </div>
 
-      <span className={classes.mdCircle}>{IconPack.circle}</span>
+      {/* <span className={classes.mdCircle}>{IconPack.circle}</span>
       <span className={classes.mdCircle1}>{IconPack.circle}</span>
       <span className={classes.rec}>{IconPack.mdRec}</span>
       <span className={classes.smallRec1}>{IconPack.smallRec}</span>
-      <span className={classes.smallRec2}>{IconPack.smallRec}</span>
+      <span className={classes.smallRec2}>{IconPack.smallRec}</span> */}
 
       {matches ? (
         <Fragment>
-          <span className={classes.mdRec}>{IconPack.mdRec}</span>
-          <span className={classes.smallRec3}>{IconPack.smallRec}</span>
+          {/* <span className={classes.mdRec}>{IconPack.mdRec}</span>
+          <span className={classes.smallRec3}>{IconPack.smallRec}</span> */}
           <div className={classes.babyImage}>
             <Image src="/images/thirdBaby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={560} height={731} />
           </div>

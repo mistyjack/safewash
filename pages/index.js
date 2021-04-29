@@ -43,34 +43,96 @@ export default function Home() {
       <main className={classes.root}>
         {/* Main landing section begins */}
         <section>
-          <Carousel
-            indicatorContainerProps={{
-              style: {
-                position: "absolute",
-                bottom: "10rem",
-                textAlign: "left",
-                marginLeft: "11rem"
-              }
-            }}
-            indicatorIconButtonProps={{
-              style: {
-                color: "transparent",
-                border: "1px solid #FE96C6",
-                marginRight: "5px"
-              }
-            }}
-            activeIndicatorIconButtonProps={{
-              style: {
-                color: "#FE96C6",
-                backgroundColor: "#FE96C6"
-              }
-            }}
-          >
-            <p>Abdullah</p>
-            <p>Sulaiman</p>
-            <p>Maryam</p>
-            <p>Rofiat</p>
-          </Carousel>
+          {mdUp ? (
+            <Carousel
+              indicatorContainerProps={{
+                style: {
+                  position: "absolute",
+                  bottom: "10rem",
+                  textAlign: "left",
+                  marginLeft: "11rem"
+                }
+              }}
+              indicatorIconButtonProps={{
+                style: {
+                  color: "transparent",
+                  border: "1px solid #FE96C6",
+                  marginRight: "5px"
+                }
+              }}
+              activeIndicatorIconButtonProps={{
+                style: {
+                  color: "#FE96C6",
+                  backgroundColor: "#FE96C6"
+                }
+              }}
+            >
+              <FirstSlide />
+              <SecondSlide />
+              <ThirdSlide />
+              <FourthSlide />
+            </Carousel>
+          ) : smUp ? (
+            <Carousel
+              indicatorContainerProps={{
+                style: {
+                  position: "absolute",
+                  bottom: "7rem",
+                  textAlign: "left",
+                  marginLeft: "3rem"
+                }
+              }}
+              indicatorIconButtonProps={{
+                style: {
+                  color: "transparent",
+                  border: "1px solid #FE96C6",
+                  marginRight: "5px"
+                }
+              }}
+              activeIndicatorIconButtonProps={{
+                style: {
+                  color: "#FE96C6",
+                  backgroundColor: "#FE96C6"
+                }
+              }}
+            >
+              <FirstSlide />
+              <SecondSlide />
+              <ThirdSlide />
+              <FourthSlide />
+            </Carousel>
+          ) : (
+            <Carousel
+              indicatorContainerProps={{
+                style: {
+                  position: "absolute",
+                  bottom: "6rem",
+                  textAlign: "left",
+                  marginLeft: "1rem"
+                }
+              }}
+              indicatorIconButtonProps={{
+                style: {
+                  color: "transparent",
+                  border: "1px solid #FE96C6",
+                  marginRight: "5px",
+                  fontSize: "10px"
+                }
+              }}
+              activeIndicatorIconButtonProps={{
+                style: {
+                  color: "#FE96C6",
+                  backgroundColor: "#FE96C6",
+                  fontSize: "10px"
+                }
+              }}
+            >
+              <FirstSlide />
+              <SecondSlide />
+              <ThirdSlide />
+              <FourthSlide />
+            </Carousel>
+          )}
         </section>
         {/* End of main landing section */}
 
