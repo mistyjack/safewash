@@ -8,8 +8,6 @@ const useStyles = makeStyles(theme =>
     container: {
       minHeight: "670px",
       [theme.breakpoints.up("md")]: {
-        background: "url('https://imgur.com/gH8zFTO') top center no-repeat",
-        backgroundSize: "cover",
         minHeight: "100vh",
         height: "772px"
       }
@@ -32,29 +30,6 @@ const useStyles = makeStyles(theme =>
       fontWeight: 700,
       maxWidth: 701,
       color: theme.palette.primary.main
-    },
-    blockHeading: {
-      [theme.breakpoints.down("sm")]: {
-        fontSize: 33,
-        lineHeight: "42px",
-        maxWidth: 400
-      },
-      [theme.breakpoints.down("xs")]: {
-        fontSize: 22,
-        lineHeight: "34px",
-        maxWidth: 240,
-        marginTop: 24,
-        marginBottom: 42
-      },
-      color: theme.palette.primary.main,
-      WebkitTextFillColor: "transparent",
-      WebkitTextStrokeWidth: "1px",
-      WebkitTextStrokeColor: theme.palette.primary.main,
-      fontSize: 48,
-      lineHeight: "70.5px",
-      fontStyle: "normal",
-      fontWeight: "bold",
-      maxWidth: 678
     },
     textContent: {
       position: "absolute",
