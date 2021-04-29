@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme =>
     container: {
       minHeight: "670px",
       [theme.breakpoints.up("md")]: {
-        background: "url('/images/slide1.png') top center no-repeat",
+        background: "url('https://imgur.com/gH8zFTO') top center no-repeat",
         backgroundSize: "cover",
         minHeight: "100vh",
         height: "772px"
