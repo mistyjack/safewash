@@ -41,39 +41,6 @@ export default function Home() {
       </Head>
 
       <main className={classes.root}>
-        {/* Main landing section begins */}
-        <section>
-          <Carousel
-            indicatorContainerProps={{
-              style: {
-                position: "absolute",
-                bottom: "10rem",
-                textAlign: "left",
-                marginLeft: "11rem"
-              }
-            }}
-            indicatorIconButtonProps={{
-              style: {
-                color: "transparent",
-                border: "1px solid #FE96C6",
-                marginRight: "5px"
-              }
-            }}
-            activeIndicatorIconButtonProps={{
-              style: {
-                color: "#FE96C6",
-                backgroundColor: "#FE96C6"
-              }
-            }}
-          >
-            <FirstSlide />
-            <SecondSlide />
-            <ThirdSlide />
-            <FourthSlide />
-          </Carousel>
-        </section>
-        {/* End of main landing section */}
-
         {/* Notable features section begins */}
         <section>
           <NotableFeatures />
