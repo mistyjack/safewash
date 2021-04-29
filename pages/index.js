@@ -68,9 +68,13 @@ export default function Home() {
               }}
             >
               <FirstSlide />
-              <SecondSlide />
+              <FirstSlide />
+              <FirstSlide />
+              <FirstSlide />
+
+              {/* <SecondSlide />
               <ThirdSlide />
-              <FourthSlide />
+              <FourthSlide /> */}
             </Carousel>
           ) : smUp ? (
             <Carousel
@@ -97,9 +101,13 @@ export default function Home() {
               }}
             >
               <FirstSlide />
-              <SecondSlide />
+              <FirstSlide />
+              <FirstSlide />
+              <FirstSlide />
+
+              {/* <SecondSlide />
               <ThirdSlide />
-              <FourthSlide />
+              <FourthSlide /> */}
             </Carousel>
           ) : (
             <Carousel
@@ -128,9 +136,13 @@ export default function Home() {
               }}
             >
               <FirstSlide />
-              <SecondSlide />
+              <FirstSlide />
+              <FirstSlide />
+              <FirstSlide />
+
+              {/* <SecondSlide />
               <ThirdSlide />
-              <FourthSlide />
+              <FourthSlide /> */}
             </Carousel>
           )}
         </section>

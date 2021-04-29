@@ -186,11 +186,11 @@ const SecondSlide = () => {
         </Button>
       </div>
 
-      {/* <span className={classes.mdCircle}>{IconPack.circle}</span>
+      <span className={classes.mdCircle}>{IconPack.circle}</span>
       <span className={classes.rec}>{IconPack.mdRec}</span>
       <span className={classes.smallRec1}>{IconPack.smallRec}</span>
       <span className={classes.smallRec2}>{IconPack.smallRec}</span>
-      <span className={classes.mdCircle1}>{IconPack.circle}</span> */}
+      <span className={classes.mdCircle1}>{IconPack.circle}</span>
 
       {matches ? (
         <Fragment>
@@ -200,15 +200,15 @@ const SecondSlide = () => {
           <div className={classes.backgroundImg}>
             <Image src="/images/backgroundImg.png" alt="Background Image" layout="fixed" width={501} height={604} />
           </div>
-          {/* <span className={classes.smallRec3}>{IconPack.smallRec}</span>
-          <span className={classes.mdRec}>{IconPack.mdRec}</span> */}
+          <span className={classes.smallRec3}>{IconPack.smallRec}</span>
+          <span className={classes.mdRec}>{IconPack.mdRec}</span>
         </Fragment>
       ) : (
         <Fragment>
           <div className={classes.babySmallImage}>
             <Image src="/images/mildSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={375} height={372} />
           </div>
-          {/* <span className={classes.smCircle}>{IconPack.smallCircle}</span> */}
+          <span className={classes.smCircle}>{IconPack.smallCircle}</span>
         </Fragment>
       )}
     </section>
