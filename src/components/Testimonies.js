@@ -83,44 +83,6 @@ const useStyles = makeStyles(theme =>
     quote: {
       position: "absolute",
       left: "20px"
-    },
-    videoContainer: {
-      textAlign: "center",
-      position: "relative",
-      marginTop: "85px",
-      marginBottom: "114px",
-      [theme.breakpoints.up("md")]: {
-        marginTop: "-66px",
-        marginBottom: "224px"
-      }
-    },
-    playButton: {
-      position: "absolute",
-      zIndex: 10,
-      left: "50%",
-      top: "50%",
-      width: "101px",
-      height: "62px",
-      transform: "translate(-50%, -50%)",
-      cursor: "pointer",
-      [theme.breakpoints.up("md")]: {
-        width: "158px",
-        height: "97px"
-      }
-    },
-    videoElement: {
-      width: "90%",
-      [theme.breakpoints.up("sm")]: {
-        maxWidth: "676px",
-        maxHeight: "564px"
-      },
-      [theme.breakpoints.up("md")]: {
-        maxWidth: "879px",
-        maxHeight: "396px"
-      }
-    },
-    dNone: {
-      display: "none"
     }
   })
 );
@@ -193,12 +155,12 @@ const Testimonies = () => {
         ))}
       </Grid>
 
-      <div className={classes.videoContainer}>
+      {/* <div className={classes.videoContainer}>
         <video ref={videoElement} className={classes.videoElement} poster={matches ? "/images/videoPoster.png" : "/images/videoPosterSmall.png"}></video>
         <div onClick={handleClick} className={isPlayClicked ? `${classes.playButton} ${classes.dNone}` : classes.playButton}>
           <img src="/icons/playButton.svg" alt="Play button" />
         </div>
-      </div>
+      </div> */}
     </Fragment>
   );
 };
