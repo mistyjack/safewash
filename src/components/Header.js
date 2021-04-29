@@ -85,19 +85,6 @@ function allyProps(index) {
   };
 }
 
-function ElevationScroll(props) {
-  const { children } = props;
-
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0
-  });
-
-  return cloneElement(children, {
-    elevation: trigger ? 0 : 0
-  });
-}
-
 function Header(props) {
   const classes = useStyles();
   const [value, setValue] = useState(0);
@@ -174,26 +161,24 @@ function Header(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <ElevationScroll {...props}>
-        <AppBar color="transparent" position="fixed">
-          <Toolbar className={classes.container}>
-            <Link className={classes.homeLink} href="/">
-              <img src="safewash_logo.svg" alt="Safewash Logo" />
-            </Link>
-            <Hidden smDown>{tab}</Hidden>
-            <Hidden mdUp>
-              <SwipeableDrawer anchor={"top"} open={menuState["top"]} onClose={toggleDrawer("top", false)} onOpen={toggleDrawer("top", true)}>
-                <div className={classes.drawer}>{list("top")}</div>
-              </SwipeableDrawer>
-            </Hidden>
-            <Hidden mdUp>
-              <IconButton style={{ paddingRight: 0 }} onClick={toggleDrawer("top", true)} edge="start" color="inherit" aria-label="menu">
-                {IconPack.menuIcon}
-              </IconButton>
-            </Hidden>
-          </Toolbar>
-        </AppBar>
-      </ElevationScroll>
+      <AppBar color="transparent" position="fixed">
+        <Toolbar className={classes.container}>
+          <Link className={classes.homeLink} href="/">
+            <img src="safewash_logo.svg" alt="Safewash Logo" />
+          </Link>
+          <Hidden smDown>{tab}</Hidden>
+          <Hidden mdUp>
+            <SwipeableDrawer anchor={"top"} open={menuState["top"]} onClose={toggleDrawer("top", false)} onOpen={toggleDrawer("top", true)}>
+              <div className={classes.drawer}>{list("top")}</div>
+            </SwipeableDrawer>
+          </Hidden>
+          <Hidden mdUp>
+            <IconButton style={{ paddingRight: 0 }} onClick={toggleDrawer("top", true)} edge="start" color="inherit" aria-label="menu">
+              {IconPack.menuIcon}
+            </IconButton>
+          </Hidden>
+        </Toolbar>
+      </AppBar>
     </div>
   );
 }
