@@ -1,26 +1,17 @@
-import { Fragment } from "react";
-import Image from "next/image";
-import IconPack from "../../public/Icons";
-
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
-      position: "relative"
-    },
-    firstSlide: {
-      minHeight: "600px",
+      minHeight: "670px",
       [theme.breakpoints.up("md")]: {
+        background: "url('/images/slide1.png') top center no-repeat",
+        backgroundSize: "cover",
         minHeight: "100vh",
-        height: "801px",
-        background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(213.01deg, #FFFFFF 4.13%, rgba(254, 150, 198, 0.5) 80.31%)",
-        opacity: "0.5",
-        transform: "matrix(-1, 0, 0, 1, 0, 0)"
+        height: "772px"
       }
     },
     stylishHeading: {
@@ -80,83 +71,15 @@ const useStyles = makeStyles(theme =>
       },
       zIndex: 10,
       padding: theme.spacing(2)
-    },
-    babyImage: {
-      position: "absolute",
-      right: 0,
-      bottom: 0,
-      overflow: "hidden",
-      [theme.breakpoints.down("md")]: {
-        transform: "scale(0.65)",
-        transformOrigin: "bottom right"
-      }
-    },
-    mdCircle: {
-      position: "absolute",
-      [theme.breakpoints.up("md")]: {
-        top: "5rem",
-        left: "5rem"
-      },
-      top: "5rem",
-      left: "45%"
-    },
-    smCircle: {
-      position: "absolute",
-      top: "15rem",
-      left: "50%"
-    },
-    mdRec: {
-      [theme.breakpoints.up("md")]: {
-        position: "absolute",
-        top: "1rem",
-        right: "40%"
-      }
-    },
-    rec: {
-      position: "absolute",
-      zIndex: 100,
-      [theme.breakpoints.up("md")]: {
-        top: "50%",
-        left: "5rem"
-      },
-      bottom: "11rem",
-      left: "1rem"
-    },
-    smallRec1: {
-      position: "absolute",
-      [theme.breakpoints.up("md")]: {
-        top: "21.5rem",
-        left: "40rem"
-      },
-      top: "8rem",
-      left: "1rem"
-    },
-    smallRec2: {
-      position: "absolute",
-      [theme.breakpoints.up("md")]: {
-        bottom: "12.7rem",
-        left: "31rem"
-      },
-      bottom: "13rem",
-      right: "3rem"
-    },
-    smallRec3: {
-      [theme.breakpoints.up("md")]: {
-        position: "absolute",
-        bottom: "11.7rem",
-        left: "43rem"
-      }
     }
   })
 );
 
 const FirstSlide = () => {
   const classes = useStyles();
-  const matches = useMediaQuery("(min-width:960px)");
 
   return (
     <section className={classes.container}>
-      <div className={classes.firstSlide} />
       <CssBaseline />
 
       <div className={classes.textContent}>
@@ -170,23 +93,6 @@ const FirstSlide = () => {
           Find Distributors Around You?
         </Button>
       </div>
-
-      <span className={classes.mdCircle}>{IconPack.circle}</span>
-      <span className={classes.rec}>{IconPack.mdRec}</span>
-      <span className={classes.smallRec1}>{IconPack.smallRec}</span>
-      <span className={classes.smallRec2}>{IconPack.smallRec}</span>
-
-      {matches ? (
-        <Fragment>
-          <div className={classes.babyImage}>
-            <Image src="/images/baby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={728} height={681} />
-          </div>
-          <span className={classes.smallRec3}>{IconPack.smallRec}</span>
-          <span className={classes.mdRec}>{IconPack.mdRec}</span>
-        </Fragment>
-      ) : (
-        <span className={classes.smCircle}>{IconPack.smallCircle}</span>
-      )}
     </section>
   );
 };
