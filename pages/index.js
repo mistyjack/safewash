@@ -67,10 +67,10 @@ export default function Home() {
                 }
               }}
             >
-              <FirstSlide />
-              <FirstSlide />
-              <FirstSlide />
-              <FirstSlide />
+              <SecondSlide />
+              <SecondSlide />
+              <SecondSlide />
+              <SecondSlide />
 
               {/* <SecondSlide />
               <ThirdSlide />
@@ -100,10 +100,10 @@ export default function Home() {
                 }
               }}
             >
-              <FirstSlide />
-              <FirstSlide />
-              <FirstSlide />
-              <FirstSlide />
+              <SecondSlide />
+              <SecondSlide />
+              <SecondSlide />
+              <SecondSlide />
 
               {/* <SecondSlide />
               <ThirdSlide />
@@ -135,10 +135,10 @@ export default function Home() {
                 }
               }}
             >
-              <FirstSlide />
-              <FirstSlide />
-              <FirstSlide />
-              <FirstSlide />
+              <SecondSlide />
+              <SecondSlide />
+              <SecondSlide />
+              <SecondSlide />
 
               {/* <SecondSlide />
               <ThirdSlide />
