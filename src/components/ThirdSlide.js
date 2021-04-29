@@ -1,17 +1,25 @@
+import { Fragment } from "react";
+import Image from "next/image";
+import IconPack from "../../public/Icons";
+
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
-      minHeight: "670px",
+      position: "relative"
+    },
+    thirdSlide: {
+      minHeight: "600px",
       [theme.breakpoints.up("md")]: {
-        background: "url('/images/slide3.png') top center no-repeat",
-        backgroundSize: "cover",
         minHeight: "100vh",
-        height: "772px"
+        height: "801px",
+        background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(146.99deg, rgba(255, 255, 255, 0.5) 4.13%, rgba(254, 150, 198, 0.5) 80.31%)",
+        opacity: "0.5"
       }
     },
     stylishHeading: {
@@ -72,15 +80,107 @@ const useStyles = makeStyles(theme =>
       },
       zIndex: 10,
       padding: theme.spacing(2)
+    },
+    babyImage: {
+      position: "absolute",
+      zIndex: 10,
+      right: "7rem",
+      top: 0,
+      overflow: "hidden",
+      [theme.breakpoints.down("md")]: {
+        transform: "scale(0.65)",
+        transformOrigin: "bottom right"
+      }
+    },
+    babyImageSmallScreen: {
+      position: "absolute",
+      zIndex: 1,
+      right: "0",
+      top: 0,
+      overflow: "hidden"
+    },
+    babyImageBorder: {
+      position: "absolute",
+      zIndex: 0,
+      right: "0",
+      top: "6rem",
+      overflow: "hidden",
+      [theme.breakpoints.down("md")]: {
+        transform: "scale(0.65)",
+        transformOrigin: "bottom right"
+      }
+    },
+    babyImageBorderSmallScreen: {
+      position: "absolute",
+      zIndex: 0,
+      right: "0",
+      top: "6rem",
+      overflow: "hidden"
+    },
+    mdCircle: {
+      position: "absolute",
+      [theme.breakpoints.up("md")]: {
+        bottom: "33%",
+        left: "46%"
+      }
+    },
+    mdCircle1: {
+      position: "absolute",
+      [theme.breakpoints.up("md")]: {
+        bottom: "1rem",
+        right: "1rem"
+      }
+    },
+    smCircle: {
+      position: "absolute",
+      top: "15rem",
+      left: "50%"
+    },
+    mdRec: {
+      [theme.breakpoints.up("md")]: {
+        position: "absolute",
+        top: "1rem",
+        right: "33%"
+      }
+    },
+    rec: {
+      position: "absolute",
+      [theme.breakpoints.up("md")]: {
+        top: "50%",
+        left: "5rem"
+      }
+    },
+    smallRec1: {
+      position: "absolute",
+      [theme.breakpoints.up("md")]: {
+        top: "25%",
+        right: "13%"
+      }
+    },
+    smallRec2: {
+      position: "absolute",
+      [theme.breakpoints.up("md")]: {
+        top: "41%",
+        left: "45%"
+      }
+    },
+    smallRec3: {
+      [theme.breakpoints.up("md")]: {
+        position: "absolute",
+        bottom: "14.4%",
+        left: "35.5%"
+      }
     }
   })
 );
 
 const ThirdSlide = () => {
   const classes = useStyles();
+  const matches = useMediaQuery("(min-width:960px)");
 
   return (
     <section className={classes.container}>
+      <div className={classes.thirdSlide} />
       <CssBaseline />
       <div className={classes.textContent}>
         <Typography className={classes.stylishHeading} variant="h1" gutterBottom>
@@ -93,6 +193,34 @@ const ThirdSlide = () => {
           Become A Distributor
         </Button>
       </div>
+
+      <span className={classes.mdCircle}>{IconPack.circle}</span>
+      <span className={classes.mdCircle1}>{IconPack.circle}</span>
+      <span className={classes.rec}>{IconPack.mdRec}</span>
+      <span className={classes.smallRec1}>{IconPack.smallRec}</span>
+      <span className={classes.smallRec2}>{IconPack.smallRec}</span>
+
+      {matches ? (
+        <Fragment>
+          <span className={classes.mdRec}>{IconPack.mdRec}</span>
+          <span className={classes.smallRec3}>{IconPack.smallRec}</span>
+          <div className={classes.babyImage}>
+            <Image src="/images/thirdBaby.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={560} height={731} />
+          </div>
+          <div className={classes.babyImageBorder}>
+            <Image src="/images/border.svg" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={735} height={673} />
+          </div>
+        </Fragment>
+      ) : (
+        <Fragment>
+          <div className={classes.babyImageSmallScreen}>
+            <Image src="/images/thirdBabySmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={254} height={373} />
+          </div>
+          <div className={classes.babyImageBorderSmallScreen}>
+            <Image src="/images/borderSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={204} height={248} />
+          </div>
+        </Fragment>
+      )}
     </section>
   );
 };
