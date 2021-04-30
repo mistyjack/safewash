@@ -89,8 +89,10 @@ const useStyles = makeStyles(theme =>
       color: "#9D3E89"
     },
     pt: {
-      marginBottom: "30px",
-      paddingTop: "40px"
+      [theme.breakpoints.up("md")]: {
+        marginBottom: "30px",
+        paddingTop: "40px"
+      }
     }
   })
 );
@@ -172,7 +174,7 @@ const NotableFeatures = () => {
         </Grid>
 
         <Grid className={classes.mt3} container justify="space-around" direction="row-reverse">
-          <Grid md={4} item>
+          <Grid sm={12} md={4} item>
             <div className={`${classes.item}`}>
               {IconPack.special}
               <Typography className={`${classes.itemHeading} ${classes[items[2].headStyle]}`} variant="h4">
@@ -181,7 +183,7 @@ const NotableFeatures = () => {
               <Typography variant="body1">{items[2].itemBody}</Typography>
             </div>
           </Grid>
-          <Grid md={4} item>
+          <Grid sm={12} md={4} item>
             <div className={`${classes.item}`}>
               {IconPack.bubbles}
               <Typography className={`${classes.itemHeading} ${classes[items[3].headStyle]}`} variant="h4">

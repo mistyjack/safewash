@@ -67,9 +67,9 @@ export default function Home() {
             }}
           >
             <FirstSlide />
-            <FirstSlide />
-            <FirstSlide />
-            <FirstSlide />
+            <SecondSlide />
+            <ThirdSlide />
+            <FourthSlide />
           </Carousel>
         </section>
         {/* End of main landing section */}
