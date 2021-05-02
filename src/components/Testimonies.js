@@ -194,7 +194,7 @@ const Testimonies = () => {
       </Grid>
 
       <div className={classes.videoContainer}>
-        <video ref={videoElement} className={classes.videoElement} poster={matches ? "/images/videoPoster.png" : "/images/videoPosterSmall.png"}></video>
+        <video ref={videoElement} className={classes.videoElement} poster={matches ? "/images/videoPoster.webp" : "/images/videoPosterSmall.webp"}></video>
         <div onClick={handleClick} className={isPlayClicked ? `${classes.playButton} ${classes.dNone}` : classes.playButton}>
           <img src="/icons/playButton.svg" alt="Play button" />
         </div>
