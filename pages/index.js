@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Fragment } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import FirstSlide from "../src/components/FirstSlide";
 import SecondSlide from "../src/components/SecondSlide";
 import ThirdSlide from "../src/components/ThirdSlide";
@@ -12,7 +13,6 @@ import Testimonies from "../src/components/Testimonies";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Carousel from "react-material-ui-carousel";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles(theme =>
@@ -102,16 +102,26 @@ clinically safe for babies and children’s health."
                   color: "#FE96C6",
                   backgroundColor: "#FE96C6",
                   fontSize: "10px"
-                }
-              }}
-            >
-              <FirstSlide />
+                }import Carousel from "react-material-ui-carousel";ide />
               <SecondSlide />
               <ThirdSlide />
               <FourthSlide />
             </Carousel>
           )} */}
-          <FirstSlide />
+          <Swiper autoplay={true} slidesPerView={1}>
+            <SwiperSlide>
+              <FirstSlide />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SecondSlide />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ThirdSlide />
+            </SwiperSlide>
+            <SwiperSlide>
+              <FourthSlide />
+            </SwiperSlide>
+          </Swiper>
         </section>
         {/* End of main landing section */}
 
