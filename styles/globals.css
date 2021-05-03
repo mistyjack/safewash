@@ -62,3 +62,7 @@ a {
   font-size: 14px !important;
   font-weight: 600;
 }
+
+.material-icons {
+  display: none;
+}

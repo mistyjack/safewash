@@ -139,6 +139,9 @@ function Header(props) {
   const list = anchor => (
     <div className={classes.list} role="Navigation menu" onClick={toggleDrawer(anchor, false)} onKeyDown={toggleDrawer(anchor, false)}>
       <IconButton className={classes.closeButton} onClick={toggleDrawer("top", false)} edge="start" color="inherit" aria-label="menu">
+        <span class="material-icons" aria-hidden="true">
+          Close button
+        </span>
         {IconPack.closeIcon}
       </IconButton>
       <span className={classes.mdCircle}>{IconPack.circle}</span>
@@ -188,6 +191,9 @@ function Header(props) {
             </Hidden>
             <Hidden mdUp>
               <IconButton style={{ paddingRight: 0 }} onClick={toggleDrawer("top", true)} edge="start" color="inherit" aria-label="menu">
+                <span class="material-icons" aria-hidden="true">
+                  Menu Icon
+                </span>
                 {IconPack.menuIcon}
               </IconButton>
             </Hidden>
