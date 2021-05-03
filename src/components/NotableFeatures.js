@@ -11,7 +11,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
-      background: "url('/images/notableFeatures.png') top center no-repeat",
+      background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/notableFeatures_k-LNpHirH.png') top center no-repeat",
       backgroundSize: "cover",
       [theme.breakpoints.up("md")]: {
         marginTop: "153px"
@@ -132,7 +132,7 @@ const NotableFeatures = () => {
       <CssBaseline />
 
       <div className={classes.container}>
-        {!matches && <Image src="/images/babyInBasketSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="responsive" width={400} height={408} />}
+        {!matches && <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/babyInBasketSmallScreen_sh1pWzlX5.png" alt="BQ Safewash baby 4 hero 1" layout="responsive" width={400} height={408} />}
 
         <div className={`${classes.heading} ${classes.px2AtSmall}`}>
           <Typography className={classes.headingText} variant="h3" component="h2" gutterBottom>
@@ -147,7 +147,7 @@ const NotableFeatures = () => {
         <Grid container justify="space-around" direction="row">
           {matches && (
             <Grid md={4} item className={classes.babyInBasketImage}>
-              <Image src="/images/babyInBasket.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={575} height={566} />
+              <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/babyInBasket_5J9kSbk9pw.png" alt="Baby in basket" layout="fixed" width={575} height={566} />
             </Grid>
           )}
 

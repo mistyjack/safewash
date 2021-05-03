@@ -178,7 +178,7 @@ function Header(props) {
         <AppBar color="transparent" position="fixed">
           <Toolbar className={classes.container}>
             <Link className={classes.homeLink} href="/">
-              <img src="safewash_logo.svg" alt="Safewash Logo" />
+              <img src="https://ik.imagekit.io/7wpxe2myx/Safewash/safewash_logo_9VQ4-XPfY.svg" alt="Safewash Logo" />
             </Link>
             <Hidden smDown>{tab}</Hidden>
             <Hidden mdUp>

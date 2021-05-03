@@ -64,7 +64,7 @@ const Footer = () => {
         <Grid className={classes.container} container direction="row" justify="space-between">
           {matches ? (
             <Grid xs={6} md={3} item>
-              <img src="/icons/global.svg" alt="Global Image" />
+              <img src="https://ik.imagekit.io/7wpxe2myx/Safewash/global_CSZGulErxV2.svg" alt="Global Image" />
             </Grid>
           ) : null}
           <Grid className={classes.mb} xs={6} md={3} item>
@@ -102,7 +102,7 @@ const Footer = () => {
           </Grid>
           {!matches ? (
             <Grid className={classes.mbLarge} xs={6} md={3} item>
-              <img src="/icons/global.svg" alt="Global Image" />
+              <img src="https://ik.imagekit.io/7wpxe2myx/Safewash/global_CSZGulErxV2.svg" alt="Global Image" />
             </Grid>
           ) : null}
         </Grid>

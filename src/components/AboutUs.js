@@ -68,7 +68,7 @@ const AboutUs = () => {
 
       <Grid className={classes.container} container direction="row-reverse" alignItems="center" justify="space-between">
         <Grid className={classes.womanImage} xs={12} md={5} item>
-          {matches ? <Image src="/images/woman.png" alt="About us Image" layout="responsive" width={543} height={719} /> : <Image src="/images/womanSmallScreen.png" alt="About us Image" layout="responsive" width={278} height={374} />}
+          {matches ? <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/woman_-eSw1B5vkEX.png" alt="About us Image" layout="responsive" width={543} height={719} /> : <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/womanSmallScreen_EkS1TNQy1.png" alt="About us Image" layout="responsive" width={278} height={374} />}
         </Grid>
 
         <Grid className={classes.textContent} xs={12} md={7} item>

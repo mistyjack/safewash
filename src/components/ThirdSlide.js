@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme =>
     container: {
       minHeight: "600px",
       [theme.breakpoints.up("md")]: {
-        background: "url('/images/slide3.png') top center no-repeat",
+        background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/slide3_BTG2lVerp.png') top center no-repeat",
         backgroundSize: "cover",
         minHeight: "100vh",
         height: "772px"
@@ -101,7 +101,7 @@ const ThirdSlide = () => {
 
       {!matches && (
         <div className={classes.babyImageSmallScreen}>
-          <Image src="/images/thirdBaby.png" alt="Third baby" layout="fixed" width={254} height={373} />
+          <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/thirdBaby_77_qVbeZD.png" alt="Third baby" layout="fixed" width={254} height={373} />
         </div>
       )}
     </section>

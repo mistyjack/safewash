@@ -136,21 +136,21 @@ const Testimonies = () => {
       name: "Abdul Wasiu Modu",
       title: "Laundry Owner",
       testimony: "I have tried it oooo, the thickness and smell is everything.",
-      imageSrc: "/images/laundryOwner1.png",
+      imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/laundryOwner1_0s0WaqvHs.png",
       style: "true"
     },
     {
       name: "Abdul Wasiu Modu",
       title: "A Nursing Mother",
       testimony: "Yeah I have bought after I gave birth because I feel my baby’s clothes deserve bqsafewash I and to protect his skin from rashes and allergies.",
-      imageSrc: "/images/nursingMother.png",
+      imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/nursingMother_vQAXh0lORgZ.png",
       style: "true"
     },
     {
       name: "Abdul Wasiu Modu",
       title: "Laundry Owner",
       testimony: "I tried bqsafewash yesterday! It was the Bomb! My customers are happy and coming back for more.",
-      imageSrc: "/images/laundryOwner2.png"
+      imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/laundryOwner2_OSbOoq4V9.png"
     }
   ];
 
@@ -194,9 +194,9 @@ const Testimonies = () => {
       </Grid>
 
       <div className={classes.videoContainer}>
-        <video ref={videoElement} className={classes.videoElement} poster={matches ? "/images/videoPoster.webp" : "/images/videoPosterSmall.webp"}></video>
+        <video ref={videoElement} className={classes.videoElement} poster={matches ? "https://ik.imagekit.io/7wpxe2myx/Safewash/videoPoster_L2XoDXSrm.png" : "https://ik.imagekit.io/7wpxe2myx/Safewash/videoPosterSmall_ISE82SuWK.png"}></video>
         <div onClick={handleClick} className={isPlayClicked ? `${classes.playButton} ${classes.dNone}` : classes.playButton}>
-          <img src="/icons/playButton.svg" alt="Play button" />
+          <img src="https://ik.imagekit.io/7wpxe2myx/Safewash/playButton_B3gx1rPmu.svg" alt="Play button" />
         </div>
       </div>
     </Fragment>

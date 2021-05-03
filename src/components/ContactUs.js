@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme =>
   createStyles({
     container: {
       padding: theme.spacing("225px", 0),
-      background: "url('/images/reachOutBackground.png') top center no-repeat",
+      background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/reachOutBackground_-kxZ0cIUM.png') top center no-repeat",
       backgroundSize: "cover",
       [theme.breakpoints.down("sm")]: {
         textAlign: "center",
@@ -69,10 +69,10 @@ const ContactUs = () => {
       <Grid className={classes.container} container direction="row" alignItems="center" justify="space-around">
         <Grid className={classes.womanImage} xs={12} md={5} item>
           <Hidden smDown>
-            <Image src="/images/reachOut.png" alt="About us Image" layout="responsive" width={560} height={553} />
+            <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/reachOut_2lIHW-MXe.png" alt="About us Image" layout="responsive" width={560} height={553} />
           </Hidden>
           <Hidden mdUp>
-            <Image src="/images/reachOutSmall.png" alt="About us Image" layout="responsive" width={350} height={346} />
+            <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/reachOutSmall_8SQjmE4CkzG.png" alt="About us Image" layout="responsive" width={350} height={346} />
           </Hidden>
         </Grid>
 

@@ -95,9 +95,9 @@ const TopDistributors = () => {
   const classes = useStyles();
 
   const items = [
-    { imageSrc: "/images/kudiratB.png", imageAlt: "Kudrat Bakare Passport", name: "Kudirat Bakare", address: "Surulere, Lagos State.", phone: "09030267295", style: "mb" },
-    { imageSrc: "/images/ibikunleVentures.png", imageAlt: "Ibikunle Ventures Passport", name: "Ibikunle Ventures", address: "Surulere, Lagos State.", phone: "09030267295", style: "mb" },
-    { imageSrc: "/images/rosemerryShop.png", imageAlt: "Rosemerry’s Shop Passport", name: "Rosemerry’s Shop", address: "Surulere, Lagos State.", phone: "09030267295" }
+    { imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/kudiratB_BjPy7UrJB.png", imageAlt: "Kudrat Bakare Passport", name: "Kudirat Bakare", address: "Surulere, Lagos State.", phone: "09030267295", style: "mb" },
+    { imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/ibikunleVentures_VZEzX-x19O7.png", imageAlt: "Ibikunle Ventures Passport", name: "Ibikunle Ventures", address: "Surulere, Lagos State.", phone: "09030267295", style: "mb" },
+    { imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/rosemerryShop_A8S6SjIajU.png", imageAlt: "Rosemerry’s Shop Passport", name: "Rosemerry’s Shop", address: "Surulere, Lagos State.", phone: "09030267295" }
   ];
 
   return (

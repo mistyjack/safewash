@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme =>
     container: {
       minHeight: "670px",
       [theme.breakpoints.up("md")]: {
-        background: "url('/images/slide2.png') top center no-repeat",
+        background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/slide2_oYHYqJc9-.png') top center no-repeat",
         backgroundSize: "cover",
         minHeight: "100vh",
         height: "772px"
@@ -112,7 +112,7 @@ const SecondSlide = () => {
         <Fragment>
           <div className={classes.secondSlide} />
           <div className={classes.babySmallImage}>
-            <Image src="/images/mildSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={375} height={372} />
+            <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/mildSmallScreen_uZm94hUOUgS.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={375} height={372} />
           </div>
           <span
             style={{

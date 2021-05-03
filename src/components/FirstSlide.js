@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme =>
     container: {
       minHeight: "600px",
       [theme.breakpoints.up("md")]: {
-        background: "url('/images/slide1.png') top center no-repeat",
+        background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/slide1_k2thshPqyYc.png') top center no-repeat",
         backgroundSize: "cover",
         minHeight: "100vh",
         height: "772px"
