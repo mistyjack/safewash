@@ -191,14 +191,14 @@ export default function Distributors() {
             Search result{" "}
             {matches ? (
               <IconButton>
-                <span class="material-icons" aria-hidden="true">
+                <span className="material-icons" aria-hidden="true">
                   Arrow Forward Icon
                 </span>
                 <ArrowForwardIcon />
               </IconButton>
             ) : (
               <IconButton>
-                <span class="material-icons" aria-hidden="true">
+                <span className="material-icons" aria-hidden="true">
                   Arrow Downard Icon
                 </span>
                 <ArrowDownwardIcon />
@@ -228,7 +228,7 @@ export default function Distributors() {
           <Typography className={classes.viewDist} variant="h6">
             View More Distributors{" "}
             <IconButton className={classes.blueIcon}>
-              <span class="material-icons" aria-hidden="true">
+              <span className="material-icons" aria-hidden="true">
                 Arrow Forward Icon
               </span>
               <ArrowForwardIcon />
