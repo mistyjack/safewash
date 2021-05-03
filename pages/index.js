@@ -16,7 +16,7 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-SwiperCore.use([Autoplay, Navigation, Pagination]);
+SwiperCore.use([Autoplay, Pagination]);
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -107,7 +107,7 @@ clinically safe for babies and children’s health."
               <FourthSlide />
             </Carousel>
           )} */}
-          <Swiper slidesPerView={1} pagination autoplay navigation>
+          <Swiper slidesPerView={1} pagination autoplay>
             <SwiperSlide>
               <FirstSlide />
             </SwiperSlide>

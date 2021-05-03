@@ -60,7 +60,7 @@ const useStyles = makeStyles(theme =>
       fontStyle: "normal",
       fontWeight: "bold",
       maxWidth: 678,
-      marginBottom: "100px"
+      marginBottom: "80px"
     },
     textContent: {
       position: "absolute",

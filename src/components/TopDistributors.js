@@ -9,6 +9,8 @@ import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
 
+import Zoom from "react-reveal/Zoom";
+
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
@@ -104,18 +106,24 @@ const TopDistributors = () => {
     <Fragment>
       <CssBaseline />
       <div className={classes.headingTexts}>
-        <Typography className={classes.heading} variant="h3" component="h2">
-          See Our Top Distributors
-        </Typography>
-        <Hidden smDown>
-          <Typography className={classes.bodyText} variant="h6" component="h4">
-            We use our knowledge and expertise to providethe most effecient, effective and environmentally friendly cleaning possible.
+        <Zoom>
+          <Typography className={classes.heading} variant="h3" component="h2">
+            See Our Top Distributors
           </Typography>
+        </Zoom>
+        <Hidden smDown>
+          <Zoom>
+            <Typography className={classes.bodyText} variant="h6" component="h4">
+              We use our knowledge and expertise to providethe most effecient, effective and environmentally friendly cleaning possible.
+            </Typography>
+          </Zoom>
         </Hidden>
         <Hidden mdUp>
-          <Typography className={classes.bodyText} variant="h6" component="h4">
-            We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
-          </Typography>
+          <Zoom>
+            <Typography className={classes.bodyText} variant="h6" component="h4">
+              We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
+            </Typography>
+          </Zoom>
         </Hidden>
       </div>
 
@@ -126,15 +134,21 @@ const TopDistributors = () => {
               <div className={classes.image}>
                 <Image src={item.imageSrc} alt={item.imageAlt} layout="fixed" width={202} height={188} />
               </div>
-              <Typography className={classes.name} variant="h4">
-                {item.name}
-              </Typography>
-              <Typography className={classes.address} variant="h5">
-                {item.address} <br /> {item.phone}
-              </Typography>
-              <Button className="btn btn--top-dist" variant="contained" color="secondary" disableElevation>
-                Contact
-              </Button>
+              <Zoom>
+                <Typography className={classes.name} variant="h4">
+                  {item.name}
+                </Typography>
+              </Zoom>
+              <Zoom>
+                <Typography className={classes.address} variant="h5">
+                  {item.address} <br /> {item.phone}
+                </Typography>
+              </Zoom>
+              <Zoom>
+                <Button className="btn btn--top-dist" variant="contained" color="secondary" disableElevation>
+                  Contact
+                </Button>
+              </Zoom>
             </Paper>
           </Grid>
         ))}
@@ -143,13 +157,17 @@ const TopDistributors = () => {
 
       <div className={classes.headingTexts}>
         <Hidden smDown>
-          <Typography className={`${classes.bodyText} ${classes.mb34}`} variant="h6" component="h4">
-            We use our knowledge and expertise to providethe most effecient, effective and environmentally friendly cleaning possible.
-          </Typography>
+          <Zoom>
+            <Typography className={`${classes.bodyText} ${classes.mb34}`} variant="h6" component="h4">
+              We use our knowledge and expertise to providethe most effecient, effective and environmentally friendly cleaning possible.
+            </Typography>
+          </Zoom>
 
-          <Button className="btn" variant="contained" color="secondary" disableElevation>
-            Find Distributors Around You?
-          </Button>
+          <Zoom>
+            <Button className="btn" variant="contained" color="secondary" disableElevation>
+              Find Distributors Around You?
+            </Button>
+          </Zoom>
         </Hidden>
       </div>
     </Fragment>

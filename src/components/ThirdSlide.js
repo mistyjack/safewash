@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme =>
         lineHeight: "34px",
         maxWidth: 240,
         marginTop: 24,
-        marginBottom: 42
+        marginBottom: 80
       },
       color: theme.palette.primary.main,
       WebkitTextFillColor: "transparent",
@@ -58,7 +58,7 @@ const useStyles = makeStyles(theme =>
       fontStyle: "normal",
       fontWeight: "bold",
       maxWidth: 678,
-      marginBottom: 117
+      marginBottom: 80
     },
     textContent: {
       position: "absolute",
@@ -74,7 +74,7 @@ const useStyles = makeStyles(theme =>
       position: "absolute",
       zIndex: 1,
       right: "0",
-      top: "3.2rem",
+      top: "2rem",
       overflow: "hidden"
     }
   })

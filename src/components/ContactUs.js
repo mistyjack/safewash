@@ -8,6 +8,8 @@ import Hidden from "@material-ui/core/Hidden";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
+import Zoom from "react-reveal/Zoom";
+
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
@@ -77,15 +79,21 @@ const ContactUs = () => {
         </Grid>
 
         <Grid className={classes.textContent} xs={12} md={6} item>
-          <Typography className={classes.heading} variant="h3" component="h2">
-            Reach Out To Us
-          </Typography>
-          <Typography className={classes.bodyText} variant="h6" component="h4">
-            We use our knowledge and expertise to provide the most effecient, effective and environmentally friendly cleaning possible. Having in mind the daily increase in percentage of children cancer patients world wide, skin reactions caused by harmful chemicals, high priced soaps leading to parents using products not ideal for children.
-          </Typography>
-          <Button className="btn" variant="contained" color="secondary" disableElevation>
-            Contact Us Now!
-          </Button>
+          <Zoom>
+            <Typography className={classes.heading} variant="h3" component="h2">
+              Reach Out To Us
+            </Typography>
+          </Zoom>
+          <Zoom>
+            <Typography className={classes.bodyText} variant="h6" component="h4">
+              We use our knowledge and expertise to provide the most effecient, effective and environmentally friendly cleaning possible. Having in mind the daily increase in percentage of children cancer patients world wide, skin reactions caused by harmful chemicals, high priced soaps leading to parents using products not ideal for children.
+            </Typography>
+          </Zoom>
+          <Zoom>
+            <Button className="btn" variant="contained" color="secondary" disableElevation>
+              Contact Us Now!
+            </Button>
+          </Zoom>
         </Grid>
       </Grid>
     </Fragment>

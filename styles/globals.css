@@ -66,3 +66,27 @@ a {
 .material-icons {
   display: none;
 }
+
+.swiper-pagination {
+  text-align: left !important;
+  padding-left: 1.4rem;
+  bottom: 6rem !important;
+}
+
+@media (min-width: 960px) {
+  .swiper-pagination {
+    bottom: 20% !important;
+    padding-left: 11.2rem;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 16px !important;
+  height: 16px !important;
+  background-color: #fff !important;
+  border: 2px solid #fe96c6;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fe96c6 !important;
+}

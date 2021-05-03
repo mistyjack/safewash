@@ -9,6 +9,8 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
+import Zoom from "react-reveal/Zoom";
+
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
@@ -163,32 +165,38 @@ const Testimonies = () => {
     <Fragment>
       <CssBaseline />
       <div className={classes.headingTexts}>
-        <Typography className={classes.heading} variant="h3" component="h2">
-          Read Our Testimonies
-        </Typography>
-        <Typography className={classes.bodyText} variant="h6" component="h4">
-          We use our knowledge and expertise to providethe most effecient, effective and environmentally friendly cleaning possible.
-        </Typography>
+        <Zoom>
+          <Typography className={classes.heading} variant="h3" component="h2">
+            Read Our Testimonies
+          </Typography>
+        </Zoom>
+        <Zoom>
+          <Typography className={classes.bodyText} variant="h6" component="h4">
+            We use our knowledge and expertise to providethe most effecient, effective and environmentally friendly cleaning possible.
+          </Typography>
+        </Zoom>
       </div>
 
       <Grid className={classes.container} container direction="row" justify="space-around">
         {items.map(item => (
           <Grid key={item.title + " " + item.imageSrc} item>
-            <Paper className={item.style ? `${classes.item} ${classes.mb}` : classes.item} elevation={0}>
-              <div className={classes.image}>
-                <Image src={item.imageSrc} alt={item.name} layout="fixed" width={102} height={101} />
-              </div>
-              <Typography className={classes.name} variant="h4">
-                {item.name}
-              </Typography>
-              <Typography className={classes.title} variant="h5">
-                {item.title}
-              </Typography>
-              <Typography className={classes.testimony} variant="h5">
-                <div className={classes.quote}>{IconPack.quote}</div>
-                {item.testimony}
-              </Typography>
-            </Paper>
+            <Zoom>
+              <Paper className={item.style ? `${classes.item} ${classes.mb}` : classes.item} elevation={0}>
+                <div className={classes.image}>
+                  <Image src={item.imageSrc} alt={item.name} layout="fixed" width={102} height={101} />
+                </div>
+                <Typography className={classes.name} variant="h4">
+                  {item.name}
+                </Typography>
+                <Typography className={classes.title} variant="h5">
+                  {item.title}
+                </Typography>
+                <Typography className={classes.testimony} variant="h5">
+                  <div className={classes.quote}>{IconPack.quote}</div>
+                  {item.testimony}
+                </Typography>
+              </Paper>
+            </Zoom>
           </Grid>
         ))}
       </Grid>

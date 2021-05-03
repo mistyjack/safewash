@@ -8,6 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
+import Zoom from "react-reveal/Zoom";
+
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
@@ -72,15 +74,21 @@ const AboutUs = () => {
         </Grid>
 
         <Grid className={classes.textContent} xs={12} md={7} item>
-          <Typography className={classes.heading} variant="h3" component="h2">
-            About Us
-          </Typography>
-          <Typography className={classes.bodyText} variant="h6" component="h4">
-            We use our knowledge and expertise to provide the most effecient, effective and environmentally friendly cleaning possible. Having in mind the daily increase in percentage of children cancer patients world wide, skin reactions caused by harmful chemicals, high priced soaps leading to parents using products not ideal for children.
-          </Typography>
-          <Button className="btn" variant="contained" color="secondary" disableElevation>
-            Become A Distributor
-          </Button>
+          <Zoom>
+            <Typography className={classes.heading} variant="h3" component="h2">
+              About Us
+            </Typography>
+          </Zoom>
+          <Zoom>
+            <Typography className={classes.bodyText} variant="h6" component="h4">
+              We use our knowledge and expertise to provide the most effecient, effective and environmentally friendly cleaning possible. Having in mind the daily increase in percentage of children cancer patients world wide, skin reactions caused by harmful chemicals, high priced soaps leading to parents using products not ideal for children.
+            </Typography>
+          </Zoom>
+          <Zoom>
+            <Button className="btn" variant="contained" color="secondary" disableElevation>
+              Become A Distributor
+            </Button>
+          </Zoom>
         </Grid>
       </Grid>
     </Fragment>

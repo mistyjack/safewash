@@ -8,6 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
+import Zoom from "react-reveal/Zoom";
+
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
@@ -134,16 +136,18 @@ const NotableFeatures = () => {
       <div className={classes.container}>
         {!matches && <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/babyInBasketSmallScreen_sh1pWzlX5.png" alt="BQ Safewash baby 4 hero 1" layout="responsive" width={400} height={408} />}
 
-        <div className={`${classes.heading} ${classes.px2AtSmall}`}>
-          <Typography className={classes.headingText} variant="h3" component="h2" gutterBottom>
-            Notable Features
-          </Typography>
-          <div>
-            <Typography className={classes.mainBody} variant="h6" component="h4">
-              We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
+        <Zoom>
+          <div className={`${classes.heading} ${classes.px2AtSmall}`}>
+            <Typography className={classes.headingText} variant="h3" component="h2" gutterBottom>
+              Notable Features
             </Typography>
+            <div>
+              <Typography className={classes.mainBody} variant="h6" component="h4">
+                We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
+              </Typography>
+            </div>
           </div>
-        </div>
+        </Zoom>
         <Grid container justify="space-around" direction="row">
           {matches && (
             <Grid md={4} item className={classes.babyInBasketImage}>
@@ -153,44 +157,52 @@ const NotableFeatures = () => {
 
           <Grid md={4} item container direction="column" justify="center">
             <Grid item>
-              <div className={`${classes.item}`}>
-                {IconPack.shield}
-                <Typography className={`${classes.itemHeading} ${classes[items[0].headStyle]}`} variant="h4">
-                  {items[0].itemHeading}
-                </Typography>
-                <Typography variant="body1">{items[0].itemBody}</Typography>
-              </div>
+              <Zoom>
+                <div className={`${classes.item}`}>
+                  {IconPack.shield}
+                  <Typography className={`${classes.itemHeading} ${classes[items[0].headStyle]}`} variant="h4">
+                    {items[0].itemHeading}
+                  </Typography>
+                  <Typography variant="body1">{items[0].itemBody}</Typography>
+                </div>
+              </Zoom>
             </Grid>
             <Grid item>
-              <div className={`${classes.item} ${classes.pt}`}>
-                {IconPack.bio}
-                <Typography className={`${classes.itemHeading} ${classes[items[1].headStyle]}`} variant="h4">
-                  {items[1].itemHeading}
-                </Typography>
-                <Typography variant="body1">{items[1].itemBody}</Typography>
-              </div>
+              <Zoom>
+                <div className={`${classes.item} ${classes.pt}`}>
+                  {IconPack.bio}
+                  <Typography className={`${classes.itemHeading} ${classes[items[1].headStyle]}`} variant="h4">
+                    {items[1].itemHeading}
+                  </Typography>
+                  <Typography variant="body1">{items[1].itemBody}</Typography>
+                </div>
+              </Zoom>
             </Grid>
           </Grid>
         </Grid>
 
         <Grid className={classes.mt3} container justify="space-around" direction="row-reverse">
           <Grid sm={12} md={4} item>
-            <div className={`${classes.item}`}>
-              {IconPack.special}
-              <Typography className={`${classes.itemHeading} ${classes[items[2].headStyle]}`} variant="h4">
-                {items[2].itemHeading}
-              </Typography>
-              <Typography variant="body1">{items[2].itemBody}</Typography>
-            </div>
+            <Zoom>
+              <div className={`${classes.item}`}>
+                {IconPack.special}
+                <Typography className={`${classes.itemHeading} ${classes[items[2].headStyle]}`} variant="h4">
+                  {items[2].itemHeading}
+                </Typography>
+                <Typography variant="body1">{items[2].itemBody}</Typography>
+              </div>
+            </Zoom>
           </Grid>
           <Grid sm={12} md={4} item>
-            <div className={`${classes.item}`}>
-              {IconPack.bubbles}
-              <Typography className={`${classes.itemHeading} ${classes[items[3].headStyle]}`} variant="h4">
-                {items[3].itemHeading}
-              </Typography>
-              <Typography variant="body1">{items[3].itemBody}</Typography>
-            </div>
+            <Zoom>
+              <div className={`${classes.item}`}>
+                {IconPack.bubbles}
+                <Typography className={`${classes.itemHeading} ${classes[items[3].headStyle]}`} variant="h4">
+                  {items[3].itemHeading}
+                </Typography>
+                <Typography variant="body1">{items[3].itemBody}</Typography>
+              </div>
+            </Zoom>
           </Grid>
         </Grid>
       </div>
