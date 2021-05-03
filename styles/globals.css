@@ -54,7 +54,7 @@ a {
 }
 
 .btn--top-dist {
-  background-color: #21a4c4 !important;
+  background: #21a4c4 !important;
   border-radius: 8px !important;
   width: 105px;
   height: 34px;

@@ -42,7 +42,7 @@ export default function Home() {
       <main className={classes.root}>
         {/* Main landing section begins */}
         <section>
-          {mdUp ? (
+          {/* {mdUp ? (
             <Carousel
               indicatorContainerProps={{
                 style: {
@@ -102,7 +102,8 @@ export default function Home() {
               <ThirdSlide />
               <FourthSlide />
             </Carousel>
-          )}
+          )} */}
+          <FirstSlide />
         </section>
         {/* End of main landing section */}
 

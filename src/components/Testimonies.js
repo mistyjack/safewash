@@ -196,7 +196,7 @@ const Testimonies = () => {
       <div className={classes.videoContainer}>
         <video ref={videoElement} className={classes.videoElement} poster={matches ? "https://ik.imagekit.io/7wpxe2myx/Safewash/videoPoster_L2XoDXSrm.png" : "https://ik.imagekit.io/7wpxe2myx/Safewash/videoPosterSmall_ISE82SuWK.png"}></video>
         <div onClick={handleClick} className={isPlayClicked ? `${classes.playButton} ${classes.dNone}` : classes.playButton}>
-          <img src="https://ik.imagekit.io/7wpxe2myx/Safewash/playButton_B3gx1rPmu.svg" alt="Play button" />
+          <img src="https://ik.imagekit.io/7wpxe2myx/Safewash/playButton_B3gx1rPmu.svg" alt="Play button" width={158} height={97} />
         </div>
       </div>
     </Fragment>
