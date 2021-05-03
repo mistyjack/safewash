@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Fragment } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 import FirstSlide from "../src/components/FirstSlide";
 import SecondSlide from "../src/components/SecondSlide";
 import ThirdSlide from "../src/components/ThirdSlide";
@@ -15,14 +16,12 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
+SwiperCore.use([Autoplay, Navigation, Pagination]);
+
 const useStyles = makeStyles(theme =>
   createStyles({
     root: {
       flexGrow: 1
-    },
-    featureSection: {
-      zIndex: 10,
-      backgroundColor: "#fff"
     }
   })
 );
@@ -108,7 +107,7 @@ clinically safe for babies and children’s health."
               <FourthSlide />
             </Carousel>
           )} */}
-          <Swiper autoplay={true} slidesPerView={1}>
+          <Swiper slidesPerView={1} pagination autoplay navigation>
             <SwiperSlide>
               <FirstSlide />
             </SwiperSlide>

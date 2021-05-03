@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import "swiper/swiper.min.css";
+import "swiper/swiper-bundle.css";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import { Fragment } from "react";
