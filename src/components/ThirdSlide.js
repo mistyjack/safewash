@@ -1,12 +1,15 @@
+import Image from "next/image";
+
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
-      minHeight: "670px",
+      minHeight: "600px",
       [theme.breakpoints.up("md")]: {
         background: "url('/images/slide3.png') top center no-repeat",
         backgroundSize: "cover",
@@ -64,20 +67,22 @@ const useStyles = makeStyles(theme =>
       [theme.breakpoints.up("md")]: {
         left: "10.1rem"
       },
-      [theme.breakpoints.down("sm")]: {
-        left: "2rem"
-      },
-      [theme.breakpoints.down("xs")]: {
-        left: 0
-      },
       zIndex: 10,
-      padding: theme.spacing(2)
+      padding: theme.spacing(3)
+    },
+    babyImageSmallScreen: {
+      position: "absolute",
+      zIndex: 1,
+      right: "0",
+      top: "3.2rem",
+      overflow: "hidden"
     }
   })
 );
 
 const ThirdSlide = () => {
   const classes = useStyles();
+  const matches = useMediaQuery("(min-width:960px)");
 
   return (
     <section className={classes.container}>
@@ -93,6 +98,12 @@ const ThirdSlide = () => {
           Become A Distributor
         </Button>
       </div>
+
+      {!matches && (
+        <div className={classes.babyImageSmallScreen}>
+          <Image src="/images/thirdBaby.png" alt="Third baby" layout="fixed" width={254} height={373} />
+        </div>
+      )}
     </section>
   );
 };

@@ -76,7 +76,7 @@ export default function Distributors() {
         </Grid>
         <Grid xs={12} md={4} item>
           <FormControl className={classes.selectItem} variant="filled">
-            <Select onClick={e => setTown(e.target.value)} labelId="select-town-label" id="select-town" label="select-town" value={town} input={<BigSelect />}>
+            <Select onClick={e => (e.target.value ? setTown(e.target.value) : null)} labelId="select-town-label" id="select-town" label="select-town" value={town} input={<BigSelect />}>
               <MenuItem value="Town">Town</MenuItem>
               <Divider />
               {StatesAndTowns[currentIndex].state.locals.map(item => (

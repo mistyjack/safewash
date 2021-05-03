@@ -30,7 +30,6 @@ const useStyles = makeStyles(theme =>
 export default function Home() {
   const classes = useStyles();
   const mdUp = useMediaQuery("(min-width:960px)");
-  const smUp = useMediaQuery("(min-width:600px)");
 
   return (
     <Fragment>
@@ -43,34 +42,67 @@ export default function Home() {
       <main className={classes.root}>
         {/* Main landing section begins */}
         <section>
-          <Carousel
-            indicatorContainerProps={{
-              style: {
-                position: "absolute",
-                bottom: "10rem",
-                textAlign: "left",
-                marginLeft: "11rem"
-              }
-            }}
-            indicatorIconButtonProps={{
-              style: {
-                color: "transparent",
-                border: "1px solid #FE96C6",
-                marginRight: "5px"
-              }
-            }}
-            activeIndicatorIconButtonProps={{
-              style: {
-                color: "#FE96C6",
-                backgroundColor: "#FE96C6"
-              }
-            }}
-          >
-            <FirstSlide />
-            <SecondSlide />
-            <ThirdSlide />
-            <FourthSlide />
-          </Carousel>
+          {mdUp ? (
+            <Carousel
+              indicatorContainerProps={{
+                style: {
+                  position: "absolute",
+                  bottom: "10rem",
+                  textAlign: "left",
+                  marginLeft: "11.4rem"
+                }
+              }}
+              indicatorIconButtonProps={{
+                style: {
+                  color: "transparent",
+                  border: "1px solid #FE96C6",
+                  marginRight: "5px"
+                }
+              }}
+              activeIndicatorIconButtonProps={{
+                style: {
+                  color: "#FE96C6",
+                  backgroundColor: "#FE96C6"
+                }
+              }}
+            >
+              <FirstSlide />
+              <SecondSlide />
+              <ThirdSlide />
+              <FourthSlide />
+            </Carousel>
+          ) : (
+            <Carousel
+              indicatorContainerProps={{
+                style: {
+                  position: "absolute",
+                  bottom: "6rem",
+                  textAlign: "left",
+                  marginLeft: "1.4rem"
+                }
+              }}
+              indicatorIconButtonProps={{
+                style: {
+                  color: "transparent",
+                  border: "1px solid #FE96C6",
+                  marginRight: "5px",
+                  fontSize: "10px"
+                }
+              }}
+              activeIndicatorIconButtonProps={{
+                style: {
+                  color: "#FE96C6",
+                  backgroundColor: "#FE96C6",
+                  fontSize: "10px"
+                }
+              }}
+            >
+              <FirstSlide />
+              <SecondSlide />
+              <ThirdSlide />
+              <FourthSlide />
+            </Carousel>
+          )}
         </section>
         {/* End of main landing section */}
 

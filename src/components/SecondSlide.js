@@ -1,7 +1,12 @@
+import Image from "next/image";
+
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { Fragment } from "react";
+import IconPack from "../../public/Icons";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -12,6 +17,14 @@ const useStyles = makeStyles(theme =>
         backgroundSize: "cover",
         minHeight: "100vh",
         height: "772px"
+      }
+    },
+    secondSlide: {
+      [theme.breakpoints.down("sm")]: {
+        minHeight: "670px",
+        background: "linear-gradient(212.16deg, rgba(254, 150, 198, 0.7) 10.33%, rgba(254, 150, 198, 0.7) 31.35%, rgba(255, 255, 255, 0) 83.91%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)",
+        opacity: "0.5",
+        transform: "matrix(-1, 0, 0, 1, 0, 0)"
       }
     },
     stylishHeading: {
@@ -65,13 +78,20 @@ const useStyles = makeStyles(theme =>
         right: "1rem"
       },
       zIndex: 10,
-      padding: theme.spacing(2)
+      padding: theme.spacing(3)
+    },
+    babySmallImage: {
+      position: "absolute",
+      right: 0,
+      top: 0,
+      overflow: "hidden"
     }
   })
 );
 
 const SecondSlide = () => {
   const classes = useStyles();
+  const matches = useMediaQuery("(min-width:960px)");
 
   return (
     <section className={classes.container}>
@@ -87,6 +107,60 @@ const SecondSlide = () => {
           Find Distributors Around You?
         </Button>
       </div>
+
+      {!matches && (
+        <Fragment>
+          <div className={classes.secondSlide} />
+          <div className={classes.babySmallImage}>
+            <Image src="/images/mildSmallScreen.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={375} height={372} />
+          </div>
+          <span
+            style={{
+              position: "absolute",
+              top: "5rem",
+              left: "45%"
+            }}
+          >
+            {IconPack.circle}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "15rem",
+              left: "50%"
+            }}
+          >
+            {IconPack.smallCircle}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "8rem",
+              left: "1rem"
+            }}
+          >
+            {IconPack.smallRec}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              bottom: "13rem",
+              right: "3rem"
+            }}
+          >
+            {IconPack.smallRec}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              bottom: "13.3rem",
+              left: "1rem"
+            }}
+          >
+            {IconPack.mdRec}
+          </span>
+        </Fragment>
+      )}
     </section>
   );
 };
