@@ -37,6 +37,14 @@ export default function Home() {
       <Head>
         <title>Safewash</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          key="description"
+          content="At Safewash, we are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap 
+clinically safe for babies and children’s health."
+        />
+        <meta property="og:title" content="Home | Safewash" key="og:title" />
+        <meta property="og:image" key="og:image" content="https://ik.imagekit.io/7wpxe2myx/Safewash/videoPosterSmall_ISE82SuWK.png"></meta>
       </Head>
 
       <main className={classes.root}>

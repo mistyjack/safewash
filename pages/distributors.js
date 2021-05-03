@@ -163,11 +163,19 @@ export default function Distributors() {
       <Head>
         <title>Safewash</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          key="description"
+          content="At Safewash, we are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap 
+clinically safe for babies and children’s health."
+        />
+        <meta property="og:title" content="Distributors | Safewash" key="og:title" />
+        <meta property="og:image" key="og:image" content="https://ik.imagekit.io/7wpxe2myx/Safewash/videoPosterSmall_ISE82SuWK.png"></meta>
       </Head>
 
       <main className={classes.root}>
         <div className={classes.bgImage}>
-          <Image src="/images/dist.png" layout="fixed" width={522} height={606} />
+          <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/dist_hNh2C_tN3.png" layout="fixed" width={522} height={606} />
         </div>
         <div className={classes.blueBg}>{IconPack.blueBg}</div>
         <div className={classes.container}>
