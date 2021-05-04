@@ -12,19 +12,13 @@ const useStyles = makeStyles(theme =>
   createStyles({
     container: {
       minHeight: "670px",
+      background: "url('/sl2.png') top center no-repeat",
+      backgroundSize: "cover",
       [theme.breakpoints.up("md")]: {
         background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/slide2_oYHYqJc9-.png') top center no-repeat",
         backgroundSize: "cover",
         minHeight: "100vh",
         height: "772px"
-      }
-    },
-    secondSlide: {
-      [theme.breakpoints.down("sm")]: {
-        minHeight: "670px",
-        background: "linear-gradient(212.16deg, rgba(254, 150, 198, 0.7) 10.33%, rgba(254, 150, 198, 0.7) 31.35%, rgba(255, 255, 255, 0) 83.91%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)",
-        opacity: "0.5",
-        transform: "matrix(-1, 0, 0, 1, 0, 0)"
       }
     },
     stylishHeading: {
@@ -72,19 +66,13 @@ const useStyles = makeStyles(theme =>
     },
     textContent: {
       position: "absolute",
-      bottom: "0",
+      bottom: "-0.75rem",
       transform: "translateY(-50%)",
       [theme.breakpoints.up("md")]: {
         right: "1rem"
       },
       zIndex: 10,
       padding: theme.spacing(3)
-    },
-    babySmallImage: {
-      position: "absolute",
-      right: 0,
-      top: 0,
-      overflow: "hidden"
     }
   })
 );
@@ -110,19 +98,6 @@ const SecondSlide = () => {
 
       {!matches && (
         <Fragment>
-          <div className={classes.secondSlide} />
-          <div className={classes.babySmallImage}>
-            <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/mildSmallScreen_uZm94hUOUgS.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={375} height={372} />
-          </div>
-          <span
-            style={{
-              position: "absolute",
-              top: "5rem",
-              left: "45%"
-            }}
-          >
-            {IconPack.circle}
-          </span>
           <span
             style={{
               position: "absolute",

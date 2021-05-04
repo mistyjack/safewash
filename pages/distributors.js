@@ -47,7 +47,9 @@ const useStyles = makeStyles(theme =>
       maxWidth: "850px",
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing("231px", 3, 0)
-      }
+      },
+      position: "relative",
+      zIndex: 10
     },
     heading: {
       fontFamily: "BR Firma",
@@ -70,7 +72,7 @@ const useStyles = makeStyles(theme =>
       position: "relative",
       maxWidth: "967px",
       margin: theme.spacing("227px", "auto", "350px"),
-      position: "relative"
+      zIndex: 10
     },
     mb: {
       marginBottom: "126px"
@@ -112,7 +114,8 @@ const useStyles = makeStyles(theme =>
       position: "absolute",
       top: "-130px",
       left: "50px",
-      color: "#483D3F"
+      color: "#483D3F",
+      zIndex: 10
     },
     viewDist: {
       fontFamily: "BR Firma",
@@ -243,6 +246,58 @@ clinically safe for babies and children’s health."
             </IconButton>
           </Typography>
         </div>
+
+        {!matches && (
+          <Fragment>
+            <span
+              style={{
+                position: "absolute",
+                top: "5rem",
+                left: "45%"
+              }}
+            >
+              {IconPack.circle}
+            </span>
+            <span
+              style={{
+                position: "absolute",
+                top: "15rem",
+                left: "50%"
+              }}
+            >
+              {IconPack.smallCircle}
+            </span>
+            <span
+              style={{
+                position: "absolute",
+                top: "8rem",
+                left: "1rem"
+              }}
+            >
+              {IconPack.smallRec}
+            </span>
+            <span
+              style={{
+                position: "absolute",
+                top: "15%",
+                right: "3rem",
+                zIndex: 0
+              }}
+            >
+              {IconPack.smallRec}
+            </span>
+            <span
+              style={{
+                position: "absolute",
+                top: "17.8%",
+                left: "30%",
+                zIndex: 0
+              }}
+            >
+              {IconPack.mdRec}
+            </span>
+          </Fragment>
+        )}
       </main>
     </Fragment>
   );

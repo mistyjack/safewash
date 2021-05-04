@@ -19,6 +19,16 @@ const useStyles = makeStyles(theme =>
         height: "772px"
       }
     },
+    fourthSlide1: {
+      minHeight: "600px",
+      width: "100vw",
+      background: "linear-gradient(192.48deg, rgba(33, 164, 196, 0.24) 1.26%, rgba(255, 255, 255, 0) 30.65%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);",
+      opacity: "0.5",
+      transform: "matrix(-1, 0, 0, 1, 0, 0)",
+      position: "absolute",
+      right: 0,
+      top: 0
+    },
     stylishHeading: {
       fontSize: 50,
       [theme.breakpoints.down("sm")]: {
@@ -104,6 +114,7 @@ const FourthSlide = () => {
 
       {!matches && (
         <Fragment>
+          <div className={classes.fourthSlide1} />
           <div className={classes.fourthSlide}>
             <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/fourthSlideSmallScreen_8MrB4y7Ag.png" alt="BQ Safewash baby 4 hero 1" layout="fixed" width={375} height={317} />
           </div>
