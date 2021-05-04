@@ -130,9 +130,9 @@ function Header(props) {
         aria-label="main navigation tabs"
       >
         <Tab classes={{ root: classes.tab }} label="Home" component={Link} href="/" {...allyProps(0)} />
-        <Tab label="About Us" component={Link} href="/about-us" {...allyProps(1)} />
-        <Tab label="Become a Distributor" component={Link} href="/become-a-distributor" {...allyProps(2)} />
-        <Tab label="Contact Us" component={Link} href="/contact-us" {...allyProps(3)} />
+        <Tab label="About Us" component={Link} href="/#about-us" {...allyProps(1)} />
+        <Tab label="Become a Distributor" component={Link} href="/#top-distributors" {...allyProps(2)} />
+        <Tab label="Contact Us" component={Link} href="/#contact-us" {...allyProps(3)} />
       </Tabs>
     </Fragment>
   );
@@ -152,9 +152,9 @@ function Header(props) {
       <List>
         {[
           { label: "Home", link: "/" },
-          { label: "About Us", link: "/about" },
-          { label: "Become a Distributor", link: "/become-a-distributor" },
-          { label: "Contact Us", link: "/contact-us" }
+          { label: "About Us", link: "#about-us" },
+          { label: "Become a Distributor", link: "#top-distributors" },
+          { label: "Contact Us", link: "#contact-us" }
         ].map((item, index) => (
           <ListItem key={`${index}: ${item}`} className={classes.listItem} button component={Link} href={item.link}>
             <ListItemText

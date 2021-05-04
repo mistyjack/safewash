@@ -67,31 +67,31 @@ clinically safe for babies and children’s health."
         {/* End of main landing section */}
 
         {/* Notable features section begins */}
-        <section>
+        <section id="featuress">
           <NotableFeatures />
         </section>
         {/* End of notable features section */}
 
         {/* About us section begins */}
-        <section>
+        <section id="about-us">
           <AboutUs />
         </section>
         {/* End of About us section */}
 
         {/* Top distributors section begins */}
-        <section style={{ position: "relative" }}>
+        <section id="top-distributors" style={{ position: "relative" }}>
           <TopDistributors />
         </section>
         {/* End of Top distributors section */}
 
         {/* Contact us section begins */}
-        <section>
+        <section id="contact-us">
           <ContactUs />
         </section>
         {/* End of Contact us section */}
 
         {/* Testimonies section begins */}
-        <section>
+        <section id="testimonies">
           <Testimonies />
         </section>
         {/* End of Testimonies section */}

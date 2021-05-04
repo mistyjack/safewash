@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
@@ -87,9 +89,11 @@ const FirstSlide = () => {
         <Typography className={classes.blockHeading} variant="h1" gutterBottom>
           Babies and Children Clothings
         </Typography>
-        <Button className="btn" variant="contained" color="secondary" disableElevation>
-          Find Distributors Around You?
-        </Button>
+        <Link href="/distributors">
+          <Button className="btn" variant="contained" color="secondary" disableElevation>
+            Find Distributors Around You?
+          </Button>
+        </Link>
       </div>
 
       {!matches && (

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -94,9 +95,11 @@ const ThirdSlide = () => {
         <Typography className={classes.blockHeading} variant="h1" gutterBottom>
           Zero Skin Irritations
         </Typography>
-        <Button className="btn" variant="contained" color="secondary" disableElevation>
-          Become A Distributor
-        </Button>
+        <Link href="/distributors">
+          <Button className="btn" variant="contained" color="secondary" disableElevation>
+            Become A Distributor
+          </Button>
+        </Link>
       </div>
 
       {!matches && (
