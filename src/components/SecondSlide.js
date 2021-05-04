@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme =>
   createStyles({
     container: {
       minHeight: "670px",
-      background: "url('/sl2.png') top center no-repeat",
+      background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/sl2__oMUKSKeC5.png') top center no-repeat",
       backgroundSize: "cover",
       [theme.breakpoints.up("md")]: {
         background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/slide2_oYHYqJc9-.png') top center no-repeat",
