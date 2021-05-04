@@ -88,6 +88,7 @@ const useStyles = makeStyles(theme =>
     },
     videoContainer: {
       textAlign: "center",
+      zIndex: 10,
       position: "relative",
       marginTop: "85px",
       marginBottom: "114px",

@@ -95,7 +95,7 @@ function ElevationScroll(props) {
   });
 
   return cloneElement(children, {
-    elevation: trigger ? 0 : 0
+    elevation: trigger ? 1 : 0
   });
 }
 
@@ -129,7 +129,7 @@ function Header(props) {
         onChange={handleChange}
         aria-label="main navigation tabs"
       >
-        <Tab classes={{ root: classes.tab }} label="Home" component={Link} href="/" {...allyProps(0)} />
+        <Tab classes={{ root: classes.tab }} label="Home" component={Link} href="/#home" {...allyProps(0)} />
         <Tab label="About Us" component={Link} href="/#about-us" {...allyProps(1)} />
         <Tab label="Become a Distributor" component={Link} href="/#top-distributors" {...allyProps(2)} />
         <Tab label="Contact Us" component={Link} href="/#contact-us" {...allyProps(3)} />
@@ -151,7 +151,7 @@ function Header(props) {
       <span className={classes.mdRec}>{IconPack.mdRec}</span>
       <List>
         {[
-          { label: "Home", link: "/" },
+          { label: "Home", link: "#home" },
           { label: "About Us", link: "#about-us" },
           { label: "Become a Distributor", link: "#top-distributors" },
           { label: "Contact Us", link: "#contact-us" }

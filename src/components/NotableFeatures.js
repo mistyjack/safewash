@@ -17,7 +17,8 @@ const useStyles = makeStyles(theme =>
       backgroundSize: "cover",
       [theme.breakpoints.up("md")]: {
         marginTop: "153px",
-        background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/notable_jlUeoeq96.png') top center no-repeat"
+        background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/notable_jlUeoeq96.png') top center no-repeat",
+        backgroundSize: "cover"
       }
     },
     babyInBasketImage: {

@@ -48,7 +48,7 @@ clinically safe for babies and children’s health."
 
       <main className={classes.root}>
         {/* Main landing section begins */}
-        <section>
+        <section id="home">
           <Swiper slidesPerView={1} pagination autoplay>
             <SwiperSlide>
               <FirstSlide />

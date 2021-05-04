@@ -85,11 +85,11 @@ const useStyles = makeStyles(theme =>
       top: "0",
       left: "0",
       zIndex: 0,
-      maxWidth: "100vw",
-      overflow: "hidden",
       [theme.breakpoints.up("md")]: {
         top: "-12rem",
-        left: "4rem"
+        left: "4rem",
+        overflow: "hidden",
+        maxWidth: "100% !important"
       }
     }
   })
@@ -130,7 +130,7 @@ const TopDistributors = () => {
         </Hidden>
       </div>
       <span className={classes.backgrd}>
-        <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/distBgrd_sQvnfOu2Axs.png" layout="fixed" width={1029} height={1109} alt="Distributors bgrd" />
+        <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/distBgrd_sQvnfOu2Axs.png" layout="intrinsic" width={1029} height={1109} alt="Distributors bgrd" />
       </span>
       <Grid className={classes.container} container direction="row" justify="space-around">
         {items.map(item => (
