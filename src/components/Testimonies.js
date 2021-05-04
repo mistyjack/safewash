@@ -123,6 +123,18 @@ const useStyles = makeStyles(theme =>
     },
     dNone: {
       display: "none"
+    },
+    backgrd: {
+      position: "absolute",
+      top: "8rem",
+      left: "0",
+      zIndex: 0,
+      maxWidth: "100vw",
+      overflow: "hidden"
+    },
+    gridCont: {
+      position: "relative",
+      zIndex: 10
     }
   })
 );
@@ -162,7 +174,7 @@ const Testimonies = () => {
   };
 
   return (
-    <Fragment>
+    <div style={{ position: "relative" }}>
       <CssBaseline />
       <div className={classes.headingTexts}>
         <Zoom>
@@ -179,7 +191,7 @@ const Testimonies = () => {
 
       <Grid className={classes.container} container direction="row" justify="space-around">
         {items.map(item => (
-          <Grid key={item.title + " " + item.imageSrc} item>
+          <Grid className={classes.gridCont} key={item.title + " " + item.imageSrc} item>
             <Zoom>
               <Paper className={item.style ? `${classes.item} ${classes.mb}` : classes.item} elevation={0}>
                 <div className={classes.image}>
@@ -204,10 +216,63 @@ const Testimonies = () => {
       <div className={classes.videoContainer}>
         <video ref={videoElement} className={classes.videoElement} poster={matches ? "https://ik.imagekit.io/7wpxe2myx/Safewash/videoPoster_L2XoDXSrm.png" : "https://ik.imagekit.io/7wpxe2myx/Safewash/videoPosterSmall_ISE82SuWK.png"}></video>
         <div onClick={handleClick} className={isPlayClicked ? `${classes.playButton} ${classes.dNone}` : classes.playButton}>
-          <img src="https://ik.imagekit.io/7wpxe2myx/Safewash/playButton_B3gx1rPmu.svg" alt="Play button" width={158} height={97} />
+          <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/playButton_B3gx1rPmu.svg" layout="fixed" alt="Play button" width={158} height={97} />
         </div>
       </div>
-    </Fragment>
+
+      {!matches && (
+        <Fragment>
+          <span className={classes.backgrd}>
+            <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/distBgrd_sQvnfOu2Axs.png" layout="fixed" width={1029} height={1109} alt="Distributors bgrd" />
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "13.5%",
+              left: "45%"
+            }}
+          >
+            {IconPack.circle}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "30%",
+              right: "31px"
+            }}
+          >
+            {IconPack.smallRec}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "40%",
+              right: "59px"
+            }}
+          >
+            {IconPack.circle}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "53%",
+              left: "21px"
+            }}
+          >
+            {IconPack.mdRec}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              bottom: "17.5%",
+              right: "75px"
+            }}
+          >
+            {IconPack.mdRec}
+          </span>
+        </Fragment>
+      )}
+    </div>
   );
 };
 

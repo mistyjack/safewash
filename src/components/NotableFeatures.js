@@ -13,10 +13,11 @@ import Zoom from "react-reveal/Zoom";
 const useStyles = makeStyles(theme =>
   createStyles({
     container: {
-      background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/notableFeatures_k-LNpHirH.png') top center no-repeat",
+      background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/notableFeaturesSmall_BfHDuMzYuWH.png') top center no-repeat",
       backgroundSize: "cover",
       [theme.breakpoints.up("md")]: {
-        marginTop: "153px"
+        marginTop: "153px",
+        background: "url('https://ik.imagekit.io/7wpxe2myx/Safewash/notable_jlUeoeq96.png') top center no-repeat"
       }
     },
     babyInBasketImage: {
@@ -142,7 +143,7 @@ const NotableFeatures = () => {
               Notable Features
             </Typography>
             <div>
-              <Typography className={classes.mainBody} variant="h6" component="h4">
+              <Typography className={classes.mainBody} variant="h6" component="h3">
                 We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
               </Typography>
             </div>

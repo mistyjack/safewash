@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import IconPack from "../../public/Icons";
 
 import Zoom from "react-reveal/Zoom";
 
@@ -23,6 +24,7 @@ const useStyles = makeStyles(theme =>
       maxWidth: "100%",
       overflow: "hidden",
       marginLeft: "auto",
+      padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0, 4)
       }
@@ -45,7 +47,7 @@ const useStyles = makeStyles(theme =>
       marginRight: "auto",
       padding: theme.spacing(2),
       [theme.breakpoints.up("md")]: {
-        padding: theme.spacing(0),
+        paddingRight: 0,
         marginLeft: "auto"
       }
     },
@@ -65,7 +67,7 @@ const AboutUs = () => {
   const matches = useMediaQuery("(min-width:960px)");
 
   return (
-    <Fragment>
+    <div style={{ position: "relative" }}>
       <CssBaseline />
 
       <Grid className={classes.container} container direction="row-reverse" alignItems="center" justify="space-between">
@@ -91,7 +93,47 @@ const AboutUs = () => {
           </Zoom>
         </Grid>
       </Grid>
-    </Fragment>
+      {!matches && (
+        <Fragment>
+          <span
+            style={{
+              position: "absolute",
+              top: "33.5%",
+              left: "20px"
+            }}
+          >
+            {IconPack.smallRec}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "53.5%",
+              right: "36px"
+            }}
+          >
+            {IconPack.smallRec}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "118px",
+              right: "49px"
+            }}
+          >
+            {IconPack.smallRec}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "78px",
+              left: "66px"
+            }}
+          >
+            {IconPack.mdRec}
+          </span>
+        </Fragment>
+      )}
+    </div>
   );
 };
 

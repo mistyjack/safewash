@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Fragment } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
+import SwiperCore, { Autoplay, Pagination } from "swiper";
 import FirstSlide from "../src/components/FirstSlide";
 import SecondSlide from "../src/components/SecondSlide";
 import ThirdSlide from "../src/components/ThirdSlide";
@@ -49,64 +49,6 @@ clinically safe for babies and children’s health."
       <main className={classes.root}>
         {/* Main landing section begins */}
         <section>
-          {/* {mdUp ? (
-            <Carousel
-              indicatorContainerProps={{
-                style: {
-                  position: "absolute",
-                  bottom: "10rem",
-                  textAlign: "left",
-                  marginLeft: "11.4rem"
-                }
-              }}
-              indicatorIconButtonProps={{
-                style: {
-                  color: "transparent",
-                  border: "1px solid #FE96C6",
-                  marginRight: "5px"
-                }
-              }}
-              activeIndicatorIconButtonProps={{
-                style: {
-                  color: "#FE96C6",
-                  backgroundColor: "#FE96C6"
-                }
-              }}
-            >
-              <FirstSlide />
-              <SecondSlide />
-              <ThirdSlide />
-              <FourthSlide />
-            </Carousel>
-          ) : (
-            <Carousel
-              indicatorContainerProps={{
-                style: {
-                  position: "absolute",
-                  bottom: "6rem",
-                  textAlign: "left",
-                  marginLeft: "1.4rem"
-                }
-              }}
-              indicatorIconButtonProps={{
-                style: {
-                  color: "transparent",
-                  border: "1px solid #FE96C6",
-                  marginRight: "5px",
-                  fontSize: "10px"
-                }
-              }}
-              activeIndicatorIconButtonProps={{
-                style: {
-                  color: "#FE96C6",
-                  backgroundColor: "#FE96C6",
-                  fontSize: "10px"
-                }import Carousel from "react-material-ui-carousel";ide />
-              <SecondSlide />
-              <ThirdSlide />
-              <FourthSlide />
-            </Carousel>
-          )} */}
           <Swiper slidesPerView={1} pagination autoplay>
             <SwiperSlide>
               <FirstSlide />
@@ -137,7 +79,7 @@ clinically safe for babies and children’s health."
         {/* End of About us section */}
 
         {/* Top distributors section begins */}
-        <section>
+        <section style={{ position: "relative" }}>
           <TopDistributors />
         </section>
         {/* End of Top distributors section */}

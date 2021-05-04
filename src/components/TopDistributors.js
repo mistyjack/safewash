@@ -8,6 +8,8 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import IconPack from "../../public/Icons";
 
 import Zoom from "react-reveal/Zoom";
 
@@ -26,6 +28,8 @@ const useStyles = makeStyles(theme =>
       marginTop: "-45px"
     },
     headingTexts: {
+      position: "relative",
+      zIndex: 10,
       textAlign: "center",
       maxWidth: "816px",
       padding: theme.spacing(0, 2),
@@ -78,16 +82,14 @@ const useStyles = makeStyles(theme =>
     },
     backgrd: {
       position: "absolute",
-      background: "#FE96C6",
-      filter: "blur(451px)",
-      width: "50%",
-      height: "285px",
-      left: 0,
-      top: 0,
+      top: "0",
+      left: "0",
       zIndex: 0,
+      maxWidth: "100vw",
+      overflow: "hidden",
       [theme.breakpoints.up("md")]: {
-        width: "350px",
-        height: "285px"
+        top: "-12rem",
+        left: "4rem"
       }
     }
   })
@@ -95,6 +97,7 @@ const useStyles = makeStyles(theme =>
 
 const TopDistributors = () => {
   const classes = useStyles();
+  const matches = useMediaQuery("(min-width:960px)");
 
   const items = [
     { imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/kudiratB_BjPy7UrJB.png", imageAlt: "Kudrat Bakare Passport", name: "Kudirat Bakare", address: "Surulere, Lagos State.", phone: "09030267295", style: "mb" },
@@ -103,7 +106,7 @@ const TopDistributors = () => {
   ];
 
   return (
-    <Fragment>
+    <div style={{ position: "relative" }}>
       <CssBaseline />
       <div className={classes.headingTexts}>
         <Zoom>
@@ -126,7 +129,9 @@ const TopDistributors = () => {
           </Zoom>
         </Hidden>
       </div>
-
+      <span className={classes.backgrd}>
+        <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/distBgrd_sQvnfOu2Axs.png" layout="fixed" width={1029} height={1109} alt="Distributors bgrd" />
+      </span>
       <Grid className={classes.container} container direction="row" justify="space-around">
         {items.map(item => (
           <Grid key={item.imageAlt} item>
@@ -152,7 +157,6 @@ const TopDistributors = () => {
             </Paper>
           </Grid>
         ))}
-        <div className={classes.backgrd} />
       </Grid>
 
       <div className={classes.headingTexts}>
@@ -170,7 +174,66 @@ const TopDistributors = () => {
           </Zoom>
         </Hidden>
       </div>
-    </Fragment>
+
+      {!matches && (
+        <Fragment>
+          <span
+            style={{
+              position: "absolute",
+              top: "-63px",
+              left: "45%"
+            }}
+          >
+            {IconPack.circle}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "-73.4px",
+              left: "1rem"
+            }}
+          >
+            {IconPack.smallRec}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "120px",
+              right: "39.46px"
+            }}
+          >
+            {IconPack.smallRec}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              top: "40%",
+              left: "21px"
+            }}
+          >
+            {IconPack.mdRec}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              bottom: "25%",
+              right: "80px"
+            }}
+          >
+            {IconPack.mdRec}
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              bottom: "25%",
+              right: "41px"
+            }}
+          >
+            {IconPack.smallRec}
+          </span>
+        </Fragment>
+      )}
+    </div>
   );
 };
 

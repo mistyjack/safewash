@@ -1,6 +1,6 @@
 import { Fragment } from "react";
+import Image from "next/image";
 import IconPack from "../../public/Icons";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -65,7 +65,7 @@ const Footer = () => {
         <Grid className={classes.container} container direction="row" justify="space-between">
           {matches ? (
             <Grid xs={6} md={3} item>
-              <LazyLoadImage alt="Global image logo" height={57} src="https://ik.imagekit.io/7wpxe2myx/Safewash/global_CSZGulErxV2.svg" width={150} />
+              <Image alt="Global image logo" height={57} layout="fixed" src="https://ik.imagekit.io/7wpxe2myx/Safewash/global_CSZGulErxV2.svg" width={150} />
             </Grid>
           ) : null}
           <Grid className={classes.mb} xs={6} md={3} item>
@@ -103,7 +103,7 @@ const Footer = () => {
           </Grid>
           {!matches ? (
             <Grid className={classes.mbLarge} xs={6} md={3} item>
-              <LazyLoadImage alt="Global image logo" height={57} src="https://ik.imagekit.io/7wpxe2myx/Safewash/global_CSZGulErxV2.svg" width={150} />
+              <Image alt="Global image logo" layout="fixed" height={57} src="https://ik.imagekit.io/7wpxe2myx/Safewash/global_CSZGulErxV2.svg" width={150} />
             </Grid>
           ) : null}
         </Grid>
