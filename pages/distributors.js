@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Fragment, useState } from "react";
 import TownSelect from "../src/components/TownSelect";
 import IconPack from "../public/Icons";
+import Distributor from "../public/distributors";
+import Fade from "react-reveal/Fade";
 
 import { createStyles, makeStyles, withStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -82,10 +84,12 @@ const useStyles = makeStyles(theme =>
       width: "280px",
       height: "360px",
       position: "relative",
-      background: "#FFFFFF",
       boxShadow: "0px 4px 31px #F4F4F9",
       borderRadius: "12px",
-      zIndex: 10
+      zIndex: 10,
+      marginBottom: "126px",
+      paddingLeft: theme.spacing(2),
+      paddingRight: theme.spacing(2)
     },
     name: {
       color: theme.palette.secondary.main,
@@ -102,6 +106,7 @@ const useStyles = makeStyles(theme =>
     },
     image: {
       position: "absolute",
+      zIndex: 10,
       left: "40px",
       top: "-47px"
     },
@@ -135,8 +140,28 @@ const useStyles = makeStyles(theme =>
     },
     bgImage: {
       position: "absolute",
+      zIndex: "1",
       top: 0,
       right: 0
+    },
+    bgImageLabel: {
+      position: "absolute",
+      zIndex: 10,
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      lineHeight: "70.5px",
+      fontStyle: "normal",
+      color: "rgba(0,0,0,0.8)",
+      fontFamily: "Cocon",
+      fontWeight: 700,
+      fontSize: "96px"
+    },
+    bg: {
+      position: "absolute",
+      left: "49px",
+      zIndex: 5,
+      top: "-47px"
     },
     blueBg: {
       position: "absolute",
@@ -153,12 +178,21 @@ export default function Distributors() {
   const classes = useStyles();
   const matches = useMediaQuery("(min-width:960px)");
   const [sort, setSort] = useState("Sort");
+  const [showDistributors, setShowDistributors] = useState(true);
+  const [showSearchResult, setShowSearchResult] = useState(false);
+  const [state, setState] = useState("");
 
-  const items = [
-    { imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/kudiratB_BjPy7UrJB.png", imageAlt: "Kudrat Bakare Passport", name: "Kudirat Bakare", address: "Surulere, Lagos State.", phone: "09030267295", style: "mb" },
-    { imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/ibikunleVentures_VZEzX-x19O7.png", imageAlt: "Ibikunle Ventures Passport", name: "Ibikunle Ventures", address: "Surulere, Lagos State.", phone: "09030267295", style: "mb" },
-    { imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/rosemerryShop_A8S6SjIajU.png", imageAlt: "Rosemerry’s Shop Passport", name: "Rosemerry’s Shop", address: "Surulere, Lagos State.", phone: "09030267295" }
+  const backgroundOption = [
+    { border: "https://ik.imagekit.io/7wpxe2myx/Safewash/Ellipse_30_58-B4n-kJ4.svg", color: "#6EB245" },
+    { border: "https://ik.imagekit.io/7wpxe2myx/Safewash/Ellipse_29_bDZq0f9vU.svg", color: "#21A4C4" },
+    { border: "https://ik.imagekit.io/7wpxe2myx/Safewash/Ellipse_28_gCfYEuGOc9d.svg", color: "#DB99CD" }
   ];
+
+  const handleSearch = (e, location) => {
+    setState(location);
+    setShowSearchResult(true);
+    setShowDistributors(false);
+  };
 
   return (
     <Fragment>
@@ -188,63 +222,113 @@ clinically safe for babies and children’s health."
               <Select onClick={e => (e.target.value ? setSort(e.target.value) : null)} labelId="sort-select-label" id="sort-select" label="sort" value={sort} input={<SmallSelect />}>
                 <MenuItem value="Sort">Sort</MenuItem>
                 <Divider />
-                <MenuItem value="sort1">sort1</MenuItem>
-                <MenuItem value="sort2">sort2</MenuItem>
-                <MenuItem value="sort3">sort3</MenuItem>
+                <MenuItem value="sort1">By state</MenuItem>
+                <MenuItem value="sort2">By town</MenuItem>
               </Select>
             </FormControl>
           </Typography>
-          <TownSelect />
+          {(sort == "sort1" || sort == "sort2") && <TownSelect search={handleSearch} />}
         </div>
 
         <div className={classes.itemContainer}>
-          <Typography className={classes.searchResult} variant="h6">
-            Search result{" "}
-            {matches ? (
-              <IconButton>
+          {showSearchResult && (
+            <Typography className={classes.searchResult} variant="h6">
+              Search result{" "}
+              {matches ? (
+                <IconButton>
+                  <span className="material-icons" aria-hidden="true">
+                    Arrow Forward Icon
+                  </span>
+                  <ArrowForwardIcon />
+                </IconButton>
+              ) : (
+                <IconButton>
+                  <span className="material-icons" aria-hidden="true">
+                    Arrow Downard Icon
+                  </span>
+                  <ArrowDownwardIcon />
+                </IconButton>
+              )}
+            </Typography>
+          )}
+
+          {showDistributors && (
+            <Grid container direction="row" justify="space-around">
+              {Distributor.map(item => (
+                <Grid key={item.username} item>
+                  <Fade>
+                    <Paper className={classes.item} elevation={1}>
+                      <div className={classes.image}>
+                        <Image src={backgroundOption[Math.floor(Math.random() * 3)].border} alt={item.username} layout="fixed" width={202} height={188} />
+                        <span className={classes.bgImageLabel}>{item.username[0] + item.username[1]}</span>
+                      </div>
+                      <div className={classes.bg}>
+                        <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/circle_cmEMMl8eQ1t.png" alt="Background" layout="fixed" width={188} height={188} />
+                      </div>
+                      <Typography className={classes.name} variant="h4">
+                        {item.username}
+                      </Typography>
+                      <Typography className={classes.address} variant="h5">
+                        {item.address} <br /> {item.phone}
+                      </Typography>
+                      <a href={`tel:+${item.phone}`}>
+                        <Button className="btn btn--top-dist" variant="contained" color="secondary" disableElevation>
+                          Contact
+                        </Button>
+                      </a>
+                    </Paper>
+                  </Fade>
+                </Grid>
+              ))}
+            </Grid>
+          )}
+
+          {showSearchResult && state && (
+            <Grid container direction="row" justify="space-around">
+              {Distributor.filter(item => item.state == state).map(item => (
+                <Grid key={item.username} item>
+                  <Fade>
+                    <Paper className={classes.item} elevation={1}>
+                      <div className={classes.image}>
+                        <Image src={backgroundOption[Math.floor(Math.random() * 3)].border} alt={item.username} layout="fixed" width={202} height={188} />
+                        <span className={classes.bgImageLabel}>{item.username[0] + item.username[1]}</span>
+                      </div>
+                      <div className={classes.bg}>
+                        <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/circle_cmEMMl8eQ1t.png" alt="Background" layout="fixed" width={188} height={188} />
+                      </div>
+                      <Typography className={classes.name} variant="h4">
+                        {item.username}
+                      </Typography>
+                      <Typography className={classes.address} variant="h5">
+                        {item.address} <br /> {item.phone}
+                      </Typography>
+                      <Button className="btn btn--top-dist" variant="contained" color="secondary" disableElevation>
+                        Contact
+                      </Button>
+                    </Paper>
+                  </Fade>
+                </Grid>
+              ))}
+            </Grid>
+          )}
+
+          {showSearchResult && (
+            <Typography className={classes.viewDist} variant="h6">
+              View More Distributors{" "}
+              <IconButton
+                onClick={e => {
+                  setShowDistributors(true);
+                  setShowSearchResult(false);
+                }}
+                className={classes.blueIcon}
+              >
                 <span className="material-icons" aria-hidden="true">
                   Arrow Forward Icon
                 </span>
                 <ArrowForwardIcon />
               </IconButton>
-            ) : (
-              <IconButton>
-                <span className="material-icons" aria-hidden="true">
-                  Arrow Downard Icon
-                </span>
-                <ArrowDownwardIcon />
-              </IconButton>
-            )}
-          </Typography>
-          <Grid container direction="row" justify="space-around">
-            {items.map(item => (
-              <Grid key={item.imageAlt} item>
-                <Paper className={item.style ? `${classes.item} ${classes.mb}` : classes.item} elevation={0}>
-                  <div className={classes.image}>
-                    <Image src={item.imageSrc} alt={item.imageAlt} layout="fixed" width={202} height={188} />
-                  </div>
-                  <Typography className={classes.name} variant="h4">
-                    {item.name}
-                  </Typography>
-                  <Typography className={classes.address} variant="h5">
-                    {item.address} <br /> {item.phone}
-                  </Typography>
-                  <Button className="btn btn--top-dist" variant="contained" color="secondary" disableElevation>
-                    Contact
-                  </Button>
-                </Paper>
-              </Grid>
-            ))}
-          </Grid>
-          <Typography className={classes.viewDist} variant="h6">
-            View More Distributors{" "}
-            <IconButton className={classes.blueIcon}>
-              <span className="material-icons" aria-hidden="true">
-                Arrow Forward Icon
-              </span>
-              <ArrowForwardIcon />
-            </IconButton>
-          </Typography>
+            </Typography>
+          )}
         </div>
 
         {!matches && (

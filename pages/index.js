@@ -67,7 +67,7 @@ clinically safe for babies and children’s health."
         {/* End of main landing section */}
 
         {/* Notable features section begins */}
-        <section id="featuress">
+        <section id="features">
           <NotableFeatures />
         </section>
         {/* End of notable features section */}
