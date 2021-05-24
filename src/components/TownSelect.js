@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme =>
   })
 );
 
-export default function Distributors() {
+export default function Distributors({ search }) {
   const classes = useStyles();
   const [state, setState] = useState("State");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -57,6 +57,7 @@ export default function Distributors() {
     a ? setCurrentIndex(parseInt(a[a.length - 1])) : null;
     setTown("Town");
   };
+
   return (
     <Fragment>
       <CssBaseline />
@@ -88,7 +89,7 @@ export default function Distributors() {
           </FormControl>
         </Grid>
         <Grid xs={12} md={3} item>
-          <Button disableElevation className={classes.btn} variant="contained" color="secondary">
+          <Button onClick={e => search(e, state)} disableElevation className={classes.btn} variant="contained" color="secondary">
             Search
           </Button>
         </Grid>

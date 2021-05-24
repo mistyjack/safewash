@@ -83,7 +83,7 @@ const AboutUs = () => {
           </Zoom>
           <Zoom>
             <Typography className={classes.bodyText} variant="h6" component="h4">
-              We use our knowledge and expertise to provide the most effecient, effective and environmentally friendly cleaning possible. Having in mind the daily increase in percentage of children cancer patients world wide, skin reactions caused by harmful chemicals, high priced soaps leading to parents using products not ideal for children.
+              BQ GLOBAL SOLUTIONS LIMITED is an innovative detergent company with a primary product called BQSAFEWASH; a healthy liquid laundry detergent, specifically formulated for babies and children with great concern for the African child. Having in mind the daily increase in percentage of children cancer patients world wide, skin reactions caused by harmful chemicals, high priced soaps leading to parents using products not ideal for their children. With our knowledge and expertise we are able to provide the most efficient, effective and environmentally friendly laundry solution for every home.
             </Typography>
           </Zoom>
           <Zoom>

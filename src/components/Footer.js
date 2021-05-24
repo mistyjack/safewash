@@ -72,33 +72,55 @@ const Footer = () => {
             <Typography variant="body2" gutterBottom>
               <strong>Customer Service</strong>
             </Typography>
-            <Typography variant="body2">Become a Distributor</Typography>
+            <a href="#top-distributors">
+              <Typography variant="body2">Become a Distributor</Typography>
+            </a>
             <Typography variant="body2">Ordering and Payment</Typography>
             <Typography variant="body2">Returns</Typography>
             <Typography variant="body2">FAQS</Typography>
-            <Typography variant="body2">Go to Top</Typography>
+            <div style={{ cursor: "pointer" }} onClick={e => window.scroll(0, 0)}>
+              <Typography variant="body2">Go to Top</Typography>
+            </div>
           </Grid>
           <Grid className={classes.mb} xs={6} md={3} item>
             <Typography variant="body2" gutterBottom>
               <strong>Information</strong>
             </Typography>
-            <Typography variant="body2">About Safewash</Typography>
-            <Typography variant="body2">Work with Us</Typography>
+            <a href="#about-us">
+              <Typography variant="body2">About Safewash</Typography>
+            </a>
+            <a href="#contact-us">
+              <Typography variant="body2">Work with Us</Typography>
+            </a>
             <Typography variant="body2">Privacy Policy</Typography>
             <Typography variant="body2">Terms and Conditions</Typography>
           </Grid>
           <Grid className={`${classes.mbLarge} ${classes.contact}`} xs={6} md={3} item>
-            <Typography variant="body2" gutterBottom>
-              <strong>Contact Us</strong>
-            </Typography>
-            <Typography variant="body2">+23456778889996</Typography>
-            <Typography variant="body2">safewash@gmail.com</Typography>
+            <a href="#contact-us">
+              <Typography variant="body2" gutterBottom>
+                <strong>Contact Us</strong>
+              </Typography>
+            </a>
+            <a href="tel:+23456778889996">
+              <Typography variant="body2">+23456778889996</Typography>
+            </a>
+            <a href="mailto:safewash@gmail.com">
+              <Typography variant="body2">safewash@gmail.com</Typography>
+            </a>
 
             <div className={classes.icons}>
-              {IconPack.instagram}
-              {IconPack.twitter}
-              {IconPack.facebook}
-              {IconPack.linkedIn}
+              <a href="http://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                {IconPack.instagram}
+              </a>
+              <a href="http://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                {IconPack.twitter}
+              </a>
+              <a href="http://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                {IconPack.facebook}
+              </a>
+              <a href="http://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                {IconPack.linkedIn}
+              </a>
             </div>
           </Grid>
           {!matches ? (

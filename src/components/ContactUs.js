@@ -86,7 +86,7 @@ const ContactUs = () => {
           </Zoom>
           <Zoom>
             <Typography className={classes.bodyText} variant="h6" component="h4">
-              We use our knowledge and expertise to provide the most effecient, effective and environmentally friendly cleaning possible. Having in mind the daily increase in percentage of children cancer patients world wide, skin reactions caused by harmful chemicals, high priced soaps leading to parents using products not ideal for children.
+              Imagine having an healthy baby and you had to be admitted back in the hospital few days after birth due escalated skin irritation(Dermititis) as a result of poorly formulated laundry soap used. This is our founder case with her son in 2019. As devastated as she was, with her background as a pharmacolgist she formulated bqsafewash. Helped over 50 homes during test stage and commercialized after 0ne year.
             </Typography>
           </Zoom>
           <Zoom>

@@ -117,14 +117,14 @@ const TopDistributors = () => {
         <Hidden smDown>
           <Zoom>
             <Typography className={classes.bodyText} variant="h6" component="h4">
-              We use our knowledge and expertise to providethe most effecient, effective and environmentally friendly cleaning possible.
+              Because more homes have to experience mildness and purity in quality, we need you to join our team and as well be a business owner(money multiplier) of your own by showing the world what a great experience they can have using BQSAFEWASH.
             </Typography>
           </Zoom>
         </Hidden>
         <Hidden mdUp>
           <Zoom>
             <Typography className={classes.bodyText} variant="h6" component="h4">
-              We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
+              Because more homes have to experience mildness and purity in quality, we need you to join our team and as well be a business owner(money multiplier) of your own by showing the world what a great experience they can have using BQSAFEWASH.
             </Typography>
           </Zoom>
         </Hidden>
@@ -163,7 +163,7 @@ const TopDistributors = () => {
         <Hidden smDown>
           <Zoom>
             <Typography className={`${classes.bodyText} ${classes.mb34}`} variant="h6" component="h4">
-              We use our knowledge and expertise to providethe most effecient, effective and environmentally friendly cleaning possible.
+              We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
             </Typography>
           </Zoom>
 
