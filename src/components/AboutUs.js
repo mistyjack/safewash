@@ -87,9 +87,11 @@ const AboutUs = () => {
             </Typography>
           </Zoom>
           <Zoom>
-            <Button className="btn" variant="contained" color="secondary" disableElevation>
-              Become A Distributor
-            </Button>
+            <a href="#top-distributors">
+              <Button className="btn" variant="contained" color="secondary" disableElevation>
+                Become A Distributor
+              </Button>
+            </a>
           </Zoom>
         </Grid>
       </Grid>

@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -60,7 +61,9 @@ const useStyles = makeStyles(theme =>
       background: "#FFFFFF",
       boxShadow: "0px 4px 31px #F4F4F9",
       borderRadius: "12px",
-      zIndex: 10
+      zIndex: 10,
+      paddingLeft: theme.spacing(1),
+      paddingRight: theme.spacing(1)
     },
     name: {
       color: theme.palette.secondary.main,
@@ -75,10 +78,23 @@ const useStyles = makeStyles(theme =>
       lineHeight: "22.64px",
       marginBottom: "12px"
     },
-    image: {
+    logo: {
       position: "absolute",
       left: "40px",
-      top: "-47px"
+      top: "-47px",
+      height: "204px",
+      width: "204px",
+      borderRadius: "102px",
+      transform: "scale(0.9)"
+    },
+    bgGreen: {
+      border: "3px solid #6EB245"
+    },
+    bgBlue: {
+      border: "3px solid #21A4C4"
+    },
+    bgRed: {
+      border: "3px solid #DB99CD"
     },
     backgrd: {
       position: "absolute",
@@ -100,9 +116,9 @@ const TopDistributors = () => {
   const matches = useMediaQuery("(min-width:960px)");
 
   const items = [
-    { imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/kudiratB_BjPy7UrJB.png", imageAlt: "Kudrat Bakare Passport", name: "Kudirat Bakare", address: "Surulere, Lagos State.", phone: "09030267295", style: "mb" },
-    { imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/ibikunleVentures_VZEzX-x19O7.png", imageAlt: "Ibikunle Ventures Passport", name: "Ibikunle Ventures", address: "Surulere, Lagos State.", phone: "09030267295", style: "mb" },
-    { imageSrc: "https://ik.imagekit.io/7wpxe2myx/Safewash/rosemerryShop_A8S6SjIajU.png", imageAlt: "Rosemerry’s Shop Passport", name: "Rosemerry’s Shop", address: "Surulere, Lagos State.", phone: "09030267295" }
+    { imageSrc: "bgGreen", name: "@bqkiddies", address: "Plot 50, Imola Busstop, Opp. Imola Plaza, Iju Road, Agege, Lagos", phone: "07087080796", style: "mb" },
+    { imageSrc: "bgBlue", name: "@spinncitydrycleaners", address: "Spinncity Drycleaners, 48, Akerele St., Surulere, Lagos", phone: "09099203568", style: "mb" },
+    { imageSrc: "bgRed", name: "@amalbotanicals", address: "3rd Flr., Wing 2, YMCA building, 77A Awolowo Road, Ikoyi, Lagos", phone: "09015508417" }
   ];
 
   return (
@@ -134,10 +150,10 @@ const TopDistributors = () => {
       </span>
       <Grid className={classes.container} container direction="row" justify="space-around">
         {items.map(item => (
-          <Grid key={item.imageAlt} item>
-            <Paper className={item.style ? `${classes.item} ${classes.mb}` : classes.item} elevation={0}>
-              <div className={classes.image}>
-                <Image src={item.imageSrc} alt={item.imageAlt} layout="fixed" width={202} height={188} />
+          <Grid key={item.phone} item>
+            <Paper className={item.style ? `${classes.item} ${classes.mb}` : classes.item} elevation={1}>
+              <div className={`${classes.logo} ${classes[item.imageSrc]}`}>
+                <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/logo_1__-6q9G7Lmot3.png" alt="Logo placeholder" layout="fixed" width={188} height={188} />
               </div>
               <Zoom>
                 <Typography className={classes.name} variant="h4">
@@ -150,9 +166,11 @@ const TopDistributors = () => {
                 </Typography>
               </Zoom>
               <Zoom>
-                <Button className="btn btn--top-dist" variant="contained" color="secondary" disableElevation>
-                  Contact
-                </Button>
+                <a href={`tel:+${item.phone}`}>
+                  <Button className="btn btn--top-dist" variant="contained" color="secondary" disableElevation>
+                    Contact
+                  </Button>
+                </a>
               </Zoom>
             </Paper>
           </Grid>
@@ -168,9 +186,11 @@ const TopDistributors = () => {
           </Zoom>
 
           <Zoom>
-            <Button className="btn" variant="contained" color="secondary" disableElevation>
-              Find Distributors Around You?
-            </Button>
+            <Link href="/distributors">
+              <Button className="btn" variant="contained" color="secondary" disableElevation>
+                Find Distributors Around You?
+              </Button>
+            </Link>
           </Zoom>
         </Hidden>
       </div>

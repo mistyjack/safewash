@@ -21,7 +21,7 @@ const Distributors = [
     area: "Ikoyi",
     username: "@amalbotanicals",
     address: "3rd Flr., Wing 2, YMCA building, 77A Awolowo Road, Ikoyi, Lagos",
-    phone: "09099203568"
+    phone: "09015508417"
   },
   {
     state: "Lagos State 24",

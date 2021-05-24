@@ -95,7 +95,7 @@ const ThirdSlide = () => {
         <Typography className={classes.blockHeading} variant="h1" gutterBottom>
           Zero Skin Irritations
         </Typography>
-        <Link href="/distributors">
+        <Link href="#top-distributors">
           <Button className="btn" variant="contained" color="secondary" disableElevation>
             Become A Distributor
           </Button>
