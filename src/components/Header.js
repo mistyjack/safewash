@@ -16,6 +16,9 @@ import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import Fab from "@material-ui/core/Fab";
+import Zoom from "@material-ui/core/Zoom";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -75,6 +78,12 @@ const useStyles = makeStyles(theme =>
       position: "absolute",
       top: "50%",
       left: "10%"
+    },
+    backToTop: {
+      position: "fixed",
+      zIndex: 1000,
+      bottom: theme.spacing(2),
+      right: theme.spacing(2)
     }
   })
 );
@@ -98,6 +107,35 @@ function ElevationScroll(props) {
     position: trigger ? "fixed" : "absolute",
     elevation: trigger ? 1 : 0
   });
+}
+
+function ScrollTop(props) {
+  const { children, window } = props;
+  const classes = useStyles();
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100
+  });
+
+  const handleClick = event => {
+    const anchor = (event.target.ownerDocument || document).querySelector("#home");
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
+  return (
+    <Zoom in={trigger}>
+      <div onClick={handleClick} role="presentation" className={classes.backToTop}>
+        {children}
+      </div>
+    </Zoom>
+  );
 }
 
 function Header(props) {
@@ -202,6 +240,12 @@ function Header(props) {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
+
+      <ScrollTop {...props}>
+        <Fab color="primary" size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
     </div>
   );
 }
