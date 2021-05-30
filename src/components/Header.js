@@ -95,7 +95,7 @@ function ElevationScroll(props) {
   });
 
   return cloneElement(children, {
-    position: trigger ? "fixed" : "static",
+    position: trigger ? "fixed" : "absolute",
     elevation: trigger ? 1 : 0
   });
 }
