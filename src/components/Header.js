@@ -90,11 +90,12 @@ function ElevationScroll(props) {
   const { children } = props;
 
   const trigger = useScrollTrigger({
-    disableHysteresis: true,
+    disableHysteresis: false,
     threshold: 0
   });
 
   return cloneElement(children, {
+    position: trigger ? "fixed" : "static",
     elevation: trigger ? 1 : 0
   });
 }
