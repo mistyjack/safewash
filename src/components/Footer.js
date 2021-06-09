@@ -48,8 +48,17 @@ const useStyles = makeStyles(theme =>
     icons: {
       marginTop: "10px",
       display: "flex",
-      width: "156px",
+      width: "150px",
       justifyContent: "space-between"
+    },
+    bodyText: {
+      marginBottom: "15px",
+      fontSize: "14px",
+      lineHeight: "28px",
+      [theme.breakpoints.up("md")]: {
+        fontSize: "16px",
+        lineHeight: "33px"
+      }
     }
   })
 );
@@ -69,56 +78,84 @@ const Footer = () => {
             </Grid>
           ) : null}
           <Grid className={classes.mb} xs={6} md={3} item>
-            <Typography variant="body2" gutterBottom>
+            <Typography className={classes.bodyText} variant="body2" gutterBottom>
               <strong>Customer Service</strong>
             </Typography>
             <a href="#top-distributors">
-              <Typography variant="body2">Become a Distributor</Typography>
+              <Typography className={classes.bodyText} variant="body2">
+                Become a Distributor
+              </Typography>
             </a>
-            <Typography variant="body2">Ordering and Payment</Typography>
-            <Typography variant="body2">Returns</Typography>
-            <Typography variant="body2">FAQS</Typography>
+            <Typography className={classes.bodyText} variant="body2">
+              Ordering and Payment
+            </Typography>
+            <Typography className={classes.bodyText} variant="body2">
+              Returns
+            </Typography>
+            <Typography className={classes.bodyText} variant="body2">
+              FAQS
+            </Typography>
             <div style={{ cursor: "pointer" }} onClick={e => window.scroll(0, 0)}>
-              <Typography variant="body2">Go to Top</Typography>
+              <Typography className={classes.bodyText} variant="body2">
+                Go to Top
+              </Typography>
             </div>
           </Grid>
           <Grid className={classes.mb} xs={6} md={3} item>
-            <Typography variant="body2" gutterBottom>
+            <Typography className={classes.bodyText} variant="body2" gutterBottom>
               <strong>Information</strong>
             </Typography>
             <a href="#about-us">
-              <Typography variant="body2">About Safewash</Typography>
+              <Typography className={classes.bodyText} variant="body2">
+                About Safewash
+              </Typography>
             </a>
             <a href="#contact-us">
-              <Typography variant="body2">Work with Us</Typography>
+              <Typography className={classes.bodyText} variant="body2">
+                Work with Us
+              </Typography>
             </a>
-            <Typography variant="body2">Privacy Policy</Typography>
-            <Typography variant="body2">Terms and Conditions</Typography>
+            <Typography className={classes.bodyText} variant="body2">
+              Privacy Policy
+            </Typography>
+            <Typography className={classes.bodyText} variant="body2">
+              Terms and Conditions
+            </Typography>
           </Grid>
           <Grid className={`${classes.mbLarge} ${classes.contact}`} xs={6} md={3} item>
             <a href="#contact-us">
-              <Typography variant="body2" gutterBottom>
+              <Typography className={classes.bodyText} variant="body2" gutterBottom>
                 <strong>Contact Us</strong>
               </Typography>
             </a>
-            <a href="tel:+23456778889996">
-              <Typography variant="body2">+23456778889996</Typography>
+            <a href="tel:+2348094488997">
+              <Typography className={classes.bodyText} variant="body2">
+                0809 448 8997
+              </Typography>
             </a>
-            <a href="mailto:safewash@gmail.com">
-              <Typography variant="body2">safewash@gmail.com</Typography>
+            <a href="mailto:hello@bqglobalsolutions.com">
+              <Typography className={classes.bodyText} variant="body2">
+                hello@bqglobalsolutions.com
+              </Typography>
             </a>
 
             <div className={classes.icons}>
-              <a href="http://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://instagram.com/bqsafewash?igshid=1mytu9ow4oflm" target="_blank" rel="noopener noreferrer">
+                <span className="material-icons" aria-hidden="true">
+                  Instagram profile
+                </span>
                 {IconPack.instagram}
               </a>
-              <a href="http://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                {IconPack.twitter}
-              </a>
-              <a href="http://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/bqsafewash?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
+                <span className="material-icons" aria-hidden="true">
+                  Faceook profile
+                </span>
                 {IconPack.facebook}
               </a>
-              <a href="http://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/bqsafewash" target="_blank" rel="noopener noreferrer">
+                <span className="material-icons" aria-hidden="true">
+                  LinkedIn profile
+                </span>
                 {IconPack.linkedIn}
               </a>
             </div>

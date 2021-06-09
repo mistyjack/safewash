@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme =>
       maxWidth: "100%",
       overflow: "hidden",
       marginLeft: "auto",
-      padding: theme.spacing(3),
+      padding: theme.spacing(10),
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0, 4)
       }
@@ -70,9 +70,9 @@ const AboutUs = () => {
     <div style={{ position: "relative" }}>
       <CssBaseline />
 
-      <Grid className={classes.container} container direction="row-reverse" alignItems="center" justify="space-between">
+      <Grid className={classes.container} container direction="row-reverse" alignItems="center" justify="space-around">
         <Grid className={classes.womanImage} xs={12} md={5} item>
-          {matches ? <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/woman_-eSw1B5vkEX.png" alt="About us Image" layout="responsive" width={543} height={719} /> : <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/womanSmallScreen_EkS1TNQy1.png" alt="About us Image" layout="responsive" width={278} height={374} />}
+          {matches ? <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/keyPerson_1__lxKttxpn_.png" alt="About us Image" layout="responsive" width={1119} height={1508} /> : <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/keyPersonSmall_R2t-3mcke.png" alt="About us Image" layout="responsive" width={1010} height={962} />}
         </Grid>
 
         <Grid className={classes.textContent} xs={12} md={7} item>
@@ -82,7 +82,7 @@ const AboutUs = () => {
             </Typography>
           </Zoom>
           <Zoom>
-            <Typography className={classes.bodyText} variant="h6" component="h4">
+            <Typography className={classes.bodyText} variant="h6" component="h3">
               BQ GLOBAL SOLUTIONS LIMITED is an innovative detergent company with a primary product called BQSAFEWASH; a healthy liquid laundry detergent, specifically formulated for babies and children with great concern for the African child. Having in mind the daily increase in percentage of children cancer patients world wide, skin reactions caused by harmful chemicals, high priced soaps leading to parents using products not ideal for their children. With our knowledge and expertise we are able to provide the most efficient, effective and environmentally friendly laundry solution for every home.
             </Typography>
           </Zoom>

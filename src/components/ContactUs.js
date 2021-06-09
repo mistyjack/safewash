@@ -137,12 +137,21 @@ const ContactUs = () => {
           <Zoom>
             <div className={classes.icons}>
               <a href="https://instagram.com/bqsafewash?igshid=1mytu9ow4oflm" target="_blank" rel="noopener noreferrer">
+                <span className="material-icons" aria-hidden="true">
+                  Instagram profile
+                </span>
                 {IconPack.instagram}
               </a>
               <a href="https://www.facebook.com/bqsafewash?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
+                <span className="material-icons" aria-hidden="true">
+                  Facebook profile
+                </span>
                 {IconPack.facebook}
               </a>
               <a href="https://www.linkedin.com/company/bqsafewash" target="_blank" rel="noopener noreferrer">
+                <span className="material-icons" aria-hidden="true">
+                  LinkedIn profile
+                </span>
                 {IconPack.linkedIn}
               </a>
             </div>

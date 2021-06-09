@@ -135,20 +135,11 @@ const TopDistributors = () => {
             See Our Top Distributors
           </Typography>
         </Zoom>
-        <Hidden smDown>
-          <Zoom>
-            <Typography className={classes.bodyText} variant="h6" component="h4">
-              Because more homes have to experience mildness and purity in quality, we need you to join our team and as well be a business owner(money multiplier) of your own by showing the world what a great experience they can have using BQSAFEWASH.
-            </Typography>
-          </Zoom>
-        </Hidden>
-        <Hidden mdUp>
-          <Zoom>
-            <Typography className={classes.bodyText} variant="h6" component="h4">
-              Because more homes have to experience mildness and purity in quality, we need you to join our team and as well be a business owner(money multiplier) of your own by showing the world what a great experience they can have using BQSAFEWASH.
-            </Typography>
-          </Zoom>
-        </Hidden>
+        <Zoom>
+          <Typography className={classes.bodyText} variant="h6" component="h3">
+            Because more homes have to experience mildness and purity in quality, we need you to join our team and as well be a business owner(money multiplier) of your own by showing the world what a great experience they can have using BQSAFEWASH.
+          </Typography>
+        </Zoom>
       </div>
       <span className={classes.backgrd}>
         <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/distBgrd_sQvnfOu2Axs.png" layout="intrinsic" width={1029} height={1109} alt="Distributors bgrd" />
@@ -184,7 +175,7 @@ const TopDistributors = () => {
 
       <div className={classes.headingTexts}>
         <Zoom>
-          <a href="https://bit.ly/safewashfeedback" target="_blank">
+          <a href="https://bit.ly/safewashfeedback" target="_blank" rel="noopener noreferrer">
             <Button className={classes.mtSm2 + " btn"} variant="contained" color="secondary" disableElevation>
               Become a Distributor
             </Button>
