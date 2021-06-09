@@ -1,4 +1,4 @@
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import IconPack from "../../public/Icons";
 
@@ -8,6 +8,9 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
+import IconButton from "@material-ui/core/IconButton";
+import PauseIcon from "@material-ui/icons/Pause";
 
 import Zoom from "react-reveal/Zoom";
 
@@ -21,6 +24,8 @@ const useStyles = makeStyles(theme =>
       marginBottom: "123px"
     },
     headingTexts: {
+      position: "relative",
+      zIndex: "10",
       textAlign: "center",
       maxWidth: "816px",
       padding: theme.spacing("128px", 2, 0, 2),
@@ -92,6 +97,7 @@ const useStyles = makeStyles(theme =>
       position: "relative",
       marginTop: "85px",
       marginBottom: "114px",
+      overflow: "hidden",
       [theme.breakpoints.up("md")]: {
         marginTop: "-66px",
         marginBottom: "224px"
@@ -102,14 +108,8 @@ const useStyles = makeStyles(theme =>
       zIndex: 10,
       left: "50%",
       top: "50%",
-      width: "101px",
-      height: "62px",
       transform: "translate(-50%, -50%)",
-      cursor: "pointer",
-      [theme.breakpoints.up("md")]: {
-        width: "158px",
-        height: "97px"
-      }
+      cursor: "pointer"
     },
     videoElement: {
       width: "90%",
@@ -136,6 +136,37 @@ const useStyles = makeStyles(theme =>
     gridCont: {
       position: "relative",
       zIndex: 10
+    },
+    controls: {
+      display: "flex",
+      position: "absolute:",
+      bottom: 0,
+      flexWrap: "wrap",
+      backgroundColor: "#FE96C6",
+      width: "90%",
+      marginLeft: "auto",
+      marginRight: "auto",
+      transform: "translateY(100%)",
+      [theme.breakpoints.up("sm")]: {
+        maxWidth: "676px"
+      },
+      [theme.breakpoints.up("md")]: {
+        maxWidth: "879px"
+      }
+    },
+    videoButtons: {
+      height: "100%",
+      background: "none",
+      border: 0,
+      outline: 0,
+      cursor: "pointer",
+      padding: 0
+    },
+    barJuice: {
+      height: 8,
+      background: theme.palette.secondary.main,
+      position: "absolute",
+      bottom: 23
     }
   })
 );
@@ -145,6 +176,7 @@ const Testimonies = () => {
   const matches = useMediaQuery("(min-width:960px)");
   const videoElement = useRef(null);
   const [isPlayClicked, setIsPlayClicked] = useState(false);
+  const [barPosition, setBarPosition] = useState("0%");
 
   const items = [
     {
@@ -173,6 +205,31 @@ const Testimonies = () => {
     videoElement.current.play();
     setIsPlayClicked(true);
   };
+
+  const handlePlayPause = () => {
+    if (videoElement.current.paused) {
+      videoElement.current.play();
+      setIsPlayClicked(true);
+    } else {
+      videoElement.current.pause();
+      setIsPlayClicked(false);
+    }
+  };
+
+  useEffect(() => {
+    function handleTimeEvent() {
+      if (videoElement.current) {
+        let juiceBarPosition = `${(videoElement.current.currentTime / videoElement.current.duration) * 100}%`;
+        setBarPosition(juiceBarPosition);
+      }
+    }
+
+    if (isPlayClicked) {
+      videoElement.current.addEventListener("timeupdate", handleTimeEvent);
+    } else {
+      videoElement.current.removeEventListener("timeupdate", handleTimeEvent);
+    }
+  }, [isPlayClicked]);
 
   return (
     <div style={{ position: "relative" }}>
@@ -214,8 +271,19 @@ const Testimonies = () => {
         ))}
       </Grid>
 
-      <div className={classes.videoContainer}>
-        <video ref={videoElement} className={classes.videoElement} poster={matches ? "https://ik.imagekit.io/7wpxe2myx/Safewash/videoPoster_L2XoDXSrm.png" : "https://ik.imagekit.io/7wpxe2myx/Safewash/videoPosterSmall_ISE82SuWK.png"}></video>
+      <div className={classes.videoContainer + " video-container"}>
+        <video src="/safewash.mp4" ref={videoElement} className={classes.videoElement} poster={matches ? "https://ik.imagekit.io/7wpxe2myx/Safewash/videoPoster_L2XoDXSrm.png" : "https://ik.imagekit.io/7wpxe2myx/Safewash/videoPosterSmall_ISE82SuWK.png"}></video>
+
+        <div className={classes.controls + " controls"}>
+          <div className={classes.bar}>
+            <div className={classes.barJuice} style={{ width: barPosition }}></div>
+          </div>
+          <div className={classes.videoButtonContainer}>
+            <IconButton onClick={handlePlayPause} className={classes.videoButtons}>
+              {isPlayClicked ? <PauseIcon fontSize="small" style={{ color: "#fff" }} /> : <PlayArrowIcon fontSize="small" style={{ color: "#fff" }} />}
+            </IconButton>
+          </div>
+        </div>
         <div onClick={handleClick} className={isPlayClicked ? `${classes.playButton} ${classes.dNone}` : classes.playButton}>
           <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/playButton_B3gx1rPmu.svg" layout="fixed" alt="Play button" width={158} height={97} />
         </div>

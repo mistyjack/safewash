@@ -94,3 +94,7 @@ a {
 .MuiPaper-elevation1 {
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(137.03deg, rgba(255, 255, 255, 0.95) 47.28%, rgba(254, 150, 198, 0.95) 152.37%) !important;
 }
+
+.video-container:hover .controls {
+  transform: translateY(0) !important;
+}
