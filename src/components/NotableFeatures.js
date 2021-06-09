@@ -136,16 +136,16 @@ const NotableFeatures = () => {
       <CssBaseline />
 
       <div className={classes.container}>
-        {!matches && <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/babyInBasketSmallScreen_sh1pWzlX5.png" alt="BQ Safewash baby 4 hero 1" layout="responsive" width={400} height={408} />}
+        {!matches && <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/sizesSmall_sYJGuzyW2.png" alt="BQ Safewash baby 4 hero 1" layout="responsive" width={400} height={408} />}
 
         <Zoom>
           <div className={`${classes.heading} ${classes.px2AtSmall}`}>
             <Typography className={classes.headingText} variant="h3" component="h2" gutterBottom>
-              Notable Features
+              BQSAFEWASH
             </Typography>
             <div>
               <Typography className={classes.mainBody} variant="h6" component="h3">
-                We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
+                Having in mind the daily increase in percentage of children cancer patients world wide, also skin reactions caused by harmful chemicals, with high priced soaps leading to parents using products not ideal for their children.
               </Typography>
             </div>
           </div>
@@ -153,7 +153,7 @@ const NotableFeatures = () => {
         <Grid container justify="space-around" direction="row">
           {matches && (
             <Grid md={4} item className={classes.babyInBasketImage}>
-              <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/babyInBasket_5J9kSbk9pw.png" alt="Baby in basket" layout="fixed" width={575} height={566} />
+              <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/sizes_923NlTGAr.png" alt="Baby in basket" layout="fixed" width={575} height={566} />
             </Grid>
           )}
 

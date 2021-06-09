@@ -107,6 +107,11 @@ const useStyles = makeStyles(theme =>
         overflow: "hidden",
         maxWidth: "100% !important"
       }
+    },
+    mtSm2: {
+      [theme.breakpoints.down("sm")]: {
+        marginTop: "2rem"
+      }
     }
   })
 );
@@ -178,21 +183,13 @@ const TopDistributors = () => {
       </Grid>
 
       <div className={classes.headingTexts}>
-        <Hidden smDown>
-          <Zoom>
-            <Typography className={`${classes.bodyText} ${classes.mb34}`} variant="h6" component="h4">
-              We are moved to create a premium, harmful chemical free, sparkling clean liquid laundry soap clinically safe for babies and children’s health.
-            </Typography>
-          </Zoom>
-
-          <Zoom>
-            <Link href="/distributors">
-              <Button className="btn" variant="contained" color="secondary" disableElevation>
-                Find Distributors Around You?
-              </Button>
-            </Link>
-          </Zoom>
-        </Hidden>
+        <Zoom>
+          <a href="https://bit.ly/safewashfeedback" target="_blank">
+            <Button className={classes.mtSm2 + " btn"} variant="contained" color="secondary" disableElevation>
+              Become a Distributor
+            </Button>
+          </a>
+        </Zoom>
       </div>
 
       {!matches && (
