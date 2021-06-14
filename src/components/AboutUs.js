@@ -3,7 +3,6 @@ import Image from "next/image";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -72,7 +71,7 @@ const AboutUs = () => {
 
       <Grid className={classes.container} container direction="row-reverse" alignItems="center" justify="space-around">
         <Grid className={classes.womanImage} xs={12} md={5} item>
-          {matches ? <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/keyPerson_1__lxKttxpn_.png" alt="About us Image" layout="responsive" width={1119} height={1508} /> : <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/keyPersonSmall_R2t-3mcke.png" alt="About us Image" layout="responsive" width={1010} height={962} />}
+          {matches ? <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/keyPerson_1__lxKttxpn_.png" alt="About us Image" layout="responsive" width={1119} height={1508} /> : <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/keyPersonSmall_9p9qSfcfD.png" alt="About us Image" layout="responsive" width={1073} height={959} />}
         </Grid>
 
         <Grid className={classes.textContent} xs={12} md={7} item>

@@ -62,7 +62,6 @@ const useStyles = makeStyles(theme =>
       marginLeft: "auto",
       marginRight: "auto",
       [theme.breakpoints.up("md")]: {
-        textAlign: "left",
         maxWidth: "504px"
       }
     },
@@ -96,6 +95,14 @@ const useStyles = makeStyles(theme =>
       [theme.breakpoints.up("md")]: {
         marginBottom: "30px",
         paddingTop: "40px"
+      }
+    },
+    leftAligned: {
+      textAlign: "left"
+    },
+    horizontalPadding: {
+      [theme.breakpoints.up("md")]: {
+        padding: theme.spacing(0, 6)
       }
     }
   })
@@ -136,7 +143,7 @@ const NotableFeatures = () => {
       <CssBaseline />
 
       <div className={classes.container}>
-        {!matches && <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/sizesSmall_sYJGuzyW2.png" alt="BQ Safewash baby 4 hero 1" layout="responsive" width={400} height={408} />}
+        {!matches && <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/productsSmall_OGUvx_qUbDE.png" alt="BQ Safewash baby 4 hero 1" layout="responsive" width={408} height={416} />}
 
         <Zoom>
           <div className={`${classes.heading} ${classes.px2AtSmall}`}>
@@ -153,7 +160,7 @@ const NotableFeatures = () => {
         <Grid container justify="space-around" direction="row">
           {matches && (
             <Grid md={4} item className={classes.babyInBasketImage}>
-              <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/sizes_923NlTGAr.png" alt="Baby in basket" layout="fixed" width={575} height={566} />
+              <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/products_tv5mlsVp0.png" alt="Baby in basket" layout="fixed" width={757} height={771} />
             </Grid>
           )}
 
@@ -161,22 +168,22 @@ const NotableFeatures = () => {
             <Grid item>
               <Zoom>
                 <div className={`${classes.item}`}>
-                  {IconPack.shield}
+                  <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/fiveLitres_WZRJGxBgaC.png" alt="Five litres product" layout="fixed" width={170} height={168} />
                   <Typography className={`${classes.itemHeading} ${classes[items[0].headStyle]}`} variant="h4">
-                    {items[0].itemHeading}
+                    5 Litres
                   </Typography>
-                  <Typography variant="body1">{items[0].itemBody}</Typography>
+                  <Typography variant="body1">&#8358; 6,500</Typography>
                 </div>
               </Zoom>
             </Grid>
             <Grid item>
               <Zoom>
                 <div className={`${classes.item} ${classes.pt}`}>
-                  {IconPack.bio}
+                  <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/fourLitres_mGoET6I8D5.png" alt="Four litres product" layout="fixed" width={170} height={168} />
                   <Typography className={`${classes.itemHeading} ${classes[items[1].headStyle]}`} variant="h4">
-                    {items[1].itemHeading}
+                    4 Litres
                   </Typography>
-                  <Typography variant="body1">{items[1].itemBody}</Typography>
+                  <Typography variant="body1">&#8358; 5,500</Typography>
                 </div>
               </Zoom>
             </Grid>
@@ -187,22 +194,38 @@ const NotableFeatures = () => {
           <Grid sm={12} md={4} item>
             <Zoom>
               <div className={`${classes.item}`}>
-                {IconPack.special}
+                <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/threeLitres_mPGXio2_J.png" alt="Two litres product" layout="fixed" width={170} height={168} />
                 <Typography className={`${classes.itemHeading} ${classes[items[2].headStyle]}`} variant="h4">
-                  {items[2].itemHeading}
+                  Two Litres
                 </Typography>
-                <Typography variant="body1">{items[2].itemBody}</Typography>
+                <Typography variant="body1">&#8358; 2,000</Typography>
               </div>
             </Zoom>
           </Grid>
           <Grid sm={12} md={4} item>
             <Zoom>
-              <div className={`${classes.item}`}>
-                {IconPack.bubbles}
+              <div className={`${classes.item} ${classes.horizontalPadding}`}>
+                <Image src="https://ik.imagekit.io/7wpxe2myx/Safewash/hypoAller_dCXb8fuS2z.png" alt="Hypoallergenic Logo" layout="fixed" width={170} height={168} />
                 <Typography className={`${classes.itemHeading} ${classes[items[3].headStyle]}`} variant="h4">
                   {items[3].itemHeading}
                 </Typography>
-                <Typography variant="body1">{items[3].itemBody}</Typography>
+                <ul className={classes.leftAligned}>
+                  <li>
+                    <Typography variant="body1">Gentle on skin but tough on stains</Typography>
+                  </li>
+                  <li>
+                    <Typography variant="body1">Retains clothing colors and elasticity</Typography>
+                  </li>
+                  <li>
+                    <Typography variant="body1">Hypoallergenic for sensitive skin</Typography>
+                  </li>
+                  <li>
+                    <Typography variant="body1">Blue waters scented</Typography>
+                  </li>
+                  <li>
+                    <Typography variant="body1">Very mild</Typography>
+                  </li>
+                </ul>
               </div>
             </Zoom>
           </Grid>
