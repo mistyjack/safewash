@@ -157,7 +157,7 @@ const ContactUs = () => {
             </div>
           </Zoom>
           <Zoom>
-            <a href="tel:+2348094488997">
+            <a href="https://bit.ly/safewashfeedback" target="_blank" rel="noopener noreferrer">
               <Button className="btn" variant="contained" color="secondary" disableElevation>
                 Contact Us Now!
               </Button>

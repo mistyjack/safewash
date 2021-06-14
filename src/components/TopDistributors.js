@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -8,7 +7,6 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
-import Hidden from "@material-ui/core/Hidden";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import IconPack from "../../public/Icons";
 
@@ -111,7 +109,8 @@ const useStyles = makeStyles(theme =>
     mtSm2: {
       [theme.breakpoints.down("sm")]: {
         marginTop: "2rem"
-      }
+      },
+      marginRight: 10
     }
   })
 );
@@ -175,9 +174,16 @@ const TopDistributors = () => {
 
       <div className={classes.headingTexts}>
         <Zoom>
-          <a href="https://bit.ly/safewashfeedback" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.canva.com/design/DAEJ7eQ8mWI/9Xm9o3hrn5wBjpzLDAO5mg/view?website#2" target="_blank" rel="noopener noreferrer">
             <Button className={classes.mtSm2 + " btn"} variant="contained" color="secondary" disableElevation>
               Become a Distributor
+            </Button>
+          </a>
+        </Zoom>
+        <Zoom>
+          <a href="/distributors">
+            <Button className={classes.mtSm2 + " btn"} variant="contained" color="secondary" disableElevation>
+              Find Distributors Around You?
             </Button>
           </a>
         </Zoom>
